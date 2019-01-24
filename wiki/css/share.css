@@ -1,0 +1,61 @@
+html {
+    font-size:16px;
+}
+
+@media all and (min-width: 1681px) {
+    html {
+        font-size: 20px;   
+    }
+}
+
+.main {
+    width:98vw;
+    background-color: black;
+    color: white;
+    font-family: Raleway;
+    box-sizing: border-box;
+}
+     
+@media all and (max-width: 480px) {
+    .main {
+        padding:0;
+    } 
+}
+
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index:2;
+}
+
+.main div {
+    margin:0;
+    padding:0;
+}
+
+.main .h1, .main .h2, .main .h3, .main .h4, .main .h5, .main .h6 {
+    text-align:center;
+    font-weight:bold;
+}
+
+.main div.h1 {
+    line-height:1.42857143;
+    font-family:levirebrushed;
+    padding: 2rem 0;
+    margin:0;
+    font-size: 3rem;
+    color:dodgerblue;
+}
+
+.main div.p {
+    text-align:left;
+    text-indent:2rem;
+}
+       
+.main table {
+    border-spacing:0;
+}
+

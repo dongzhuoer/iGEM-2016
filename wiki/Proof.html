@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">   
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/share.css">
+    <link rel="stylesheet" href="css/local.css">
+    <script title="jquery.js" src="js/jquery-3.1.0.min.js"></script>
+    <script title="jquery-ui.js" src="js/jquery-ui.min.js"></script>
+    <script title="bootstrap.js" src="js/bootstrap.min.js"></script>
+    <script title="modernizr.js" src="js/modernizr.js"></script>
+    <script title="particles.js" src="js/particles.min.js"></script>
+    <script>
+        var rem = Number($('html').css('font-size').replace('px', ''));
+        function log(value) { console.log(value); }
+        function particles() { $('#particles-js').toggle(); }
+        function adjust_figure(scale) {
+            $('figure').each(
+                function (index, value) {
+                    var max_width = $(value).find('span').width() / rem * scale + 'rem';
+                    $(value).css('max-width', max_width);
+                }
+            )
+        }
+    </script>
+
+    <!--separatrix-->
+    <style>
+        .main#proof {
+            padding: 0 8vw;
+            padding-bottom: 10vh;
+            line-height: 1.25;
+        }
+
+        #proof .h1 {
+        }
+
+        .main > img {
+            width: 100%;
+        }
+
+        .main div.h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: left;
+            color: cyan;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            font-family: Raleway;
+        }
+
+        .p {
+            font-size: 1.2rem;
+        }
+    </style>
+    <style>
+        section {
+            margin: 3rem 0;
+        }
+
+        #proof section .p{
+            margin: 1rem 0;
+        }
+
+        #proof section figure {
+            margin: 2rem auto;
+        }
+
+        section figure img {
+            display: block;
+            margin: auto;
+            max-width: 100%;
+            max-height: calc(100vh - 5rem - 18px);
+            position: relative;
+            z-index: 3;
+            background-color: white;
+        }
+
+        section figcaption {
+            margin: 0.5rem 0;
+            font-size: 1rem;
+            text-align: center;
+            color: dodgerblue;
+        }
+
+        #proof section figcaption .p {
+            text-indent:0;
+            text-align: center;
+        }
+
+        #reference .h {
+            color: dodgerblue;
+            font-size: 1.25rem;
+            margin: 0.5rem;
+        }
+
+        #reference li {
+            margin: 0.5rem;
+            font-size: 1rem;
+        }
+    </style>
+    <script>
+        $(function () {
+            adjust_figure(1.01);
+            //$('#particles-js').hide();
+        })
+    </script>
+</head>
+<body id="dongzhuoer">
+    <div id="particles-js"></div>
+    <script src="js/particlesJS.js"></script>
+    <div class="main" id="proof">
+        <div class="h1">Proof of Concept</div>
+        <section>
+            <div class="h2 ui-state-active">Abstract</div>
+            <div class="p">This summer, our team is aiming to engineer bacteria for supplement and absorption of autoinducer-2 (AI-2) in the natural environment. We successfully designed two cell machines: AI-2 Supplier is the cell machine which can directly supply and enrich the AI-2 molecule while AI-2 Consumer is another cell machine which can sense, absorb and degrade the AI-2 in the environment. We validated that AI-2 Controller works as expected by qPCR, HPLC and AI-2 Response Device. We also further demonstrated that our AI-2 controllers have the ability to manipulate biofilm formation process by 'quenching' or 'ignite' AI-2 signal in the environment.</div>
+        </section>
+        <section>
+            <div class="h2 ui-state-active">Design of modular QS elements: AI-2 Supplier</div>
+            <div class="p">There are mainly 2 steps involved in the process of AI-2 production in bacteria cells. AI-2 is produced from S-adenosylhomocysteine (SAH) by Mtn and LuxS and accumulates extracellularly with cell density. In our project, we cloned <i>mtn</i>, <i>luxS</i> into the plasmid pTrcHisB to enable overexpression of proteins associated with these AI-2 production reactions in <i>Escherichia coli</i>. Two AI-2 Supplier devices, pLuxS and pLuxSMtn were successfully constructed using homologous recombination method.</div>
+            <div class="p">During the construction, all intermediate constructs and final plasmids were immediately verified by restriction enzyme digestion verification and/or sequencing. As you can see from Fig. 1, we obtained gel bands at expected position of AI-2 Controller devices, pLuxS and pLuxSMtn.</div>
+            <figure>
+                <img src="../image/Proof/01.png">
+                <figcaption>
+                    <div class="p"><span>Fig. 1: Restriction enzyme digestion verification of pLuxS (left) and pLuxSMtn (right)</span></div>
+                </figcaption>
+            </figure>
+            <div class="p">Device pLuxS and pLuxSMtn were constructed by overexpression of the components responsible for AI-2 production (<i>luxS</i>, mtn). To verify whether the device realized the function as expected, qPCR and SDS-PAGE experiments were conducted. As shown in Fig. 2 and Fig. 3, two devices overexpressed <i>luxS</i> and <i>mtn</i> mRNA about 4 times than control group, pTrcHisB. Also in SDS-PAGE experiment, you can see the overexpression of LuxS and Mtn protein.</div>
+            <figure>
+                <img src="../image/Proof/02.png">
+                <figcaption>
+                    <div class="p"><span>Fig. 2: qPCR result of <i>luxS</i> gene expression in Device pLuxS</span></div>
+                </figcaption>
+            </figure>
+            <figure>
+                <img src="../image/Proof/03.png">
+                <figcaption>
+                    <div class="p"><span>Fig. 3: qPCR result of <i>luxS</i> (left) gene and <i>mtn</i> (right) gene expression in Device pLuxS</span></div>
+                </figcaption>
+            </figure>
+            <figure>
+                <img src="../image/Proof/04.png">
+                <figcaption>
+                    <div class="p"><span>Fig. 4: SDS-PAGE result of Device pLuxS (left) and pLuxSMtn (right)</span></div>
+                </figcaption>
+            </figure>
+            <div class="p">
+                To further validate whether AI-2 Consumer Devices can actually increase AI-2 environmental AI-2 concentration, we measured the AI-2 concentration in the culture after 3 h induction of IPTG. As illustrated in Fig. 5, in the culture medium of AI-2 Supplier pLuxS and pLuxSMtn, AI-2 concentration was both increased significantly than control group. The result shows that, as expected, AI-2 concentration in the culture of AI-2 Supplier pLuxSMtn is much more than AI-2 Supplier pLuxS.
+            </div>
+            <figure>
+                <img src="../image/Proof/05.jpg">
+                <figcaption>
+                    <div class="p"><span>Fig. 5: Relative concentration of AI-2 after 3 h induction of IPTG</span></div>
+                </figcaption>
+            </figure>
+        </section>
+        <section>
+            <div class="h2 ui-state-active">Design of modular QS elements: AI-2 Consumer</div>
+            <div class="p">There are mainly three steps involved in the processing of AI-2 from the extracellular environment. (i) uptake, primarily through the LsrACDB transporter, (ii) LsrK-mediated phosphorylation of AI-2 (to AI-2P), which blocks export back to the extracellular milieu so that accumulated AI-2P binds the regulatory protein LsrR, derepressing the Lsr transporter as well as enzymes, LsrF and LsrG, and (iii) degradation of AI-2P through the two step process from isomerase LsrG followed with cleaving and thiolation by LsrF. In our project, we cloned <i>lsrACDB</i>, <i>lsrK</i>, <i>lsrFG</i> into the plasmid pTrcHisB to enable overexpression of all proteins associated with these AI-2 processing steps in <i>E. coli</i>. Six AI-2 Supplier Devices, pLsrACDB, pLsrK, pLsrFG, pLsrACDBFG, pLsrACDBK, pLsrACDBFGK were successfully constructed using homologous recombination method.</div>
+            <div class="p">During the construction, all intermediate constructs and final plasmids were immediately verified by restriction enzyme digestion verification and/or sequencing. As you can see from Fig. 1, we obtained the gel bands at expected position of AI-2 Consumer Devices, LsrACDB (A), pLsrFG (B), plsrK (C), pLsrACDBFG (D), pLsrACDBK (E) and pLsrACDBFGK (F).</div>
+            <figure>
+                <img src="../image/Proof/06.png">
+                <figcaption>
+                    <div class="p"><span>Fig. 6: Restriction enzyme digestion verification of AI-2 Consumer pLsrACDB (A), pLsrFG (B), plsrK (C), pLsrACDBFG (D), pLsrACDBK (E) and pLsrACDBFGK (F)</span></div>
+                </figcaption>
+            </figure>
+            <figure>
+                <img src="../image/Proof/07.png">
+                <figcaption>
+                    <div class="p"><span>Fig. 7: qPCR result of <i>lsrACDB</i>gene expression in AI-2 Consumer pLsrACDB</span></div>
+                </figcaption>
+            </figure>
+            <figure>
+                <img src="../image/Proof/08.png">
+                <figcaption>
+                    <div class="p"><span>Fig. 8: qPCR result of <i>lsrFG</i> gene expression in AI-2 Consumer pLsrFG</span></div>
+                </figcaption>
+            </figure>
+            <figure>
+                <img src="../image/Proof/09.png">
+                <figcaption>
+                    <div class="p"><span>Fig. 9: qPCR result of <i>lsrK</i> gene expression in AI-2 Consumer pLsrK</span></div>
+                </figcaption>
+            </figure>
+            <figure>
+                <img src="../image/Proof/10.png">
+                <figcaption>
+                    <div class="p"><span>Fig. 10: qPCR result of <i>lsrACDB</i>gene (left) and <i>lsrFG</i> gene (right) expression in AI-2 Consumer pLsrACDBFG</span></div>
+                </figcaption>
+            </figure>
+            <figure>
+                <img src="../image/Proof/11.png">
+                <figcaption>
+                    <div class="p"><span>Fig. 11: qPCR result of <i>lsrACDB</i>gene (left) and <i>lsrK</i> gene (right) expression in AI-2 Consumer pLsrACDBK</span></div>
+                </figcaption>
+            </figure>
+            <figure>
+                <img src="../image/Proof/12.png">
+                <figcaption>
+                    <div class="p"><span>Fig. 12: qPCR result of <i>lsrACDB</i>gene (left), <i>lsrFG</i> gene (medium) and <i>lsrK</i> gene (right) expression in AI-2 Consumer pLsrACDBFGK</span></div>
+                </figcaption>
+            </figure>
+            <figure>
+                <img src="../image/Proof/13.png">
+                <figcaption>
+                    <div class="p"><span>Fig. 13: SDS-PAGE of AI-2 Consumer pLsrACDB (A), pLsrACDBFG (B), pLsrACDBK (C) and pLsrACDBFGK (D)</span></div>
+                </figcaption>
+            </figure>
+            <div class="p">To further validate whether AI-2 Consumers can actually absorb AI-2 molecules from the environment, we first characterized the uptake rate of AI-2 by adding a fixed amount of exogenous AI-2 and monitored the extracellular concentration by HPLC. Each strain was grown to mid-logarithmic phase (OD~0.4) with the subsequent addition of 40 &mu;M AI-2 and 1 mM IPTG and optical density was recorded throughout.</div>
+            <div class="p">We found that all AI-2 Consumers, pLsrACDB, pLsrACDBFG, pLsrACDBK and pLsrACDBFGK successfully manipulated AI-2 signal in the environment, as expected. As shown in Fig. 14, after the IPTG induction, AI-2 concentration in the environment was significantly reduced in three hours, which means that constructed AI-2 Consumers can 'quench' AI-2 signal in the environment. What's more, statistical analysis shows that AI-2 Consumer pLsrACDBFGK has the most significant absorption ability in manipulating extracellular AI-2 concentration, while there is no significant difference on absorption ability among Device pLsrACDB, pLsrACDBFG and pLsrACDBK.</div>
+            <figure>
+                <img src="../image/Proof/14.png">
+                <figcaption>
+                    <div class="p"><span>Fig. 14: AI-2 uptake profiles of "AI-2 Consumers"</span></div>
+                </figcaption>
+            </figure>
+        </section>
+        <section>
+            <div class="h2 ui-state-active">AI-2 Response Device function validation</div>
+            <div class="p">We successfully constructed two devices that could respond to AI-2 by producing GFP fluorescence, providing an independent means to measure environmental AI-2 concentration.</div>
+            <div class="p">We firstly tested whether AI-2 Response Device A and B can respond to different AI-2 concentration. We directly added exogenous AI-2 into the culture. The final concentration of AI-2 is 50&mu;M, 40&mu;M, 30&mu;M, 20&mu;M, 10&mu;M, 0&mu;M. Every one hour, optical density was measured and samples were harvested for fluorescence analysis. The results below (Fig. 15 and Fig. 16) demonstrate that two devices can both respond to different AI-2 concentration by emitting different intensity of GFP fluorescence.</div>
+            <figure>
+                <img src="../image/Proof/15.png">
+                <figcaption>
+                    <div class="p"><span>Fig. 15: GFP expression of AI-2 Response Device A when adding exogenous AI-2</span></div>
+                </figcaption>
+            </figure>
+            <figure>
+                <img src="../image/Proof/16.png">
+                <figcaption>
+                    <div class="p"><span>Fig. 16: GFP expression of AI-2 Response Device B when adding exogenous AI-2</span></div>
+                </figcaption>
+            </figure>
+        </section>
+        <section>
+            <div class="h2 ui-state-active">Demonstration of AI-2 Controllers' application in real world</div>
+            <div class="p">We found that a 1:1 mixture of AI-2 Response Device with AI-2 Suppliers could significantly enhance AI-2-inducible GFP fluorescence compared to the control group. Also, 1:1 mixture of AI-2 Response Device with AI-2 Consumers could significantly depress AI-2-inducible GFP fluorescence compared to the control group.</div>
+            <div class="p">We also found that AI-2 Controllers can manipulate biofilm formation process. See more in <a href="http://2016.igem.org/Team:NKU_China/Demonstrate" style="position:relative;z-index:3;color:dodgerblue;">Demonstrate</a>. </div>
+        </section>
+        <div id="reference">
+            <div class="h">References</div>
+            <ol>
+                <li>Thompson J A, Oliveira R A, Djukovic A, et al. Manipulation of the quorum sensing signal AI-2 affects the antibiotic-treated gut microbiota[J]. Cell reports, 2015, 10(11): 1861-1871.</li>
+                <li>Zargar A, Quan D N, Emamian M, et al. Rational design of "controller cells" to manipulate protein and phenotype expression[J]. Metabolic engineering, 2015, 30: 61-68.</li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html>
+{{NKU_China/footer}}

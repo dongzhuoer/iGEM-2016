@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">   
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/share.css">
+    <link rel="stylesheet" href="css/local.css">
+    <script title="jquery.js" src="js/jquery-3.1.0.min.js"></script>
+    <script title="jquery-ui.js" src="js/jquery-ui.min.js"></script>
+    <script title="bootstrap.js" src="js/bootstrap.min.js"></script>
+    <script title="modernizr.js" src="js/modernizr.js"></script>
+    <script title="particles.js" src="js/particles.min.js"></script>
+    <script>
+        var rem = Number($('html').css('font-size').replace('px', ''));
+        function log(value) { console.log(value); }
+        function particles() { $('#particles-js').toggle(); }
+        function adjust_figure(scale) {
+            $('figure').each(
+                function (index, value) {
+                    var max_width = $(value).find('span').width() / rem * scale + 'rem';
+                    $(value).css('max-width', max_width);
+                }
+            )
+        }
+    </script>
+
+    <!--separatrix-->
+    <style>
+        .main#menu-bar {
+            padding:0;
+        }
+
+        #menu-bar .menu {
+            text-align: center;
+            font-weight: bold;
+            font-family:Raleway;
+            margin: 0 auto;
+            padding: 0.1rem;
+            width: 90vw;
+            position: fixed;
+            left: calc(50% - 45vw);
+            top: 18px;
+            z-index:1000;
+            display: flex;
+            justify-content: space-around;
+            align-content: space-around;
+            flex-wrap: wrap;
+        }
+       
+        .menu a {
+            color: #2779aa;           
+            text-decoration: none;        
+        }
+
+        .menu {
+            line-height:1.5rem;
+        }
+
+        .menu, .sub-menu {
+            border-radius: 0.375rem;
+           
+        }
+        
+        .menu-item, .sub-item {
+            display:block;
+            border-radius: 0.375rem;
+           
+        }
+
+        .menu .menu-item {
+            font-size: 1.2rem;
+            margin: auto;
+            padding: 0.15rem 0.4rem;
+            position: relative;
+        }
+
+        .menu div.menu-item {
+            padding:0.05rem 0.2rem;
+        }
+
+        .menu-item span {
+            width: 2rem;
+        }
+
+        .menu-item .default {
+            display: inline-block;
+        }
+
+        .menu-item .active {
+            display: none;
+        }
+
+        .menu-item:hover .default {
+            display: none;
+        }
+
+        .menu-item:hover .active {
+            display: inline-block;
+        }
+
+        .sub-menu {
+            position: absolute;
+            display:none;       
+            top: 1.7rem;
+            left: 0;
+        }
+
+        .menu-item:hover .sub-menu {
+            display:block;
+        }
+      
+        .sub-item {
+            margin:0.2rem;
+            padding:0.4rem;
+        }
+
+        .sub-menu a.sub-item{
+            color:dodgerblue;
+
+        }
+
+        .sub-item:hover {
+            border-radius: 0.375rem;      
+        }
+
+        @media all and (max-width: 1024px) {
+            .menu {
+                width:99vw;
+                left: calc(50% - 49.5vw);
+            }
+
+            .menu-item {
+                font-size:0.8rem;
+            }
+
+            .menu-item .default, .menu-item:hover .active{
+                display:none;
+            }
+
+            .sub-item {
+                margin:0.1rem;
+                padding:0.1rem;
+            }
+        }
+
+        #menu-bar-placeholder {
+            width:98vw;
+            background-color:transparent;
+            opacity:0;
+        }
+    </style>
+    <script>
+        $(function () {
+            //particles();
+        })
+    </script>
+</head>
+
+<body id="dongzhuoer">
+    <div class="main" id="menu-bar">
+        <nav class="menu">
+            <a class="menu-item" href="http://2016.igem.org/Team:NKU_China">Home</a>
+            <div class="menu-item">
+                Team<span class="default">&#9758;</span><span class="active">&#9759;</span>
+                <div class="sub-menu">
+                    <a class="sub-item ui-state-default" href="http://2016.igem.org/Team:NKU_China/Team">Team</a>
+                    <a class="sub-item ui-state-default" href="http://2016.igem.org/Team:NKU_China/Collaborations">Collaborations</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                Project<span class="default">&#9758;</span><span class="active">&#9759;</span>
+                <div class="sub-menu">
+                    <a class="sub-item" href="http://2016.igem.org/Team:NKU_China/Description">Description</a>
+                    <a class="sub-item" href="http://2016.igem.org/Team:NKU_China/Experiments">Experiments</a>
+                    <a class="sub-item" href="http://2016.igem.org/Team:NKU_China/Model">Model</a>
+                    <a class="sub-item" href="http://2016.igem.org/Team:NKU_China/Proof">Proof of Concept</a>
+                    <a class="sub-item" href="http://2016.igem.org/Team:NKU_China/Demonstrate">Demonstrate</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                HP<span class="default">&#9758;</span><span class="active">&#9759;</span>
+                <div class="sub-menu">
+                    <a class="sub-item" href="http://2016.igem.org/Team:NKU_China/Human_Practices">HP</a>
+                    <a class="sub-item" href="http://2016.igem.org/Team:NKU_China/HP/Silver">Silver</a>
+                    <a class="sub-item" href="http://2016.igem.org/Team:NKU_China/HP/Gold">Gold</a>
+                </div>
+            </div>
+            <a class="menu-item" href="http://2016.igem.org/Team:NKU_China/Safety">Safety</a>
+            <a class="menu-item" href="http://2016.igem.org/Team:NKU_China/Attributions">Attributions</a>
+            <a class="menu-item" href="http://2016.igem.org/Team:NKU_China/Parts">Parts</a>
+            <a class="menu-item" href="http://2016.igem.org/Team:NKU_China/InterLab">InterLab</a>
+            <div class="menu-item">
+                Notebook<span class="default">&#9758;</span><span class="active">&#9759;</span>
+                <div class="sub-menu">
+                    <a class="sub-item" href="http://2016.igem.org/Team:NKU_China/Notebook">Lab Notes</a>
+                    <a class="sub-item" href="http://2016.igem.org/Team:NKU_China/Protocols">Protocols</a>
+                </div>
+            </div>
+        </nav>
+        <div id="menu-bar-placeholder">
+            you can not see me!
+        </div>
+    </div>
+    <script>
+        function create_menu_placeholder() {
+            $('#menu-bar-placeholder').height($('.menu').outerHeight());
+        }
+
+        if (document.location.href == 'http://2016.igem.org/Team:NKU_China' || document.location.href == 'https://2016.igem.org/Team:NKU_China')
+            log("Homepage will deal window's resize event itself, so menubar won't do anything!")
+        else {
+            var window_resize = true;
+            create_menu_placeholder();
+            $(window).resize(create_menu_placeholder);
+        }
+    </script>
+</body>
+</html>

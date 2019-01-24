@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">   
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/share.css">
+    <link rel="stylesheet" href="css/local.css">
+    <script title="jquery.js" src="js/jquery-3.1.0.min.js"></script>
+    <script title="jquery-ui.js" src="js/jquery-ui.min.js"></script>
+    <script title="bootstrap.js" src="js/bootstrap.min.js"></script>
+    <script title="modernizr.js" src="js/modernizr.js"></script>
+    <script title="particles.js" src="js/particles.min.js"></script>
+    <script>
+        var rem = Number($('html').css('font-size').replace('px', ''));
+        function log(value) { console.log(value); }
+        function particles() { $('#particles-js').toggle(); }
+        function adjust_figure(scale) {
+            $('figure').each(
+                function (index, value) {
+                    var max_width = $(value).find('span').width() / rem * scale + 'rem';
+                    $(value).css('max-width', max_width);
+                }
+            )
+        }
+    </script>
+
+    <!--separatrix-->
+    <style>
+        .main#hp {
+            padding:1rem;
+            padding-bottom:8vw;
+            padding-bottom:10vh;
+            font-family:Lucida Grande,Lucida Sans,Arial,sans-serif;
+            font-size:1rem;
+            line-height:1.42857143;
+        }
+
+        @media all and (max-width: 737px) {
+            .main#hp {
+                padding:0 1vw;
+            }
+        }
+    </style>
+    
+    
+    
+    <script>
+        $(function () {
+            //particles();
+        })
+    </script>
+</head>
+<body id="dongzhuoer">
+    <div id="particles-js"></div>
+    <script src="js/particlesJS.js"></script>
+    <div class="main">
+        Please see <a href="http://2016.igem.org/Team:NKU_China/HP/Silver">Silver</a> and <a href="http://2016.igem.org/Team:NKU_China/HP/Gold">Gold</a>.
+    </div>
+    
+</body>
+</html>
+{{NKU_China/footer}}

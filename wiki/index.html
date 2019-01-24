@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">   
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/share.css">
+    <link rel="stylesheet" href="css/local.css">
+    <script title="jquery.js" src="js/jquery-3.1.0.min.js"></script>
+    <script title="jquery-ui.js" src="js/jquery-ui.min.js"></script>
+    <script title="bootstrap.js" src="js/bootstrap.min.js"></script>
+    <script title="modernizr.js" src="js/modernizr.js"></script>
+    <script title="particles.js" src="js/particles.min.js"></script>
+    <script>
+        var rem = Number($('html').css('font-size').replace('px', ''));
+        function log(value) { console.log(value); }
+        function particles() { $('#particles-js').toggle(); }
+        function adjust_figure(scale) {
+            $('figure').each(
+                function (index, value) {
+                    var max_width = $(value).find('span').width() / rem * scale + 'rem';
+                    $(value).css('max-width', max_width);
+                }
+            )
+        }
+    </script>
+
+    <!--separatrix-->
+    <link rel="stylesheet" href="css/style.css">
+       
+    <style>
+        .main#home {
+            line-height: 1.42857143;
+        }
+
+        .main div.h2, .main div.h3 {
+            text-align: center;
+            line-height: 1.1;
+        }
+
+        .main div.h2 {
+            color: cyan;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .main div.h3 {
+            color: dodgerblue;
+        }
+
+        .main#home .p {
+            font-size:1.2rem;
+        }
+
+        section {
+            margin-top:5rem;
+        }
+    </style>
+    <style>
+        #introduction-carousel {
+            margin:auto;
+            position: relative;
+            z-index: 3;
+        }
+
+        #introduction-carousel img {
+            width:100%;
+        }
+
+        #wowslider-wrapper {
+            margin: 0 auto;
+        }
+
+        #wowslider-container1 {
+            margin: 0;
+        }
+        
+        #wowslider-container1 .ws-title {
+            font-size:1rem;
+        }
+    </style>
+    <style>
+        #project {
+            padding:0 7vw;
+        }
+
+        #project article, #project > div:nth-child(2) {
+            display:inline-block;
+            vertical-align:top;
+        }
+
+        #project article {
+            width: 33vw;
+        }
+
+        #project article .p {
+            margin:0.5rem 0;
+        }
+
+        #project > div:nth-child(2) {
+            width:47vw;
+            margin-left:3vw;
+        }
+
+        #project .inline-accordion .ui-accordion-content {
+            height:13rem;
+            position:relative;
+            z-index:3;
+            background-color:transparent;
+        }
+
+        #project .inline-accordion .h3 {
+            text-align: left;
+        }
+
+        #project > div:nth-child(2) .p {
+            background-color:transparent;
+            padding: 0.95rem;
+        }
+    </style>
+    <style>
+        #result > .p {
+            padding: 0 10vw;
+        }
+
+        #result #figure-wrapper {
+            padding:2rem 2vw 0 2vw;
+            display: flex;
+            justify-content: space-between;
+            align-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        #result #figure-wrapper figure {
+            margin: 0;
+            padding: 0;
+            width: 31vw;
+            height: 21.3vw;
+        }
+
+        #result #figure-wrapper figure img {
+            width: 100%;
+            z-index:3;
+            position:relative;
+        }
+
+        #result #figure-wrapper figure:nth-child(1) img {
+            filter: opacity(0.3);
+            -webkit-filter: opacity(0.3);
+            
+        }
+
+        #result #figure-wrapper figure:nth-child(2) img {
+            filter: opacity(0.3);
+            -webkit-filter: opacity(0.3);
+        }
+
+        #result #figure-wrapper figure:nth-child(3) img {
+            filter: opacity(0.3);
+            -webkit-filter: opacity(0.3);
+        }
+
+        #result #figure-wrapper figure:hover img {
+            filter: none;
+            -webkit-filter: none;
+        }
+
+        #result #figure-wrapper figure figcaption {
+            visibility: hidden;
+        }
+
+        #result #figure-wrapper figure:hover figcaption {
+            visibility: visible;
+        }
+
+        #result #figure-wrapper figure figcaption .h3 {
+            font-size:1.6rem;
+            margin: 0.6rem 0;
+        }
+    </style>
+    <style>
+        #hp {
+            padding: 5vh 0 4vh 0;
+            background-color: black;
+            letter-spacing: 0.025rem;
+        }
+
+        #hp .p {
+            font-weight: 300;
+            text-indent: 0;
+            text-align: center;
+            font-size: 1rem;
+        }
+
+        #hp > div:first-child {
+            margin: 0 24vw;
+        }
+
+        #hp > div:first-child .h2 {
+            line-height: 1.1;
+            font-size: 2rem;
+            margin: 0.8rem 0;
+        }
+
+        #hp > div:nth-child(2) {
+            margin: 5vh auto 0 auto;
+            width: 86vw;
+            height: 28vw;
+            display: flex;
+            justify-content: space-around;
+            align-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        #hp > div:nth-child(2) img {
+            border-radius: 0.2rem;
+            display: block;
+            margin: auto;
+            width: 18vw;
+            height: 12vw;
+        }
+    </style>   
+    <style>
+        #wowslider-wrapper {
+            max-width:1280px;
+        }
+
+        #wowslider-container1 {
+            /*height:100%;*/
+        }
+    </style>
+    <script>
+        function window_resize() {
+            function adjust(id, W, H) {
+                var jquery = $(id);
+                var margin = 1.2 * rem;
+                //width and height
+                var width = $('#home').width() - margin;
+                var height = 0;
+                if (document.location.href == 'http://2016.igem.org/Team:NKU_China')
+                    height = $(window).height() - 18 - $('#menu-bar-placeholder').height() - margin;
+                else
+                    height = $(window).height() - margin;
+                log(id+' height '+height)
+                //adjust width and height
+                if (width > height / H * W) {
+                    jquery.height(height);
+                    jquery.width(height / H * W);
+                }
+                else {
+                    jquery.width(width);
+                    jquery.height(width / W * H);
+                }
+            }
+
+            if (document.location.href == 'http://2016.igem.org/Team:NKU_China')
+                create_menu_placeholder();
+            adjust('#introduction-carousel', 16, 9);
+            adjust('#wowslider-wrapper', 4, 3);
+            
+        }
+    </script>
+    <script>
+        $(function () {
+            //$('#introduction-carousel').carousel();
+
+            //window_resize();
+            $(window).resize(window_resize);
+
+            //$('#particles-js').hide();
+        })
+    </script>
+</head>
+<body>
+    <div id="particles-js"></div>
+    <script src="js/particlesJS.js"></script>   
+    <div class="main" id="home">
+        <div id="introduction-carousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#introduction-carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#introduction-carousel" data-slide-to="1"></li>
+                <li data-target="#introduction-carousel" data-slide-to="2"></li>
+                <li data-target="#introduction-carousel" data-slide-to="3"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <img src="../image/index/Introduction-1.jpg" alt="Introduction-1">
+                </div>
+                <div class="item">
+                    <img src="../image/index/Introduction-2.jpg" alt="Introduction-2">
+                </div>
+                <div class="item">
+                    <img src="../image/index/Introduction-3.jpg" alt="Introduction-3">
+                </div>
+                <div class="item">
+                    <img src="../image/index/Introduction-4.jpg" alt="Introduction-4">
+                </div>
+            </div>
+            <a class="left carousel-control" href="#introduction-carousel" role="button" data-slide="prev">
+                <span>&lsaquo;</span>
+            </a>
+            <a class="right carousel-control" href="#introduction-carousel" role="button" data-slide="next">
+                <span>&rsaquo;</span>
+            </a>
+        </div>
+        <section id="project">
+            <article>
+                <div class="h2">
+                    Our projects
+                </div>
+                <div class="p">
+                    This summer, our team is aiming to engineer bacteria for supplement and absorption of autoinducer-2 in the natural environment. We mainly design two cell machines: AI-2 Supplier is the cell machine which can directly supply and enrich the AI-2 molecular level; AI-2 Consumer is another cell machine which can sense, absorb and degrade the AI-2 in the environment. By taking advantage of the special characteristics of AI-2 controllers, we hope to directly control the population behaviors of bacteria in group levels.
+                </div>
+                <div class="p">
+                    What's more, biosafety is further taken into account in our project. By applying gene circuits to control essential gene expression under the assigned biocontainment conditions, we can blocks essential gene expression to kill the cell upon loss of the biocontainment signal.
+                </div>
+            </article>
+            <div>
+                <div class="h2">
+                    Our goals
+                </div>
+                <div class="inline-accordion">
+                    <div class="h3">
+                        AI-2 Supplier
+                    </div>
+                    <div class="p">
+                        To enrich the AI-2 concentration in the nature or artificial environment, we constructed two AI-2 Supplier Devices by overexpression of the components responsible for AI-2 production (<i>luxS</i>, <i>mtn</i>).
+                    </div>
+                    <div class="h3">
+                        AI-2 Consumer
+                    </div>
+                    <div class="p">
+                        To 'quench' AI-2 signal in the nature or artificial environment, we constructed six AI-2 Consumer Devices by overexpression the components responsible for AI-2 uptake(<i>lsrACDB</i>), phosphorylation(<i>lsrK</i>) and degradation (<i>lsrFG</i>).
+                    </div>
+                    <div class="h3">
+                        AI-2 Response Device
+                    </div>
+                    <div class="p">
+                        We successfully constructed two devices that could respond to AI-2 by producing GFP, to provide an independent means to use AI-2 Controller to alter heterologous gene expression. we show that a 1:1 mixture of AI-2 Response Device with AI-2 suppliers activated QS-activated GFP expression from the control group. And 1:1 mixture of AI-2 Response Device with AI-2 consumers could significantly depress QS-activated gene expression from the control cells.
+                    </div>
+                    <div class="h3">
+                        Biosafety Considerations
+                    </div>
+                    <div class="p">
+                        This summer, we plan to <i>mf</i>-lon ssrA tag into 5 essential genes by using CRIPSR/Cas9 technology. By applying gene circuits to control <i>mf</i>-lon protease expression under the assigned biocontainment conditions, we can blocks essential gene expression to kill the cell upon loss of the biocontainment signal.
+                    </div>
+                </div>
+                <script>
+                    $("#project .inline-accordion").accordion({
+                        event: 'mouseover',
+                        icons: false,
+                    });
+                </script>
+            </div>
+        </section>
+        <section id="result">
+            <div class="h2">
+                Demonstration of Experiment Results
+            </div>
+            <div class="p">
+                We are team of creative photographers. We passionate with photography and other creative things. If you are looking professional photography theme with endless possibilities, you come in right place. This template consist of well-organized layers. Tons of features waiting for you.
+            </div>
+            <div id="figure-wrapper">
+                <figure>
+                    <img src="../image/index/result-1.jpg">
+                    <figcaption>
+                        <div class="h3">
+                            AI-2 Controllers Characterization
+                        </div>
+                    </figcaption>
+                </figure>
+                <figure>
+                    <img src="../image/index/result-2.jpg">
+                    <figcaption>
+                        <div class="h3">
+                            AI-2 Controllers &amp; AI-2 Response Devices
+                        </div>
+                    </figcaption>
+                </figure>
+                <figure>
+                    <img src="../image/index/result-3.jpg">
+                    <figcaption>
+                        <div class="h3">
+                            AI-2 Controllers &amp; Biofilm Formation
+                        </div>
+                    </figcaption>
+                </figure>
+            </div>
+
+        </section>
+        <section id="hp">
+            <div>
+                <div class="h2">
+                    HUMAN PRACTICE
+                </div>
+                <div class="p">
+                    This is the outline of our human practice.
+                </div>
+            </div>
+            <div id="img-container">
+                <img src="../image/index/HP-1.jpg">
+                <img src="../image/index/HP-2.jpg">
+                <img src="../image/index/HP-3.jpg">
+                <img src="../image/index/HP-4.jpg">
+                <img src="../image/index/HP-5.jpg">
+                <img src="../image/index/HP-6.jpg">
+                <img src="../image/index/HP-7.jpg">
+                <img src="../image/index/HP-8.jpg">
+            </div>
+        </section>
+        <section id="wowslider-wrapper">
+            <div id="wowslider-container1">
+                
+                <div class="ws_images">
+                    <ul>
+                        <li><img src="../image/Team 1000 750/chenlingyi.jpg" title="chenlingyi" id="wows1_0" /></li>
+                        <li><img src="../image/Team 1000 750/chenchen.jpg" title="Chen Chen" id="wows1_1" /></li>
+                        <li><img src="../image/Team 1000 750/dailiangti.jpg" title="Liangti Dai" id="wows1_2" /></li>
+                        <li><img src="../image/Team 1000 750/dongjingzhe.jpg" title="Jingzhe Dong" id="wows1_3" /></li>
+                        <li><img src="../image/Team 1000 750/dongzhuoer-4-3.jpg" title="Zhuoer Dong" id="wows1_4" /></li>
+                        <li><img src="../image/Team 1000 750/kongannie-4-3.jpg" title="Annie Kong" id="wows1_5" /></li>
+                        <li><img src="../image/Team 1000 750/liuxiao-4-3.jpg" title="Liu Xiao" id="wows1_6" /></li>
+                        <li><img src="../image/Team 1000 750/maojiwei-4-3.jpg" title="Jiwei Mao" id="wows1_7" /></li>
+                        <li><img src="../image/Team 1000 750/mengfankang.jpg" title="Fankang Meng" id="wows1_8" /></li>
+                        <li><img src="../image/Team 1000 750/qiaomingqiang-4-3.jpg" title="Mingqiang Qiao" id="wows1_9" /></li>
+                        <li><img src="../image/Team 1000 750/maxinyu.jpg" title="Xinyu Ma" id="wows1_10" /></li>
+                        <li><img src="../image/Team 1000 750/shifuchen.jpg" title="Fuchen Shi" id="wows1_11" /></li>
+                        <li><img src="../image/Team 1000 750/shenghaocheng.jpg" title="Haosheng Shen" id="wows1_12" /></li>
+                        <li><img src="../image/Team 1000 750/songcunjiang-4-3.png" title="Cunjiang Song" id="wows1_13" /></li>
+                        <li><img src="../image/Team 1000 750/songxinghao.jpg" title="Xinhao Song" id="wows1_14" /></li>
+                        <li><img src="../image/Team 1000 750/keziying.jpg" title="Ziying Ke" id="wows1_15" /></li>
+                        <li><img src="../image/Team 1000 750/tianruilin-4-3.jpg" title="Ruilin Tian" id="wows1_16" /></li>
+                        <li><img src="../image/Team 1000 750/wangxiangxiang.jpg" title="Xiangxiang Wang" id="wows1_17" /></li>
+                        <li><img src="../image/Team 1000 750/whole-group-4-3.png" title="Team" id="wows1_18" /></li>
+                        <li><img src="../image/Team 1000 750/xiongyuxiu-4-3.png" title="Yuxiu Xiong" id="wows1_19" /></li>
+                        <li><img src="../image/Team 1000 750/zhanghanchenxi.jpg" title="Hanchenxi Zhang" id="wows1_20" /></li>
+                        <li><img src="../image/Team 1000 750/zhangmengxian.jpg" title="Mengxian Zhang" id="wows1_21" /></li>
+                        <li><img src="../image/Team 1000 750/zhangzhaoran-4-3.jpg" title="Zhaoran Zhang" id="wows1_22" /></li>
+                        <li><img src="../image/Team 1000 750/zhaokun.jpg" title="Kun Zhao" id="wows1_23" /></li>
+                        <li><img src="../image/Team 1000 750/zhaoxianglin.jpg" title="Hanchenxi Zhang" id="wows1_24" /></li>
+                        <li><img src="../image/Team 1000 750/zhaoyujie.jpg" title="Yujie Zhao" id="wows1_25" /></li>
+                        <li><img src="../image/Team 1000 750/zhoujindi.jpg" title="Jindi Zhou" id="wows1_26" /></li>
+                        <li><img src="../image/Team 1000 750/zhouhang-4-3.jpg" title="Hang Zhou" id="wows1_27" /></li>
+                    </ul>
+                </div>
+                <div class="ws_bullets">
+                    <div>
+                        <a href="#" title="chenlingyi"><span>1</span></a>
+                        <a href="#" title="Chen Chen"><span>2</span></a>
+                        <a href="#" title="Liangti Dai"><span>3</span></a>
+                        <a href="#" title="Jingzhe Dong"><span>4</span></a>
+                        <a href="#" title="Zhuoer Dong"><span>5</span></a>
+                        <a href="#" title="Annie Kong"><span>6</span></a>
+                        <a href="#" title="Liu Xiao"><span>7</span></a>
+                        <a href="#" title="Jiwei Mao"><span>8</span></a>
+                        <a href="#" title="Fankang Meng"><span>9</span></a>
+                        <a href="#" title="Mingqiang Qiao"><span>10</span></a>
+                        <a href="#" title="Xinyu Ma"><span>11</span></a>
+                        <a href="#" title="Fuchen Shi"><span>12</span></a>
+                        <a href="#" title="Haosheng Shen"><span>13</span></a>
+                        <a href="#" title="Cunjiang Song"><span>14</span></a>
+                        <a href="#" title="Xinhao Song"><span>15</span></a>
+                        <a href="#" title="Ziying Ke"><span>16</span></a>
+                        <a href="#" title="Ruilin Tian"><span>17</span></a>
+                        <a href="#" title="Xiangxiang Wang"><span>18</span></a>
+                        <a href="#" title="Team"><span>19</span></a>
+                        <a href="#" title="Yuxiu Xiong"><span>20</span></a>
+                        <a href="#" title="Hanchenxi Zhang"><span>21</span></a>
+                        <a href="#" title="Mengxian Zhang"><span>22</span></a>
+                        <a href="#" title="Zhaoran Zhang"><span>23</span></a>
+                        <a href="#" title="Kun Zhao"><span>24</span></a>
+                        <a href="#" title="Hanchenxi Zhang"><span>25</span></a>
+                        <a href="#" title="Yujie Zhao"><span>26</span></a>
+                        <a href="#" title="Jindi Zhou"><span>27</span></a>
+                        <a href="#" title="Hang Zhou"><span>28</span></a>
+                    </div>
+                </div>
+            </div>
+            <script src="js/wowslider.js"></script>
+            <script src="js/script.js" ></script>
+                    
+        </section>
+        <script>
+            window_resize();
+        </script>
+    </div>
+</body>
+</html>
+{{NKU_China/footer}}
+

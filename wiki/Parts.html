@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">   
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/share.css">
+    <link rel="stylesheet" href="css/local.css">
+    <script title="jquery.js" src="js/jquery-3.1.0.min.js"></script>
+    <script title="jquery-ui.js" src="js/jquery-ui.min.js"></script>
+    <script title="bootstrap.js" src="js/bootstrap.min.js"></script>
+    <script title="modernizr.js" src="js/modernizr.js"></script>
+    <script title="particles.js" src="js/particles.min.js"></script>
+    <script>
+        var rem = Number($('html').css('font-size').replace('px', ''));
+        function log(value) { console.log(value); }
+        function particles() { $('#particles-js').toggle(); }
+        function adjust_figure(scale) {
+            $('figure').each(
+                function (index, value) {
+                    var max_width = $(value).find('span').width() / rem * scale + 'rem';
+                    $(value).css('max-width', max_width);
+                }
+            )
+        }
+    </script>
+
+    <!--separatrix-->
+    <style>
+        .main#parts {
+            padding: 0 8vw;
+            padding-bottom: 10vh;
+            line-height: 1.42857;
+        }
+
+        #parts.main div.h1 {
+            padding-bottom:0;
+        }
+
+        #parts > div.p {
+            color:#26b3f7;
+            text-align:right;
+        }
+
+        .p {
+            font-size: 1.2rem;
+        }
+    </style>
+    <style>
+        section {
+            margin: 3rem 0;
+        }
+
+        #parts section div.h2 {
+            text-align:left;
+            font-size: 1.5rem;
+            color: cyan;
+        }
+
+        section article {
+            margin:1rem 0 4rem 0;
+            padding-left:2rem;
+        }
+
+        #parts section article .h3 {
+            text-align:left;
+            font-size: 1.3rem;
+            color:#26b3f7;
+        }
+
+        section article .p, section article figure {
+            margin: 0.8rem 0 0.8rem 1rem;
+        }
+
+        section article figure {
+            margin-left: auto;
+            margin-right:auto;
+        }
+
+        #parts article .p {
+            text-indent:1.1rem;
+        }
+
+        figure img {
+            display:block;
+            margin:auto;
+            width:100%;
+            background-color:white;
+            position:relative;
+            z-index:3;
+        }
+
+        figcaption {
+            padding-top:0.3rem;
+            font-size:1rem;
+            text-align:center;
+        }
+
+        #parts section table {
+            background-color:transparent;
+            color:white;
+            margin:0 auto;
+            border-collapse:collapse;
+        }
+
+        #parts section table caption {
+            font-size:2rem;
+            padding:1rem 0;
+            color:cyan;
+        }
+
+        #parts section table td {
+            vertical-align:middle;
+            background-color:transparent;
+            text-align:center;
+            padding:0.5rem 1rem;
+            border:0.05rem solid dodgerblue;
+        }
+
+        #parts section table td:nth-child(3) {
+            text-align:left;
+            text-indent:2rem;
+        }
+    </style>
+    <script>
+        $(function () {
+            //$('#particles-js').hide();
+        })
+    </script>
+</head>
+<body id="dongzhuoer">
+    <div id="particles-js"></div>
+    <script src="js/particlesJS.js"></script>
+    <div class="main" id="parts">
+        <div class="h1">Parts</div>
+        <div class="p">Each part gives us new inspiration.</div>
+        <section>
+            <table>
+                <caption>Part Submissions</caption>
+                <tr>
+                    <td>Biobrick</td>
+                    <td>Part</td>
+                    <td>Description</td>
+                </tr>
+                <tr>
+                    <td>BBa_K1981001</td>
+                    <td><i>lsrA</i></td>
+                    <td>Autoinducer-2 import ATP-binding protein LsrA</td>
+                </tr>
+                <tr>
+                    <td>BBa_K1981002</td>
+                    <td><i>lsrB</i></td>
+                    <td>Autoinducer-2-binding protein LsrB</td>
+                </tr>
+                <tr>
+                    <td>BBa_K1981003</td>
+                    <td><i>lsrC</i></td>
+                    <td>Autoinducer-2 import system permease protein LsrC</td>
+                </tr>
+                <tr>
+                    <td>BBa_K1981004</td>
+                    <td><i>lsrD</i></td>
+                    <td>Autoinducer-2 import system permease protein LsrD</td>
+                </tr>
+                <tr>
+                    <td>BBa_K1981005</td>
+                    <td><i>lsrFG</i></td>
+                    <td>A protein complex involved in the degradation of phospho-AI-2</td>
+                </tr>
+                <tr>
+                    <td>BBa_K1981006</td>
+                    <td><i>lsrK</i></td>
+                    <td>Autoinducer-2 kinase</td>
+                </tr>
+                <tr>
+                    <td>BBa_K1981007</td>
+                    <td><i>mtn</i></td>
+                    <td>5'-methylthioadenosine/S-adenosylhomocysteine nucleosidase</td>
+                </tr>
+                <tr>
+                    <td>BBa_K1981008</td>
+                    <td><i>luxS</i></td>
+                    <td>S-ribosylhomocysteine lyase</td>
+                </tr>
+                
+                <tr>
+                    <td>BBa_K1981101</td>
+                    <td><i>plsr</i></td>
+                    <td><i>plsr</i> is the promoter of the <i>lsr</i> operon</td>
+                </tr>
+                <tr>
+                    <td>BBa_K1981201</td>
+                    <td style="min-width:7rem;">Autoinducer-2<br> Response Device A</td>
+                    <td>A composite part of which GFP expression  can directly respond<br> to AI-2 concentration in the natural or artificial environment</td>
+                </tr>
+                <tr>
+                    <td>BBa_K1981202</td>
+                    <td>Autoinducer-2<br> Response Device B</td>
+                    <td>A composite part which has a tighter regulation and delayed<br> response compared to AI-2 Response Device A</td>
+                </tr>
+            </table>
+        </section>
+        <section>
+            <div class="h2">1. Best New Basic Part: BBa_K1981101</div>
+            <article>
+                <div class="h3"><i>lsr</i> promoter of LuxS/AI-2 signaling pathway in <i>E. coli</i> (BBa_K1981101)</div>
+                <div class="p">AI-2 is generated by many species of Gram-negative and Gram-positive bacteria. In a group of bacteria exemplified by <i>E. coli</i> MG1655, AI-2 response involves <i>lsr</i> gene clusters that encode <i>lsrACDB</i>, <i>lsrK</i>, <i>lsrFG</i>. <i>plsr</i> is the promoter of the <i>lsr</i> operon.</div>
+                <div class="p">We isolated the promoter region of the <i>lsr</i> operon to regulate the expression of the report gene, GFP (BBa_E0040). In order to test the function of the <i>lsr</i> promoter, we transformed the plasmid pTrcHisB containing <i>plsr</i> with GFP gene at its downstream into <i>E. coli</i> MG1655 &Delta;luxS. We directly add exogenous AI-2 into the culture. The final concentraton of AI-2 is 50&mu;M. Every one hour, optical density was measured and samples were harvested for HPLC analysis. As you can see, after induced by AI-2, the GFP expression is increased compared to control group.</div>
+                <figure style="max-width:35rem;">
+                    <img src="../image/Parts/1.png">
+                    <figcaption>Figure 1.1: GFP expression after promoter <i>lsr</i> is induced by exogenous AI-2</figcaption>
+                </figure>
+                <div class="p">Then we test whether promoter <i>lsr</i> can respond to different AI-2 concentration. We directly add exogenous AI-2 into the culture. The final concentraton of AI-2 is 50&mu;M, 40&mu;M, 30&mu;M, 20&mu;M, 10&mu;M, 0&mu;M. Every one hour, optical density was measured and samples were harvested for HPLC analysis. The result below shows that promoter <i>lsr</i> can respond to different AI-2 concentration resulting in different GFP expression.</div>
+                <figure style="max-width:30rem;">
+                    <img src="../image/Parts/2.png">
+                    <figcaption>Figure 1.2: GFP expression when add exogenous AI-2</figcaption>
+                </figure>
+            </article>
+        </section>
+        <section>
+            <div class="h2">2. Best New Composite Part: BBa_K1981201</div>
+            <article>
+                <div class="h3">Autoinducer-2 Response Device A</div>
+                <div class="p">This composite part consists of the AI-2 (autoinducer-2) quorum sensor-inducible promoter BBa_K1981101, a GFP coding sequence BBa_E0040, a double terminator BBa_B0015. We firstly isolated promoter <i>lsr</i> from <i>E.coli</i> MG1655. GFP BBa_E0040 and double terminator BBa_B0015 are standard part offered by iGEM. Then we successfully constrcuted <i>plsr</i>+GFP+double terminator using homologous recombination technology.</div>
+                <div class="p">In AI-2 Response Device A, GFP expression is under the control of promoter, <i>lsr</i>. When phospho-AI-2 binds LsrR, expression of GFP ensues. The expression of GFP can directly respond to the AI-2 level in the environment, which is an alternative way to reflect the AI-2 concentration in the natural or artificial environment.</div>
+                
+                <div class="p">We fisrtly tested whether AI-2 Response Device A can respond to different AI-2 concentration. We directly added exogenous AI-2 into the culture. The final concentraton of AI-2 is 50&mu;M, 40&mu;M, 30&mu;M, 20&mu;M, 10&mu;M, 0&mu;M. Every one hour, optical density was measured and samples were harvested for HPLC analysis. The result below shows that deicve can respond to different AI-2 concentration resulting in different GFP expression.</div>
+                <figure style="max-width:40rem;">
+                    <img src="../image/Parts/2.png">
+                    <figcaption>Figure 2.1: GFP expression of AI-2 Response Device A when add exogenous AI-2.</figcaption>
+                </figure>
+                <div class="p">AI-2 Consumers was constructed by iGEM 2016 NKU_China by overexpression the components responsible for AI-2 uptake (<i>lsrACDB</i>), phosphorylation (<i>lsrK</i>), and degradation (<i>lsrFG</i>), which can directly absorb and degrade AI-2 in the natural or artificial environment. When E.coli consisting of AI-2 Response Device A are co-cultured with AI-2 Consumers, the GFP expression of AI-2 Response Device A is significantly decreased compared to control group.</div>
+                <figure style="max-width:45rem;">
+                    <img src="../image/Parts/3.png">
+                    <figcaption>Figure 1.2: GFP expression of AI-2 Response Device A when co-cultured with AI-2 Consumers.</figcaption>
+                </figure>
+                <div class="p">AI-2 Suppliers was constructed by iGEM 2016 NKU_China by overexpressing the components responsible for AI-2 production (<i>luxS</i>, <i>mtn</i>), which can directly supply and enrich the AI-2 molecular level in the natural or artificial environment. When <i>E. coli</i> consisting of AI-2 Response Device A are co-cultured with AI-2 Suppliers, the GFP expression of AI-2 Response Device A is significantly increased compared to control group.</div>                
+                <figure style="max-width:45rem;">
+                    <img src="../image/Parts/4.png">
+                    <figcaption>Figure 2.3: GFP expression of AI-2 Response Device A when co-cultured with AI-2 Suppliers.</figcaption>
+                </figure>
+            </article>
+        </section>
+    </div>
+</body>
+</html>
+{{NKU_China/footer}}

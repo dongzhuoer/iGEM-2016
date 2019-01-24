@@ -1,0 +1,14 @@
+Package: igem.wiki
+Type: Package
+Title: develop team NKU_China's wiki for iGEM 2016
+Version: 1.0.0
+Authors@R: person("Zhuoer", "Dong", email = "dongzhuoer@mail.nankai.edu.cn", 
+    role = c("aut", "cre"))
+Description: More about what it does (maybe more than one line)
+License: AGPL-3.0
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1
+Roxygen: list(markdown = TRUE, roclets=c('rd', 'collate', 'namespace'))
+Imports:
+

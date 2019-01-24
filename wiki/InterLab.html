@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">   
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/share.css">
+    <link rel="stylesheet" href="css/local.css">
+    <script title="jquery.js" src="js/jquery-3.1.0.min.js"></script>
+    <script title="jquery-ui.js" src="js/jquery-ui.min.js"></script>
+    <script title="bootstrap.js" src="js/bootstrap.min.js"></script>
+    <script title="modernizr.js" src="js/modernizr.js"></script>
+    <script title="particles.js" src="js/particles.min.js"></script>
+    <script>
+        var rem = Number($('html').css('font-size').replace('px', ''));
+        function log(value) { console.log(value); }
+        function particles() { $('#particles-js').toggle(); }
+        function adjust_figure(scale) {
+            $('figure').each(
+                function (index, value) {
+                    var max_width = $(value).find('span').width() / rem * scale + 'rem';
+                    $(value).css('max-width', max_width);
+                }
+            )
+        }
+    </script>
+
+    <!--separatrix-->
+    <style>
+        .main#interlab {
+            padding: 0 8vw;
+            padding-bottom: 10vh;
+            font-family: Lucida Grande,Lucida Sans,Arial,sans-serif;
+            font-size: 1rem;
+            line-height: 1.42857143;
+        }
+
+        @media all and (max-width: 737px) {
+            .main#interlab {
+                padding: 0 1vw;
+            }
+        }
+
+        #top {
+            font-size: 5rem;
+            text-decoration: none;
+            position: fixed;
+            bottom: 0.5rem;
+            right: 2rem;
+            color: gold;
+            z-index: 4;
+        }
+    </style>
+    <style>
+        #nutshell {
+            padding: 0.5rem;
+            display: flex;
+            border-radius: 1rem;
+            border: 0.15rem solid dodgerblue;
+        }
+
+        @media all and (max-width: 1023px) {
+            #nutshell {
+                display: block;
+            }
+        }
+
+        #nutshell > div:nth-child(1) {
+            -webkit-flex: 3;
+            flex: 3;
+        }
+
+        #nutshell > div:nth-child(2) {
+            -webkit-flex: 3;
+            flex: 3;
+        }
+
+        #nutshell > div:nth-child(3) {
+            -webkit-flex: 2;
+            flex: 2;
+        }
+
+        #nutshell .nutshell-item {
+            margin: 0.3rem;
+            padding: 0 1rem;
+            border-radius: 2rem;
+            border: 0.2rem solid skyblue;
+        }
+
+        #interlab .nutshell-item .h2 {
+            margin: 1rem 0;
+            color: lightskyblue;
+        }
+
+        #interlab .nutshell-item .p, .nutshell-item ul {
+            margin: 1rem 0;
+            list-style: circle;
+        }
+
+        #interlab .nutshell-item ul {
+            margin-left: 2rem;
+        }
+    </style>
+    <style>
+        #nav {
+            position: relative;
+            z-index: 3;
+            margin: 3rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        #nav a {
+            margin: auto;
+            padding: 0.3rem 1rem;
+            text-decoration: none;
+            background-color: #26b3f7;
+            color: cyan;
+            border-radius: 0.5rem;
+        }
+    </style>
+    <style>
+        section {
+            margin: 0 0 3rem 0;
+            padding: 0 2rem;
+            padding-bottom: 0.5rem;
+            border-radius: 2rem;
+            border: 0.3rem solid #26b3f7;
+        }
+
+        section .anchor {
+            position: relative;
+            top: -5rem;
+        }
+
+        #interlab section .h2 {
+            font-size: 2rem;
+            margin: 1rem 0;
+            color: dodgerblue;
+        }
+
+        #interlab section .h3 {
+            font-size: 1.5rem;
+            text-align: left;
+            margin-top: 2rem;
+            color: cyan;
+            font-family: Pacifico;
+        }
+
+        #interlab section .h3:nth-child(3) {
+            margin-top: 0;
+        }
+
+        #interlab section .p, section ul, section ol {
+            margin: 0.5rem 0;
+        }
+
+        #interlab section .table-wrapper, section figure {
+            margin: 1.5rem 0;
+        }
+
+        section ul {
+            margin-left: 2rem;
+        }
+
+        section ul li {
+            text-indent: 0;
+        }
+
+        section .table-wrapper {
+            margin-left: auto;
+            margin-right: auto;
+            overflow: auto;
+            position: relative;
+            z-index: 3;
+        }
+
+        #interlab section table {
+            margin: 0 auto;
+            color: white;
+            background-color: transparent;
+            border-color: white;
+            border-spacing: 0.2rem;
+            border-collapse: collapse;
+            text-align: center;
+            text-indent: 0;
+        }
+
+        #interlab section td {
+            border: 0.1rem solid white;
+            padding: 0.2rem 0.5rem;
+        }
+
+        section table caption {
+            margin: 0.2rem;
+            text-align: center;
+            color: deepskyblue;
+            font-weight: bold;
+        }
+
+        section figure img {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            max-width: 100%;
+            display: block;
+            margin: 0.2rem auto;
+        }
+
+        section figure figcaption {
+            text-align: center;
+            margin: 0.2rem 0;
+        }
+    </style>
+    <script>
+        $(function () {
+            //particles();
+        })
+    </script>
+</head>
+<body id="dongzhuoer">
+    <div id="particles-js"></div>
+    <script>
+        particlesJS('particles-js',
+  {
+      "particles": {
+          "number": {
+              "value": 100,
+              "density": {
+                  "enable": true,
+                  "value_area": 800
+              }
+          },
+          "color": {
+              "value": "#0ff"
+          },
+          "shape": {
+              "type": "circle",
+              "stroke": {
+                  "width": 0,
+                  "color": "#000000"
+              },
+              "polygon": {
+                  "nb_sides": 5
+              },
+              "image": {
+                  "src": "img/github.svg",
+                  "width": 100,
+                  "height": 100
+              }
+          },
+          "opacity": {
+              "value": 0.4,
+              "random": false,
+              "anim": {
+                  "enable": false,
+                  "speed": 1,
+                  "opacity_min": 0,
+                  "sync": false
+              }
+          },
+          "size": {
+              "value": 5,
+              "random": true,
+              "anim": {
+                  "enable": false,
+                  "speed": 40,
+                  "size_min": 0,
+                  "sync": false
+              }
+          },
+          "line_linked": {
+              "enable": true,
+              "distance": 150,
+              "color": "#ff0",
+              "opacity": 0.4,
+              "width": 1
+          },
+          "move": {
+              "enable": true,
+              "speed": 6,
+              "direction": "none",
+              "random": false,
+              "straight": false,
+              "out_mode": "out",
+              "attract": {
+                  "enable": true,
+                  "rotateX": 600,
+                  "rotateY": 1200
+              }
+          }
+      },
+      "interactivity": {
+          "detect_on": "canvas",
+          "events": {
+              "onhover": {
+                  "enable": true,
+                  "mode": ["grab", "bubble"]
+              },
+              "onclick": {
+                  "enable": true,
+                  "mode": ["push", "repulse"]
+              },
+              "resize": true
+          },
+          "modes": {
+              "grab": {
+                  "distance": 100,
+                  "line_linked": {
+                      "opacity": 0.75
+                  }
+              },
+              "bubble": {
+                  "distance": 100,
+                  "size": 4,
+                  "duration": 2,
+                  "opacity": 8,
+                  "speed": 5
+              },
+              "repulse": {
+                  "distance": 200
+              },
+              "push": {
+                  "particles_nb": 4
+              },
+              "remove": {
+                  "particles_nb": 2
+              }
+          }
+      },
+      "retina_detect": true,
+      "config_demo": {
+          "hide_card": false,
+          "background_color": "#b61924",
+          "background_image": "",
+          "background_position": "50% 50%",
+          "background_repeat": "no-repeat",
+          "background_size": "cover"
+      }
+  }
+
+);
+    </script>
+    <div class="main" id="interlab">
+        <a id="top" href="#header">&#9757;</a>
+        <div class="h1" id="header">InterLab</div>
+        <div id="nutshell">
+            <div>
+                <div class="nutshell-item">
+                    <div class="h2">Background</div>
+                    <div class="p">Results of measurement often vary due to methods and units employed. The results from different laboratories can only be compared when protocols and units are standardized.</div>
+                </div>
+                <div class="nutshell-item">
+                    <div class="h2">Aim</div>
+                    <div class="p">Teams all over the world measure the fluorescence of the same devices with same protocols and units to study the distribution pattern of those results.</div>
+                </div>
+            </div>
+            <div class="nutshell-item">
+                <div class="h2">Results</div>
+                <ul>
+                    <li>Abs<sub>600</sub> of cultures of 5 strains at selected time.</li>
+                    <li>Fluorescence intensity (FI) of cultures of 5 strains at selected time.</li>
+                    <li>FI/Abs<sub>600</sub> of cultures of 5 strains at selected time.</li>
+                </ul>
+            </div>
+            <div class="nutshell-item">
+                <div class="h2">Conclusion</div>
+                <div class="p">The relative transcription initiation strength of three promoters is consistent with the result characterized by RFP FI yet some problems occurred when we conducted the experiment.</div>
+            </div>
+        </div>
+        <div id="nav">
+            <a href="#background">Background</a>
+            <a href="#aim">Aim</a>
+            <a href="#method">Method</a>
+            <a href="#result">Result</a>
+            <a href="#discussion">Discussion</a>
+        </div>
+        <section>
+            <div class="anchor" id="background"></div>
+            <div class="h2">Background</div>
+            <div class="p">iGEM aims to improve the tools both available to the iGEM community and to the synthetic biology community as a whole. One of the greatest challenges in synthetic biology study is that measurements of fluorescence usually cannot be compared because results are often reported in different units or because different groups process data in different ways.</div>
+            <div class="p">Often this work is done by doing some sort of "relative expression" comparison; however, being unable to directly compare measurements makes it harder to debug engineered biological constructs, harder to effectively share constructs between laboratories, and even harder to just interpret experimental controls.</div>
+        </section>
+        <section>
+            <div class="anchor" id="aim"></div>
+            <div class="h2">Aim</div>
+            <div class="p">We used plate reader to measure bacterial GFP fluorescence intensity, results of which could indirectly characterize the transcription initiation strength of corresponding promoters in a common, comparable way. Moreover, since the same experiments are being conducted by teams from all over the world following same protocols, the international iGEM community tries to answer questions of major significance: how close can the results be when fluorescence is measured in laboratories all around the world and, with results being normalized in a common, comparable unit, what are the distribution pattern of these results.</div>
+        </section>
+        <section>
+            <div class="anchor" id="method"></div>
+            <div class="h2">Method</div>
+            <div class="h3">Cell Transformation</div>
+            <div class="p">
+                The following plasmids were transformed in to <i>Escherichia coli</i> DH5&alpha;:
+                <ul>
+                    <li>Positive control</li>
+                    <li>Negative control</li>
+                    <li>Device 1: J23101+I13504</li>
+                    <li>Device 2: J23106+I13504</li>
+                    <li>Device 3: J23117+I13504</li>
+                </ul>
+            </div>
+            <div class="h3">Transformants Selection</div>
+            <div class="p">2 colonies from each plate were picked and inoculated in 5 mL LB medium (with 35 ng/&mu;L chloramphenicol) in a 15 mL tube. Cells were incubated overnight for 16 h at 37<sup>o</sup>C and 220 rpm.</div>
+            <div class="h3">Cell Preservation</div>
+            <div class="p">500 &mu;L of each of the 10 overnight cell cultures was mixed with 500 &mu;L 80% glycerol and the mixture was preserved at -80 <sup>o</sup>C.</div>
+            <div class="h3">Calibration</div>
+            <ol>
+                <li>
+                    OD<sub>600</sub> Reference Point
+                    <ol>
+                        <li>100 &mu;L LUDOX was added in to wells A1, B1, C1, D1.</li>
+                        <li>100 &mu;L LUDOX was added in to wells A1, B1, C1, D1.</li>
+                        <li>The absorbance at 600 nm of all samples was measured in standard measurement mode of our plate reader.</li>
+                        <li>
+                            Data was recorded and is shown in Table 1.
+                            <div class="table-wrapper">
+                                <table>
+                                    <caption>Table 1. OD<sub>600</sub> Reference Point</caption>
+                                    <tr>
+                                        <td>sample</td>
+                                        <td>LUDOX</td>
+                                        <td>H2O</td>
+                                    </tr>
+                                    <tr>
+                                        <td>replicate 1</td>
+                                        <td>0.045</td>
+                                        <td>0.040</td>
+                                    </tr>
+                                    <tr>
+                                        <td>replicate 2</td>
+                                        <td>0.045</td>
+                                        <td>0.039</td>
+                                    </tr>
+                                    <tr>
+                                        <td>replicate 3</td>
+                                        <td>0.043</td>
+                                        <td>0.041</td>
+                                    </tr>
+                                    <tr>
+                                        <td>replicate 4</td>
+                                        <td>0.043</td>
+                                        <td>0.039</td>
+                                    </tr>
+                                    <tr>
+                                        <td>average</td>
+                                        <td>0.044</td>
+                                        <td>0.040</td>
+                                    </tr>
+                                    <tr>
+                                        <td>corrected Abs<sub>600</sub></td>
+                                        <td>0.004</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>reference OD<sub>600</sub></td>
+                                        <td>0.015</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>correction factor</td>
+                                        <td>3.435306</td>
+                                        <td></td>
+                                    </tr>
+                                </table>
+
+
+                            </div>
+                        </li>
+                    </ol>
+                </li>
+                <li>
+                    FITC Fluorescence Standard Curve
+                    <ol>
+                        <li>
+                            Prepare the FITC stock solution
+                            <ol>
+                                <li>The content in the FITC stock tube was spun down.</li>
+                                <li>The FITC pellet was resuspended in 1 mL of 1x PBS to prepare 2x FITC stock solution (500 &mu;M).</li>
+                                <li>The solution was incubated at 42<sup>o</sup>C for 4 h.</li>
+                                <li>The 2x FITC stock solution was diluted in half with 1x PBS to make a 1x FITC solution (250 &mu;M).</li>
+                            </ol>
+                        </li>
+                        <li>
+                            Prepare the serial dilutions of FITC
+                            <ol>
+                                <li>100 &mu;L of PBS was added into wells A2, B2, C2, D2...A12, B12, C12, D12.</li>
+                                <li>200 &mu;L of FITC 1x stock solution was added into A1, B1, C1, D1.</li>
+                                <li>100 &mu;L of FITC stock solution was transferred from A1 into A2.</li>
+                                <li>A2 was mixed by pipetting up and down and 100 &mu;L was transferred into A3.</li>
+                                <li>A3 was mixed by pipetting up and down and 100 &mu;L was transferred into A4.</li>
+                                <li>A4 was mixed by pipetting up and down and 100 &mu;L was transferred into A5.</li>
+                                <li>A5 was mixed by pipetting up and down and 100 &mu;L was transferred into A6.</li>
+                                <li>A6 was mixed by pipetting up and down and 100 &mu;L was transferred into A7.</li>
+                                <li>A7 was mixed by pipetting up and down and 100 &mu;L was transferred into A8.</li>
+                                <li>A8 was mixed by pipetting up and down and 100 &mu;L was transferred into A9.</li>
+                                <li>A9 was mixed by pipetting up and down and 100 &mu;L was transferred into A10.</li>
+                                <li>A10 was mixed by pipetting up and down and 100 &mu;L was transferred into A11.</li>
+                                <li>A11 was mixed by pipetting up and down and 100 &mu;L was transferred into liquid waste.</li>
+                                <li>Series dilution was repeated for rows B, C, D.</li>
+                                <li>Fluorescence of all samples were measured in the standard measurement modes of our plate reader.</li>
+                                <li>
+                                    Data was recorded and is shown in Figure 1.
+                                    <figure>
+                                        <img src="../image/Interlab/1.png">
+                                        <figcaption>Figure 1. FITC Standard Curve</figcaption>
+                                    </figure>
+                                </li>
+                            </ol>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+            <div class="h3">Cell Recovery</div>
+            <div class="p">5 &mu;L of preservation mixture of each of the 10 colonies was inoculated in 5 mL LB medium (with 35 ng/&mu;L chloramphenicol) in a 15 mL tube. Cells were incubated overnight for 15 h at 37<sup>o</sup>C and 220 rpm.</div>
+            <div class="h3">Cell growth, Sampling and Assay</div>
+            <ol>
+                <li>The plate reader was set to read OD<sub>600</sub>.</li>
+                <li>
+                    OD<sub>600</sub> of the overnight cultures was measured and the data shown in Table 2.
+                    <div class="table-wrapper">
+                        <table>
+                            <caption>Table 2. Normalization</caption>
+                            <tr>
+                                <td rowspan="2">sample</td>
+                                <td colspan="2">Abs<sub>600</sub> reading</td>
+                                <td colspan="2">volume of preloading culture</td>
+                                <td colspan="2">volume of preloading media</td>
+                            </tr>
+                            <tr>
+                                <td>group1</td>
+                                <td>group2</td>
+                                <td>group1</td>
+                                <td>group2</td>
+                                <td>group1</td>
+                                <td>group2</td>
+                            </tr>
+                            <tr>
+                                <td>positive control</td>
+                                <td>0.397</td>
+                                <td>0.391</td>
+                                <td>0.559</td>
+                                <td>0.568</td>
+                                <td>9.441</td>
+                                <td>9.432</td>
+                            </tr>
+                            <tr>
+                                <td style="min-width:8rem;">negative control</td>
+                                <td>0.401</td>
+                                <td>0.419</td>
+                                <td>0.553</td>
+                                <td>0.526</td>
+                                <td>9.447</td>
+                                <td>9.474</td>
+                            </tr>
+                            <tr>
+                                <td>device 1</td>
+                                <td>0.395</td>
+                                <td>0.376</td>
+                                <td>0.561</td>
+                                <td>0.593</td>
+                                <td>9.439</td>
+                                <td>9.407</td>
+                            </tr>
+                            <tr>
+                                <td>device 2</td>
+                                <td>0.399</td>
+                                <td>0.332</td>
+                                <td>0.556</td>
+                                <td>0.683</td>
+                                <td>9.444</td>
+                                <td>9.317</td>
+                            </tr>
+                            <tr>
+                                <td>device 3</td>
+                                <td>0.360</td>
+                                <td>0.320</td>
+                                <td>0.622</td>
+                                <td>0.711</td>
+                                <td>9.378</td>
+                                <td>9.289</td>
+                            </tr>
+                            <tr>
+                                <td>media+chl</td>
+                                <td>0.039</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </div>
+                </li>
+                <li>The cultures were diluted to a target OD<sub>600</sub> of 0.02 in 10 mL LB medium (with 35 ng/&mu;L chloramphenicol) in 50 mL falcon tubes.</li>
+                <li>The cultures were incubated at 37<sup>o</sup>C and 220 rpm.</li>
+                <li>100 &mu;L samples of the culture were taken at 0, 1, 2, 3, 4, 5 and 6 hours of incubation.</li>
+                <li>The samples were placed on ice.</li>
+                <li>
+                    Samples were laid out according to Figure 2. 100 &mu;L of each sample was pipetted into each well. The settings of the plate reader were set as those that had given us the best results in calibration curves.
+                </li>
+                <li>
+                    Data was recorded.
+                    <figure>
+                        <img src="../image/Interlab/2.png">
+                        <figcaption>Figure 2. Sample layout in 96-well plate</figcaption>
+                    </figure>
+                </li>
+            </ol>
+        </section>
+        <section>
+            <div class="anchor" id="result"></div>
+            <div class="h2">Result</div>
+            <div class="p">
+                The Abs<sub>600</sub> values of cell cultures at selected time are shown in Table 3 and Figure 3. The Abs<sub>600</sub> values of device 1 at all time periods are much lower than the other groups. The Abs<sub>600</sub> values of other groups represent a similar pattern, while group 2 of positive control shows a slightly slower cell growth.
+                <div class="table-wrapper">
+                    <table>
+                        <caption>Table 3. Abs<sub>600</sub> of cultures at selected time</caption>
+                        <tr>
+                            <td rowspan="2">sample</td>
+                            <td colspan="2">positive control</td>
+                            <td colspan="2">negative control</td>
+                            <td colspan="2">device 1</td>
+                            <td colspan="2">device 2</td>
+                            <td colspan="2">device 3</td>
+                        </tr>
+                        <tr>
+                            <td>group 1</td>
+                            <td>group 2</td>
+                            <td>group 1</td>
+                            <td>group 2</td>
+                            <td>group 1</td>
+                            <td>group 2</td>
+                            <td>group 1</td>
+                            <td>group 2</td>
+                            <td>group 1</td>
+                            <td>group 2</td>
+                        </tr>
+                        <tr>
+                            <td>0 h</td>
+                            <td>0.285</td>
+                            <td>0.204</td>
+                            <td>0.345</td>
+                            <td>0.251</td>
+                            <td>0.187</td>
+                            <td>0.106</td>
+                            <td>0.167</td>
+                            <td>0.127</td>
+                            <td>0.093</td>
+                            <td>0.095</td>
+                        </tr>
+                        <tr>
+                            <td>1 h</td>
+                            <td>0.425</td>
+                            <td>0.300</td>
+                            <td>0.253</td>
+                            <td>0.221</td>
+                            <td>0.150</td>
+                            <td>0.114</td>
+                            <td>0.250</td>
+                            <td>0.184</td>
+                            <td>0.260</td>
+                            <td>0.200</td>
+                        </tr>
+                        <tr>
+                            <td>2 h</td>
+                            <td>0.477</td>
+                            <td>0.346</td>
+                            <td>0.499</td>
+                            <td>0.666</td>
+                            <td>0.175</td>
+                            <td>0.190</td>
+                            <td>0.550</td>
+                            <td>0.526</td>
+                            <td>0.558</td>
+                            <td>0.540</td>
+                        </tr>
+                        <tr>
+                            <td>3 h</td>
+                            <td>1.035</td>
+                            <td>0.545</td>
+                            <td>1.035</td>
+                            <td>1.126</td>
+                            <td>0.246</td>
+                            <td>0.264</td>
+                            <td>1.237</td>
+                            <td>1.041</td>
+                            <td>1.069</td>
+                            <td>1.046</td>
+                        </tr>
+                        <tr>
+                            <td>4 h</td>
+                            <td>1.262</td>
+                            <td>0.920</td>
+                            <td>1.540</td>
+                            <td>1.622</td>
+                            <td>0.381</td>
+                            <td>0.270</td>
+                            <td>1.640</td>
+                            <td>1.500</td>
+                            <td>1.328</td>
+                            <td>1.394</td>
+                        </tr>
+                        <tr>
+                            <td>5 h</td>
+                            <td>1.545</td>
+                            <td>1.030</td>
+                            <td>1.540</td>
+                            <td>1.596</td>
+                            <td>0.323</td>
+                            <td>0.198</td>
+                            <td>1.532</td>
+                            <td>1.495</td>
+                            <td>1.334</td>
+                            <td>1.498</td>
+                        </tr>
+                        <tr>
+                            <td>6 h</td>
+                            <td>1.403</td>
+                            <td>1.262</td>
+                            <td>1.640</td>
+                            <td>1.641</td>
+                            <td>0.406</td>
+                            <td>0.164</td>
+                            <td>1.636</td>
+                            <td>1.691</td>
+                            <td>1.401</td>
+                            <td>1.633</td>
+                        </tr>
+                        <tr>
+                            <td>Average</td>
+                            <td colspan="2">0.789</td>
+                            <td colspan="2">0.998</td>
+                            <td colspan="2">0.227</td>
+                            <td colspan="2">0.970</td>
+                            <td colspan="2">0.889</td>
+                        </tr>
+                    </table>
+                </div>
+                <figure>
+                    <img src="../image/Interlab/3.png">
+                    <figcaption>Figure 3. Abs<sub>600</sub> of cultures at selected time</figcaption>
+                </figure>
+            </div>
+            <div class="p">
+                Fluorescence intensity (FI) data is shown in Table 4 and Figure 4. Device 1, device2 and positive control show a rather strong fluorescence, as expected, while the fluorescence of device 3 is almost imperceptible compared with other experiment groups.
+                <div class="table-wrapper">
+                    <table>
+                        <caption>Table 4. FI of cultures at selected time</caption>
+                        <tr>
+                            <td rowspan="2">sample</td>
+                            <td colspan="2">positive control</td>
+                            <td colspan="2">negative control</td>
+                            <td colspan="2">device 1</td>
+                            <td colspan="2">device 2</td>
+                            <td colspan="2">device 3</td>
+                        </tr>
+                        <tr>
+                            <td>group 1</td>
+                            <td>group 2</td>
+                            <td>group 1</td>
+                            <td>group 2</td>
+                            <td>group 1</td>
+                            <td>group 2</td>
+                            <td>group 1</td>
+                            <td>group 2</td>
+                            <td>group 1</td>
+                            <td>group 2</td>
+                        </tr>
+                        <tr>
+                            <td>0 h</td>
+                            <td>4.017</td>
+                            <td>2.358</td>
+                            <td>0.147</td>
+                            <td>0.142</td>
+                            <td>11.062</td>
+                            <td>20.258</td>
+                            <td>3.693</td>
+                            <td>3.739</td>
+                            <td>-0.131</td>
+                            <td>0.233</td>
+                        </tr>
+                        <tr>
+                            <td>1 h</td>
+                            <td>18.214</td>
+                            <td> 8.060</td>
+                            <td>0.137</td>
+                            <td>0.091</td>
+                            <td>15.416</td>
+                            <td>31.959</td>
+                            <td>  8.847</td>
+                            <td>  5.976</td>
+                            <td>0.275</td>
+                            <td>0.233</td>
+                        </tr>
+                        <tr>
+                            <td>2 h</td>
+                            <td>31.135</td>
+                            <td>13.761</td>
+                            <td>0.338</td>
+                            <td>0.162</td>
+                            <td>17.046</td>
+                            <td>37.580</td>
+                            <td> 27.570</td>
+                            <td> 17.815</td>
+                            <td>0.404</td>
+                            <td>0.539</td>
+                        </tr>
+                        <tr>
+                            <td>3 h</td>
+                            <td>56.390</td>
+                            <td>21.157</td>
+                            <td>0.074</td>
+                            <td>0.143</td>
+                            <td>19.464</td>
+                            <td>43.071</td>
+                            <td>55.942</td>
+                            <td>35.669</td>
+                            <td>0.914</td>
+                            <td>0.805</td>
+                        </tr>
+                        <tr>
+                            <td>4 h</td>
+                            <td>67.640</td>
+                            <td>34.280</td>
+                            <td>0.282</td>
+                            <td>0.346</td>
+                            <td>20.594</td>
+                            <td>44.112</td>
+                            <td>87.633</td>
+                            <td>65.949</td>
+                            <td>1.288</td>
+                            <td>1.358</td>
+                        </tr>
+                        <tr>
+                            <td>5 h</td>
+                            <td>83.184</td>
+                            <td>44.882</td>
+                            <td>0.433</td>
+                            <td>0.553</td>
+                            <td>25.112</td>
+                            <td>46.501</td>
+                            <td>97.999</td>
+                            <td>86.125</td>
+                            <td>1.792</td>
+                            <td>2.013</td>
+                        </tr>
+                        <tr>
+                            <td>6 h</td>
+                            <td>80.972</td>
+                            <td>58.540</td>
+                            <td>0.892</td>
+                            <td>0.870</td>
+                            <td>36.853</td>
+                            <td>51.424</td>
+                            <td>110.451</td>
+                            <td>100.151</td>
+                            <td>2.188</td>
+                            <td>2.874</td>
+                        </tr>
+                        <tr>
+                            <td>Average</td>
+                            <td colspan="2">37.471</td>
+                            <td colspan="2">0.329</td>
+                            <td colspan="2">30.032</td>
+                            <td colspan="2">50.540</td>
+                            <td colspan="2">1.056</td>
+                        </tr>
+                    </table>
+                </div>
+                <figure>
+                    <img src="../image/Interlab/4.png">
+                    <figcaption>Figure 4. FI of cultures at selected time</figcaption>
+                </figure>
+            </div>
+            <div class="p">
+                Fluorescence intensity/Abs<sub>600</sub>data is shown in Table 5 and Figure 5, which is rather favorable to our expectation. Device 1 shows the highest fluorescence while device 2 and positive control show similar but lower fluorescence intensity. The fluorescence intensity of device 3 is still very low as to an imperceptible level.
+                <div class="table-wrapper">
+                    <table>
+                        <caption>Table 5. FI/Abs<sub>600</sub> of cultures at selected time</caption>
+                        <tr>
+                            <td rowspan="2">sample</td>
+                            <td colspan="2">positive control</td>
+                            <td colspan="2">negative control</td>
+                            <td colspan="2">device 1</td>
+                            <td colspan="2">device 2</td>
+                            <td colspan="2">device 3</td>
+                        </tr>
+                        <tr>
+                            <td>group 1</td>
+                            <td>group 2</td>
+                            <td>group 1</td>
+                            <td>group 2</td>
+                            <td>group 1</td>
+                            <td>group 2</td>
+                            <td>group 1</td>
+                            <td>group 2</td>
+                            <td>group 1</td>
+                            <td>group 2</td>
+                        </tr>
+                        <tr>
+                            <td>0 h</td>
+                            <td>14.101</td>
+                            <td>11.565</td>
+                            <td>0.427</td>
+                            <td>0.564</td>
+                            <td> 59.202</td>
+                            <td>191.792</td>
+                            <td>22.105</td>
+                            <td>29.492</td>
+                            <td>(1.416)</td>
+                            <td>2.453</td>
+                        </tr>
+                        <tr>
+                            <td>1 h</td>
+                            <td>42.901</td>
+                            <td>26.890</td>
+                            <td>0.540</td>
+                            <td>0.412</td>
+                            <td>102.772</td>
+                            <td>280.876</td>
+                            <td>35.446</td>
+                            <td>32.475</td>
+                            <td>1.060</td>
+                            <td>1.167</td>
+                        </tr>
+                        <tr>
+                            <td>2 h</td>
+                            <td>65.207</td>
+                            <td>39.756</td>
+                            <td>0.678</td>
+                            <td>0.244</td>
+                            <td> 97.204</td>
+                            <td>197.314</td>
+                            <td>50.156</td>
+                            <td>33.865</td>
+                            <td>0.724</td>
+                            <td>0.998</td>
+                        </tr>
+                        <tr>
+                            <td>3 h</td>
+                            <td>54.469</td>
+                            <td>38.856</td>
+                            <td>0.072</td>
+                            <td>0.127</td>
+                            <td> 78.964</td>
+                            <td>163.020</td>
+                            <td>45.213</td>
+                            <td>34.264</td>
+                            <td>0.854</td>
+                            <td>0.770</td>
+                        </tr>
+                        <tr>
+                            <td>4 h</td>
+                            <td>53.589</td>
+                            <td>37.255</td>
+                            <td>0.183</td>
+                            <td>0.213</td>
+                            <td> 54.112</td>
+                            <td>163.232</td>
+                            <td>53.435</td>
+                            <td>43.967</td>
+                            <td>0.970</td>
+                            <td>0.975</td>
+                        </tr>
+                        <tr>
+                            <td>5 h</td>
+                            <td>53.849</td>
+                            <td>43.569</td>
+                            <td>0.281</td>
+                            <td>0.346</td>
+                            <td> 77.676</td>
+                            <td>235.292</td>
+                            <td>63.961</td>
+                            <td>57.604</td>
+                            <td>1.343</td>
+                            <td>1.344</td>
+                        </tr>
+                        <tr>
+                            <td>6 h</td>
+                            <td>57.716</td>
+                            <td>46.374</td>
+                            <td>0.544</td>
+                            <td>0.530</td>
+                            <td> 90.863</td>
+                            <td>314.217</td>
+                            <td>67.522</td>
+                            <td>59.222</td>
+                            <td>1.562</td>
+                            <td>1.760</td>
+                        </tr>
+                        <tr>
+                            <td>Average</td>
+                            <td colspan="2">41.864</td>
+                            <td colspan="2">0.369</td>
+                            <td colspan="2">150.467</td>
+                            <td colspan="2">44.909</td>
+                            <td colspan="2">1.040</td>
+                        </tr>
+                    </table>
+                </div>
+                <figure>
+                    <img src="../image/Interlab/5.png">
+                    <figcaption>Figure 5. FI/Abs<sub>600</sub> of cultures at selected time</figcaption>
+                </figure>
+            </div>
+        </section>
+        <section>
+            <div class="anchor" id="discussion"></div>
+            <div class="h2">Discussion</div>
+            <div class="p">Our result of the relative transcription initiation strength of the three promoters is consistent with the result characterized by RFP fluorescence intensity provided by iGEM headquarter. Three problems, however, can be observed in our results. First, the cell growth of device 1 was slower than all other four groups. This phenomenon could be explained as the growth of device 1 cells was hindered by the translation of GFP most severely. In addition, the FI/Abs<sub>600</sub> data of device 1 is not as stable as other groups represent. We first suspected that this was due to the deviation during sampling. However, we also noticed that, according to Table 5, the vibration patterns of the two replicates of device 1 at selected times were almost identical, thus this possibility could be excluded. Before further evidences are collected, we could only hypothesize that this phenomenon might be caused by unique biochemistry process of device 1 cells. Moreover, the fluorescence intensity of device 3 was too weak as to fail to show significant difference from negative control. One possible explanation is that the promoter of device 3 is too weak under our culture condition. Another explanation could be that the observed fluorescence intensity of negative control cells is higher than real situation due to the sample layout pattern in the 96-well plate while measuring the fluorescence. Considering that the samples of negative control are placed between positive control and device 1 and that the 96-well plate that we use is transparent, the fluorescence leakage of positive control and device 1 might enhance the measured fluorescence intensity of negative control. Thus we suggest that the protocol for plate reader relating to the usage of 96-well plate should be adjusted, allowing teams to use black 96-well plate when measuring fluorescence while use transparent 96-well plate for Abs<sub>600</sub> measuring.</div>
+        </section>
+    </div>
+</body>
+</html>
+{{NKU_China/footer}}

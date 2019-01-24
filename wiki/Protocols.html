@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">   
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/share.css">
+    <link rel="stylesheet" href="css/local.css">
+    <script title="jquery.js" src="js/jquery-3.1.0.min.js"></script>
+    <script title="jquery-ui.js" src="js/jquery-ui.min.js"></script>
+    <script title="bootstrap.js" src="js/bootstrap.min.js"></script>
+    <script title="modernizr.js" src="js/modernizr.js"></script>
+    <script title="particles.js" src="js/particles.min.js"></script>
+    <script>
+        var rem = Number($('html').css('font-size').replace('px', ''));
+        function log(value) { console.log(value); }
+        function particles() { $('#particles-js').toggle(); }
+        function adjust_figure(scale) {
+            $('figure').each(
+                function (index, value) {
+                    var max_width = $(value).find('span').width() / rem * scale + 'rem';
+                    $(value).css('max-width', max_width);
+                }
+            )
+        }
+    </script>
+
+    <!--separatrix-->
+    <style>
+        .main#protocols {
+            padding: 0 6vw;
+            padding-bottom: 10vh;
+            line-height: 1.42857;
+            font-family: Verdana,Arial,sans-serif;
+            font-size: 1.2rem;
+        }
+
+        .main#protocols .h1 {
+            padding-bottom: 0;
+        }
+
+        #protocols section {
+            margin: 2rem 0 0 0;
+            border: 0.35rem solid skyblue;
+            border-color: #555;
+            border-radius: 0.375rem;
+        }
+
+        #protocols section .h2 {
+            text-align: left;
+            font-size: 1.5rem;
+            color: cyan;
+            margin: 0rem 0 1rem 0.5rem;
+        }
+
+        #protocols section .h3 {
+            clear: both;
+            font-size: 2rem;
+            margin: 1rem 0 2rem 0.5rem;
+        }
+
+        #protocols section > .p, #protocols section .accordion {
+            margin: 0.5rem;
+        }
+
+        #protocols .accordion-content {
+            font-size: 1.2rem;
+            padding: 1rem;
+        }
+
+        #protocols section dt {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-family: Pacifico;
+        }
+
+        #protocols section .h3, #protocols section dt {
+            color: dodgerblue;
+        }
+
+        #protocols .accordion-content .p {
+            margin: 0.5rem;
+        }
+
+        #protocols .accordion-content li {
+            margin: 0.5rem;
+            text-indent: 0;
+        }
+
+        #protocols .accordion-content img {
+            display: block;
+            margin: 0.5rem auto;
+            position: relative;
+            z-index: 3;
+        }
+
+        #protocols .accordion-content img.float {
+            float: right;
+            margin-right: 0.5rem;
+        }
+
+        #protocols .accordion-content .reference {
+            text-indent: 0;
+            font-size: 1rem;
+            margin-bottom: 0;
+        }
+
+        #protocols .accordion-content figure {
+            margin: 1rem auto;
+        }
+
+        figure img {
+            width: 100%;
+            margin-bottom: 0.25rem;
+        }
+
+        figure figcaption {
+            text-align: center;
+            line-height: 1.25;
+        }
+
+        #protocols .accordion-content table {
+            margin: 1rem auto;
+            border: 0.1rem solid skyblue;
+            border-left: none;
+            border-right: none;
+            background-color: transparent;
+            color: white;
+        }
+
+        #protocols .accordion-content table td {
+            border: none;
+            padding: 0.2rem;
+        }
+
+        #protocols .accordion-content span.notice {
+            color: gold;
+        }
+
+        #protocols #demo {
+            margin-left: 10rem;
+            text-indent: 0;
+        }
+    </style>
+    <script>
+        $(function () {
+            adjust_figure(1.02);
+
+            $(".accordion").accordion({
+                header: ".accordion-header",
+                event: 'click',
+                heightStyle: 'content',
+                collapsible: true,
+                active:false,
+                icons: false,
+            });
+
+            // particles();
+        })
+    </script>
+</head>
+<body id="dongzhuoer">
+    <div id="particles-js"></div>
+    <script src="js/particlesJS.js"></script>
+    <div class="main" id="protocols">
+        <div class="h1">Protocols</div>
+        <section>
+            <div class="h2 ">1. The Markerless Gene Replacement Method for <i>Bacillus amyloliquefaciens</i> LL3</div>
+            <div class="p"><span class="bold">Abstract: </span>This is a markerless gene replacement method that combines a temperature-sensitive plasmid pKSV7 with a counter-selectable marker, the <i>upp</i> gene encoding uracil phosphoribosyltransferase (UPRTase) for the <i>Bacillus amyloliquefaciens</i> strain LL3. This method allows us to adapt a two-step plasmid integration and excision strategy to perform markerless deletion of genes.</div>
+            <div class="accordion">
+                <div class="accordion-header"><span class="default">&#9758;</span><span class="active">&#9759;</span>&nbsp;                </div>
+                <div class="accordion-content">
+                    <div class="h3">Introduction</div>
+                    <img src="../image/Protocols/image001.jpg" class="float">
+                    <div class="p">The temperature-sensitive plasmid pKSV7 of <i>Bacillus</i> can replicate at 30<sup>o</sup>C normally, but the plasmid will be lost at 42<sup>o</sup>C. Combined the plasmid with a counter-selectable marker, the markerless gene replacement method can be constructed.</div>
+                    <div class="p">The <i>upp</i> gene encodes uracil phosphoribosyl transferase (UPRTase), which makes U transfer to UMP. Thus, cell can use extrinsic uracil via the following pathway 5-FU &#10132; 5F(fluorin)-UMP &#10132; 5-F-dUMP. Since the products of this pathway are toxic, cellular growth can be restrained.</div>
+                    <div class="p">If <i>upp</i> gene is knocked out, bacteria can resist 5-FU toxicity.</div>
+                    <div class="h3">Procedures</div>
+                    <ol>
+                        <li>&Delta;<i>upp</i> <i>B. amyloliquefaciens</i> LL3 was constructed, which can resist 5-fluorouracil.</li>
+                        <li>Construction of the <i>upp</i> cassette: An 850 bp DNA fragment carrying the <i>upp</i> gene with its 5&apos; regulatory region and its 3&apos; transcription terminator was generated by PCR from <i>B. subtilis</i> 168 genomic DNA using primers Upp-F and Upp-R. After digesting with KpnI and BamHI, the fragment was cloned in the KpnI&ndash;BamHI site of pKSV7. The resulting counter-selective plasmid was designated pKSU.</li>
+                        <li>The target gene was selected. The upstream sequence A and downstream sequence B of target gene were combined by over-lapping PCR and ligated into plasmid pKSU.</li>
+                        <li>Plasmid pKSU is a temperature sensitive plasmid, which replicates at 30<sup>o</sup>C and got expelled at 42<sup>o</sup>C, and contains an <i>upp</i> expression cassette. </li>
+                        <li>The recombinant plasmid was transformed into the target strain and the resulting transformants were cultured at 42<sup>o</sup>C with chloramphenicol to select single-crossover colonies.</li>
+                        <li>The single-crossover strains were then cultured in medium with 5-fluorouracil to select double-crossover colonies. </li>
+                    </ol>
+                    <img src="../image/Protocols/image002.jpg">
+                    <div class="p reference"><span class="bold">Reference: </span>Zhang W et al. <i>Applied Microbiology &amp; Biotechnology</i>, 2014.</div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="h2">2. Circular Polymerase Extension Cloning (CPEC)</div>
+            <div class="p"><span class="bold">Abstract: </span>Circular polymerase extension cloning (CPEC) is based on polymerase overlap extension and is therefore free of restriction digestion, ligation or single-stranded homologous recombination. CPEC is highly efficient, accurate and user friendly. Once the inserts and the linear vector have been prepared, the CPEC reaction can be completed in 10 min to 3 h, depending on the complexity of the gene libraries.</div>
+            <div class="accordion">
+                <div class="accordion-header"><span class="default">&#9758;</span><span class="active">&#9759;</span>&nbsp;</div>
+                <div class="accordion-content">
+                    <div class="h3">Introduction</div>
+                    <div class="p">CPEC is a single-tube, one-step reaction that normally takes 5&ndash;10 min to complete for everyday laboratory cloning. The method is directional, sequence independent and ligase free. It uses the polymerase extension mechanism2 to join overlapping DNA fragments into a double-stranded circular form, such as a plasmid. In a typical CPEC reaction, linear double-stranded insert(s) and vector are first heat-denatured; the resulting single strands then anneal with their overlapping ends and extend using each other as a template to form double-stranded circular plasmids. In CPEC, all overlapping regions between insert(s) and the vector are unique and carefully designed to have very similar and high melting temperatures (T<sub>m</sub>), which eliminates vector reannealing and concatenation of inserts and makes CPEC very efficient and accurate. The low concentrations of fragments in the reaction favor plasmid circularization and effectively prevent plasmid concatenation. After the CPEC reaction, the perfectly formed double-stranded circular plasmids, with one nick in each strand, can be directly transformed into competent host cells.</div>
+                    <img src="../image/Protocols/image003.jpg">
+                    <div class="h3">Steps</div>
+                    <dl>
+                        <dt>1. Design of overlapping sequences between vector and insert(s).</dt>
+                        <dd>
+                            <div class="p">The key to successful CPEC library construction and multiway CPEC is to carefully select and design the overlapping sequences between the vector and the insert(s) so that all overlapping regions share very similar T<sub>m</sub>. The T<sub>m</sub> of the overlapping regions should be as high as possible (ideally between 60 and 70<sup>o</sup>C) to maximize hybridization specificity. The T<sub>m</sub> of all overlapping regions in the final CPEC assembly reaction should match each other as closely as possible, ideally with differences within &plusmn; to 3<sup>o</sup>C. This will help eliminate mis-hybridization and ensure highest cloning efficiency and accuracy. The length of the overlapping region, typically between 15 and 35 bases, is of secondary consideration and is dictated by the T<sub>m</sub>. Standard PCR primer selection rules and software can be applied to facilitate the design process. If PCR is used to introduce overlapping regions with the vector or with adjacent fragments, primers should be designed to include at least two parts, each hybridizing to one end of the two neighboring fragments to be joined. If an additional short sequence needs to be inserted between two existing fragments, it can be simply included in the primer design between the two overlapping regions.</div>
+                        </dd>
+                        <dt>2. Preparation of linear vector. </dt>
+                        <dd>
+                            <div class="p">The linear vector can be prepared most conveniently by PCR amplification using primers designed to introduce overlapping regions with the insert(s), as described below in the Procedure; this approach offers the most flexibility in selecting cloning sites. If a convenient restriction site is available on the vector that does not introduce unwanted sequences, restriction digestion can also be used to linearize the vector. To prevent carryover of undigested or intact circular vector templates, we recommend gel purification of the linear vector after PCR amplification or restriction digestion. In addition, to eliminate the effect of any residual carryover vector, we recommend using an empty vector as the starting material for PCR amplification or restriction digestion; this way, any carryover of the empty vector will not interfere with downstream functional assays or screens.</div>
+                        </dd>
+                        <dt>3. Preparation of inserts. </dt>
+                        <dd>
+                            <div class="p">The inserts can be a single gene, a gene library, multiple genes or even multiple libraries. They can be isolated from natural sources or synthesized on the basis of in silico designs. Irrespective of whether they are single sequences or libraries, ensure that they share overlapping regions with the vector or neighboring fragments, as described above. If PCR is used to prepare the inserts, as described in the Procedure below, a high-fidelity DNA polymerase (e.g. Phusion DNA polymerase) is preferred in order to minimize the introduction of mutations or addition of an extra nucleotide at the ends of amplified products. Gel purification is sometimes necessary to ensure purity of the products.</div>
+                        </dd>
+                        <dt>4. CPEC cloning.</dt>
+                        <dd>
+                            <div class="p">In the final CPEC assembly and cloning reaction, prepared linear vec<U+00AC>tor and inserts are mixed together with the reaction cocktail, which includes dNTPs, 1&times;PCR buffer and a thermal-stable high-fidelity DNA polymerase. The composition of the CPEC reaction cocktail is almost identical to that of a standard PCR, except that no primers are added. The final vector concentration is normally in the range of 5&ndash;10 ng/&mu;L and the insert-to-vector molar ratio is in the range of 1:1 to 2:1. The thermal cycling conditions are also similar to those used for a standard PCR reaction, except that fewer cycles are needed. For example, 1&ndash;5 cycles are sufficient to clone a single insert or a less complex library; 15&ndash;30 cycles may be needed to assemble multiple fragments or clone complex or combinatorial libraries. Depending on the number of cycles used, the total reaction time can be anywhere from 10 min to a few hours. A stringent annealing temperature should be used for thermal cycling, the value of which is determined by the T<sub>m</sub> of the overlapping regions and recommen<U+00AC>dations for the particular DNA polymerase used. Extension time is calculated by the size of the construct and the extension rate of the polymerase. For single-fragment or single-library cloning, shorter extension times can be used.</div>
+                        </dd>
+                    </dl>
+                    <div class="p reference"><span class="bold">Reference: </span>Quan J, <i>Nature Protocols</i>, 2011.</div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="h2">3. ClonExpress MultiS One Step Cloning Kit</div>
+            <div class="p"><span class="bold">Abstract: </span>ClonExpress One Step technology is a simple, fast and highly efficient cloning kit which is based on homologous recombination technology. It allows to directly clone any amplified product(s) to any linearized vector, at any site.</div>
+            <div class="accordion">
+                <div class="accordion-header"><span class="default">&#9758;</span><span class="active">&#9759;</span>&nbsp;</div>
+                <div class="accordion-content">
+                    <div class="h3">Introduction</div>
+                    <div class="p">ClonExpress MultiS One Step Cloning kit is a new version cloning kit based on ClonExpress One Step Cloning technology. Exnase MultiS and reaction buffer supplied in this kit are especially optimized for multi-insertion seamless cloning (MultiS for short). With the help of this kit, sequential assembly of up to five insertions can be realized in a single reaction. Additionally, Exnase MultiS is also compatible with the endonuclease digesting reaction and the PCR reaction. Thus, the digesting products or PCR products can be directly applied in recombination reaction without purification, which greatly simplifies the experimental procedures.</div>
+                    <div class="p">Firstly, the expression vector will be linearized at the cloning site of choice. A small sequence (15-20 bp) overlapped with the end of the cloning site will be added onto the insert through a PCR step. After the inserts and the linearized vector are mixed in the presence of Exnase for only 30 min, the cloning DNA products can be directly subjected to <i>E.coli</i> transformation with true positive rate over 95%.</div>
+                    <div class="h3">Steps</div>
+                    <dl>
+                        <dt>1. Preparation for linearized cloning vectors</dt>
+                        <dd>
+                            <div class="p">Select appropriate cloning sites, and linearize the cloning vector. GC content of 20 bp regions at both ends of linearized cloning vector has great impacts on the recombination efficiency. The maximum recombination efficiency can be realized when the GC content of these regions is within 40%&sim;60%.Thus, it&apos;s better to avoid regions with sequence repeats and select regions containing even GC content.</div>
+                            <div class="p">The cloning vectors can be linearized by restriction digesting with endonuclease or by reverse PCR amplification.</div>
+                        </dd>
+                        <dt>2. Design of PCR primers of the insertions</dt>
+                        <dd>
+                            <div class="p">The principle for the design of ClonExpress MultiS primers is: introduce homologous sequences (15 bp&sim;20 bp)into 5&apos; end of primers, aiming to making the ends of amplified insertions and linearized cloning vector identical to the ends of their neighbours which is required for recombination reaction. Taking sequential assembly of three insertions (assembly order from 5&apos; to 3&apos; is as follows: insertion 1, insertion 2, insertion 3) to pUC18 cloning vector as example, design the primers as below:</div>
+                            <div class="p">Firstly, design the forward primer of insertion 1 and the reverse primer of insertion 3 (two insertions next to cloning vector) according to Figure 1.</div>
+                            <figure>
+                                <img src="../image/Protocols/image004.jpg">
+                                <figcaption><span>Figure 1: Design of the forward primer of insertion 1 and the reverse primer of insertion 3</span></figcaption>
+                            </figure>
+                            <div class="p"><span class="notice">Notice</span>: If the primer length exceeds 40 bp, PAGE purification of synthetized primers is recommended, which will benefit the recombination efficiency. When calculating the T<sub>m</sub> of primers, the homologous sequence of vector ends should be excluded and only gene specific amplification sequence should be counted.</div>
+                            <div class="p">Secondly, design the reverse primer of insertion 1 and the forward primer of insertion 2. Homologous sequence used for inter-recombination between insertions can be fully added to either the reverse primer of insertion 1or the forward primer of insertion 2, and also can be partially added to both of them. Taking the addition homologous sequence to the reverse primer of insertion 1 as an example, design the primer according to Figure 2.</div>
+                            <figure>
+                                <img src="../image/Protocols/image005.jpg">
+                                <figcaption><span>Figure 2: Design of the reverse primer of insertion 1 and the forward primer of insertion 2</span></figcaption>
+                            </figure>
+                            <div class="p"><span class="notice">Notice</span>: If the primer length exceeds 40 bp, PAGE purification of synthetized primers is recommended, which will benefit the recombination efficiency. When calculating the T<sub>m</sub> of primers, the homologous sequence of vector end should be excluded and only gene specific amplification sequence should be counted.</div>
+                            <div class="p">Lastly, design the reverse primer of insertion 2 and the forward primer of insertion 3. Design principles are similar to that of the reverse primer of insertion 1 and forward primer of insertion 2 respectively (see Figure 2).</div>
+                        </dd>
+                        <dt>3. PCR amplification of insertions</dt>
+                        <dd>
+                            <div class="p">Insertions can be amplified by any polymerase (Taq DNA polymerase or other high-fidelity polymerases). It will not interfere with the recombination efficiency whether there is A-tail in the PCR products or not, which will be removed during recombination and missing in the final construct.</div>
+                            <div class="p">Take a small amount of products and run agrose electrophoresis after PCR to confirm the yields and specificity of amplification. Exnase MultiS is compatible with most PCR reactions. As a result, PCR products can be directly applied to recombination reaction without further purification if the PCR templates are not circular plasmids which share the same antibiotic resistance with the cloning vector.</div>
+                        </dd>
+                        <dt>4. Recombination reaction</dt>
+                        <dd>
+                            <div class="p">Set up the following reaction on ice. Spin briefly to bring the sample to the bottom before reacting.</div>
+                            <table>
+                                <tr>
+                                    <td>ddH2O</td>
+                                    <td>Up to 20 &mu;l</td>
+                                </tr>
+                                <tr>
+                                    <td>5<U+00A1><c1>CE MultiS Buffer</td>
+                                    <td>4 &mu;l</td>
+                                </tr>
+                                <tr>
+                                    <td>Linearized cloning vector</td>
+                                    <td>x ng</td>
+                                </tr>
+                                <tr>
+                                    <td>PCR products of insertions</td>
+                                    <td>x ng</td>
+                                </tr>
+                                <tr>
+                                    <td>Exnase<sup>&reg;</sup> MultiS</td>
+                                    <td>2 &mu;l</td>
+                                </tr>
+                            </table>
+                            <div class="p">The recommended amount of DNA for recombination reaction is 0.03 pmol per DNA fragment (including the cloning vector and insertions). Their corresponding mass can be roughly calculated according the following formula:</div>
+                            <div class="p">The mass of each fragment required = [0.02&times;number of base pair] ng (0.03 pmol)</div>
+                            <div class="p">For example, when cloning three insertions of 0.5 kb, 1 kb and 2 kb to a 5 kb vector, their corresponding DNA mass needed is as follows:</div>
+                            <div class="p" id="demo">
+                                Linearized cloning vector: 0.02&times;5000 = 100 ng<br>
+                                0.5 kb insertion: 0.02&times;500 = 10 ng<br>
+                                1 kb insertion: 0.02&times;1000 = 20 ng<br>
+                                2 kb insertion: 0.02&times;2000 = 40 ng
+                            </div>
+                            <div class="p">
+                                <span class="notice">Notice</span>:
+                                <ol>
+                                    <li>The mass of linearized cloning vector used should be between 50&sim;200 ng. Use 50 or 200 ng if the calculated mass is out of range.</li>
+                                    <li>The mass of insertions should be over 10 ng. Use 10 ng if the calculated mass is less.</li>
+                                    <li>When applied to recombination reaction without gel recovery, the total volume of unpurified DNA used should be less than 1/5 of that of recombination reaction, which is 4 &mu;l.</li>
+                                </ol>
+                            </div>
+                            <div class="p">After finishing setting up, gently pipette up and down several times with a pipettor to mix thoroughly and try to avoid the formation of bubbles. Incubate the reaction at 37<sup>o</sup>C for 30 min and immediately place it on ice for 5 min. Recombination product is now ready for transformation, or otherwise it can be stored at -20<sup>o</sup>C before transformation.</div>
+
+                        </dd>
+                        <dt>5. Transformation and plating</dt>
+                        <dd>
+                            <div class="p">Add the entire recombination products to 200 &mu;l of competent cells; flip the tube several times to mix it thoroughly and place the tube on ice for 30 min. Heat-shock the tube for 45&sim;90 sec at 42<sup>o</sup>C and then place the tube on ice for 2 min. Add 900 &mu;l of SOC or LB medium to competent cells and leave the tube in 37<sup>o</sup>C water bath for 10 min to let the competent cells fully recovered. Then, shake the tube at 37<sup>o</sup>C for 45 min to culture the bacteria. Take 100 &mu;l of culture and plate evenly on agar plate which contains appropriate selection antibiotic. Place the plate at 37<sup>o</sup>C overnight to culture.</div>
+
+                        </dd>
+                        <dt>6. Selection of positive colony</dt>
+                        <dd>
+                            <div class="p">
+                                Colony PCR is the most convenient selection method. Pick a single colony with tips to 20&sim;50 &mu;l of LB medium, mix thoroughly and take 1 &mu;l as PCR template. To avoid false positive PCR, we recommend at least one sequencing primer of the cloning vector should be used. Inoculate the remaining medium of positive clones into fresh LB medium and culture overnight. Then, extract the plasmids for subsequent authentication.
+                            </div>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="h2">4. Testing of the presence of AI-2 via <i>Vibrio harveyi</i> reporter strain BB170.</div>
+            <div class="p"><span class="bold">Abstract: </span><i>Vibrio harveyi</i> can express bioluminescence in response to small signal molecules called autoinducers, which accumulate in the environment. Mutant strain BB170 responds only to autoinducer-2 (AI-2).  Therefore, BB170 became a universal strain to test the presence of AI-2.</div>
+            <div class="accordion">
+                <div class="accordion-header"><span class="default">&#9758;</span><span class="active">&#9759;</span>&nbsp;</div>
+                <div class="accordion-content">
+                    <div class="h3">Steps</div>
+                    <ol>
+                        <li>BB170 was grown for 16 h with shaking at 30<sup>o</sup>C in AI-2 Bioassay (AB) media. AB media is made by adjusting 400 mL of distilled (DI) water to pH 7.5, and adding 7 g of NaCl, 2.4 g of MgSO<sub>4</sub>, 0.8 g casamino acid and 8 mL of glycerol. AB media is supplmented with 400 &mu;L of potassium phosphate buffer (K<sub>2</sub>HPO<sub>4</sub> 10.71 g and 5.24 g KH<sub>2</sub>PO<sub>4</sub> dissolved in 100 mL of DI water), 400 &mu;L of 0.1 M L-arginine (0.1742 g L-arginine in 10 mL of DI water), 40 &mu;L of riboflavin (10 &mu;g/mL), 40 &mu;L of thiamine (1 mg/mL) and 40 &mu;L kanamycin (50 mg/mL). </li>
+                        <li>Overnight cultures were diluted 1:5000 in fresh AB media. Test samples were added to BB170 cultures at a final concentration of 10% (vol/vol). The cultures were shaking at 30<sup>o</sup>C.</li>
+                        <li>In the next six hours, 200 &mu;L cultures were added into black 96-well plates every 30 min, and luminescence was measured by microplate reader in the mode of Chemiluminescence. </li>
+                    </ol>
+                    <div class="p reference"><span class="bold">Reference: </span>Bassler B L et al. <i>Journal of Bacteriology</i>, 1997.</div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="h2">5. Metabolic engineering of <i>Escherichia coli</i> using CRISPR&ndash;Cas9 meditated genome editing</div>
+            <div class="p"><span class="bold">Abstract: </span>Engineering cellular metabolism for improved production of valuable chemicals requires extensive modulation of bacterial genome to explore complex genetic spaces. Here, we use the development of a CRISPR&ndash;Cas9 based method for genome editing and metabolic engineering of <i>Escherichia coli</i>. This system enables us to introduce various types of genomic modifications with near 100% editing efficiency and to introduce three mutations simultaneously.</div>
+            <div class="accordion">
+                <div class="accordion-header"><span class="default">&#9758;</span><span class="active">&#9759;</span>&nbsp;</div>
+                <div class="accordion-content">
+                    <div class="h3">Steps</div>
+                    <dl>
+                        <dt>1. Constructing gRNA plasmid and donor DNA</dt>
+                        <dd>
+                            <div class="p">To construct gRNA plasmid, a set of primers were used to PCR amplify the pGRB backbone. The 20 bp spacer sequence specific for each target was synthesized in primers. The PCR product was then self-ligated using Golden Gate Assembly to obtain the desired gRNA plasmid.</div>
+                            <div class="p">Donor dsDNA usually had 300&ndash;500 bp homologous arm on each side unless otherwise noted. To construct donor dsDNA, two homologous arms and the sequence to be inserted were separately amplified and were then fused together by fusion PCR. Gel purification of the PCR products prior to electroporation is necessary. All primers, including those used as donor ssDNA, were ordered from Genewiz.</div>
+                        </dd>
+                        <dt>2. Genome editing procedure</dt>
+                        <dd>
+                            <div class="p">Electrocompetent cells with pRedCas9 plasmid were generated previously. In brief, a single colony or 100 times diluted overnight culture was inoculated in 3 mL LB medium (or 100 mL LB for large scale preparation) and was grown at 32<sup>o</sup>C to OD&sim;.5. The cells were then washed twice with cold-sterile ddH2O in test tubes. One microliter of cells were finally concentrated 20-fold into 50 &mu;L volume for each reaction. Unless otherwise noted, 100 ng donor dsDNA (or 1 &mu;M ssDNA) and 100 ng gRNA plasmid were added in each electroporation reaction. Bio-Rad MicroPulser was used for electroporation (0.1 cm cuvette, 1.80 kV). Cells after electroporation were immediately added into 3 mL LB and recovered for 3 h prior to plating. For plasmid curing, correct colonies were inoculated in LB containing 0.2% L-arabinose and cultivated for 6&ndash;8 h or overnight.</div>
+                        </dd>
+                    </dl>
+                    <div class="p reference"><span class="bold">Reference: </span>Li, Yifan, et al. "Metabolic engineering of <i>Escherichia coli</i> using CRISPR&ndash;Cas9 meditated genome editing." Metabolic engineering 31 (2015): 13-21.</div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
+{{NKU_China/footer}}

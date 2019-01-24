@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">   
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/share.css">
+    <link rel="stylesheet" href="css/local.css">
+    <script title="jquery.js" src="js/jquery-3.1.0.min.js"></script>
+    <script title="jquery-ui.js" src="js/jquery-ui.min.js"></script>
+    <script title="bootstrap.js" src="js/bootstrap.min.js"></script>
+    <script title="modernizr.js" src="js/modernizr.js"></script>
+    <script title="particles.js" src="js/particles.min.js"></script>
+    <script>
+        var rem = Number($('html').css('font-size').replace('px', ''));
+        function log(value) { console.log(value); }
+        function particles() { $('#particles-js').toggle(); }
+        function adjust_figure(scale) {
+            $('figure').each(
+                function (index, value) {
+                    var max_width = $(value).find('span').width() / rem * scale + 'rem';
+                    $(value).css('max-width', max_width);
+                }
+            )
+        }
+    </script>
+
+    <!--separatrix-->
+    <style>
+        .main#collaborations {
+            padding: 0 8vw;
+            padding-bottom: 10vh;
+            line-height: 1.25;
+        }
+
+        #description .h1 {
+        }
+
+        .main > img {
+            width: 100%;
+        }
+
+        .main div.h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: left;
+            color: cyan;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            font-family: Pacifico;
+        }
+
+        .main .p, .main dl {
+            font-size: 1.2rem;
+        }
+    </style>
+    <style>
+        section {
+            margin: 3rem 0;
+        }
+
+        #collaborations section .p, #collaborations section figure, #collaborations section dl {
+            margin: 1rem 0;
+        }
+
+        section figure {
+            margin: 1rem auto;
+        }
+
+        section figure img {
+            display: block;
+            margin: auto;
+            max-width: 100%;
+            max-height: calc(100vh - 5rem - 18px);
+            position: relative;
+            z-index: 3;
+            background-color: transparent;
+        }
+
+        section figcaption {
+            margin: 1rem 0;
+            font-size: 1rem;
+            text-align: center;
+            color: dodgerblue;
+        }
+    </style>
+    <script>
+        $(function () {
+            //particles();
+        })
+    </script>
+</head>
+<body id="dongzhuoer">
+    <div id="particles-js"></div>
+    <script src="js/particlesJS.js"></script>
+    <div class="main" id="collaborations">
+        <div class="h1">Collaborations</div>
+        <section>
+            <div class="h2 ui-state-active">Team TJUSLS_China</div>
+            
+            <div class="p">As a team with relatively insufficient experience, we have been actively seeking collaboration with other iGEM teams to discuss our projects and learn from their experience. Particularly, we have worked in close cooperation with iGEM 2015 Gold Medal team TJUSLS_China. Team TJUSLS_China is an iGEM team from College of Life Science, Tianjin University and it has been a team with outstanding performance They won one single gold award and two single nominations last year. Moreover, the campus of Tianjin University is adjacent to the campus of Nankai University, which made TJUSLS_China the team that we had the closest cooperation with.</div>
+            <figure>
+                <img src="../image/Collaborations/01.jpg">
+            </figure>
+            <div class="p">During this summer, we had several meetings to discuss our projects and share the problems that we had encountered. We had learnt a lot from each of those meetings and we believe that the projects of both parties have been promoted through the enthusiastic discussions.</div>
+            
+            <div class="p">Meanwhile, we have provided them with fluorescence microscopy as well as necessary training and instructions according to the requirements of their experiment. They obtained delicate pictures and further confirmed their results using the microscopy that we provided.</div>
+            <figure>
+                <img src="../image/Collaborations/02.png">
+            </figure>
+        </section>
+        <section>
+            <div class="h2 ui-state-active">Team Tianjin</div>
+            <div class="p">iGEM team Tianjin comes from School of Chemical Engineering and Technology, Tianjin University. Their project this year aims to solve the problem of polyethylene terephthalate (PET) pollution using biodegradation method by express an enzyme that is capable of efficiently degrade PET in various species of model microorganisms. Besides <i>Escherichia coli</i> and yeast, they also asked as for strains of <i>Pseudomonas putida</i> and <i>Pseudomonas aeruginosa</i> and corresponding expression vectors, expecting to express the PET degradation enzyme in more chassis organisms. We provided the strains and materials they asked for as well as necessary instructions.</div>
+            <figure>
+                <img src="../image/Collaborations/03.png">
+            </figure>
+        </section>
+        <section>
+            <div class="h2 ui-state-active">Team HFUT-China &amp; SJTU_China</div>
+            <div class="p">
+                This year, we also helped iGEM Teams HFUT-China and SJTU_China test their software.
+                Team HFUT-China designed a piece of software used for construction of synthetic biology devices and analysis of gene relationship. The functions of this software are relatively simple yet practical. However, we have still discovered some obvious bugs by actually using this software. For example, the scroll bar could not function properly. Also, the position of the navigation bar was incorrect, which greatly affected the normal operation of the software. Meanwhile, we suggested them to increase the quantity of the data in the background database as well as improve the quality of the data. Moreover, we suggested that the real-time updating capability of their database should be enhanced.
+            </div>
+            <div class="p">
+                Team SJTU_China designed a piece of software used for laboratory management and instant communication. The design style of this software is natural and delicate and the systems of laboratory material management and instant communication could very well meet the requirements of iGEM teams. When we actually tried out this software, however, we still discovered some problems. For example, in order to use the instant communication function of this software, users must register on service offered by certain commercial companies first, which would presumably lead to the disclosure of personal information.
+            </div>
+            <div class="p">
+                We have submitted reports on user experience to both of the teams.
+            </div>
+            <figure>
+                <img src="../image/Collaborations/04.png">
+            </figure>
+        </section>
+        <section>
+            <div class="h2 ui-state-active">Team HUST_China</div>
+            <div class="p">Many iGEM teams have participated in the Interlab Study this year. Unfortunately, however, materials from the 2016 Interlab Kit such as plasmids failed to function effectively due to problems in the manufacture, transportation, storage and experiment process. Team HUST_China was encountered with such problem. Due to some unknown issues, they failed to successfully transform the plasmid for Positive Control group into <i>Escherichia coli</i> DH5<U+00A6><c1> and they turned to us for assistance. After we had learnt their situation, we immediately cultured the Positive Control strain that we had successfully transformed and send the plasmid they had required to them. With our prompt help, team HUST_China eventually obtained the Positive Group strain.</div>
+                    
+        </section>
+        <section>
+            <div class="h2 ui-state-active">Team JSNU_China</div>
+            <div class="p">This year is the first year that team JSNU_China participates in the iGEM Competition and we have had a close cooperation with them. We have provided them with detailed suggestions on composition of team members, selection of project focus and establishment of their team wiki etc.</div>
+                  
+        </section>
+        <section>
+            <div class="h2 ui-state-active">Team NAU_China</div>
+            <div class="p">
+                One part of the project of our team this year was to design AI-2 Response Device that could respond to different concentration of environmental AI-2. As a result, we could test the regulation ability of AI-2 Controllers by directly measuring the GFP expression. In this part of our project, we had the honor to receive significant help from iGEM Team NAU_China on mathematical modelling.
+            </div>
+            <figure>
+                <img src="../image/Collaborations/05.png" style="background-color:white;">
+            </figure>
+        </section>
+        <section>
+            <div class="h2 ui-state-active">Others</div>
+            <div class="p">Meanwhile we have also participated in the questionnaire investigation of multiple teams (listed below) and provided suggestions and helpful feedbacks to them.</div>
+            <dl>
+                <dt>SJTU_China</dt>
+                <dd>https://www.surveymonkey.com/r/7H6T6S3</dd>
+                <dt>XMU_China</dt>
+                <dd>http://www.sojump.com/jq/9049617.aspx</dd>
+                <dt>HUST_China</dt>
+                <dd>https://www.sojump.hk/jq/9256153.aspx</dd>
+                <dt>Jilin_China</dt>
+                <dd>https://zh.surveymonkey.com/r/RLC7Z57</dd>
+                <dt>UCAS</dt>
+                <dd>https://www.surveymonkey.com/r/2DQBB5T</dd>
+                <dt>AHUT_China</dt>
+                <dd>https://www.surveymonkey.com/r/YHTHGS6</dd>
+                <dt>FAFU_China</dt>
+                <dd>https://www.sojump.hk/jq/9078324.aspx</dd>
+                <dt>HFUT_China</dt>
+                <dd>https://docs.google.com/forms/d/e/1FAIpQLSdNi0gchSaekJnI6UrSIO20mKYI_0PQGhItYtd3XuUbjj19Fw/viewform</dd>
+                <dt>SUSTech</dt>
+                <dd>https://sojump.com/m/9947898.aspx</dd>
+            </dl>
+        </section>
+    </div>
+</body>
+</html>
+{{NKU_China/footer}}

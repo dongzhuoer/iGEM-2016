@@ -1,0 +1,974 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     37677,        966]
+NotebookOptionsPosition[     37203,        946]
+NotebookOutlinePosition[     37576,        962]
+CellTagsIndexPosition[     37533,        959]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"Consumer3", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"kin_", ",", "kout_", ",", "kp_"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"Lsr\[CapitalKappa]_", ",", "LsrACDB_"}], "}"}]}], "]"}], ":=", 
+   "\[IndentingNewLine]", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"AI2in", ",", "AI2out", ",", 
+       RowBox[{"dt", "=", "1"}]}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"AI2in", "[", "0", "]"}], "=", "0"}], ";", 
+      RowBox[{
+       RowBox[{"AI2out", "[", "0", "]"}], "=", "1"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Do", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{"AI2in", "[", "i", "]"}], "=", 
+          RowBox[{
+           RowBox[{"AI2in", "[", 
+            RowBox[{"i", "-", "1"}], "]"}], "+", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"kin", "*", 
+               RowBox[{"LsrACDB", "[", 
+                RowBox[{"i", "-", "1"}], "]"}], "*", 
+               RowBox[{"AI2out", "[", 
+                RowBox[{"i", "-", "1"}], "]"}]}], "-", 
+              RowBox[{"kout", "*", 
+               RowBox[{"AI2in", "[", 
+                RowBox[{"i", "-", "1"}], "]"}]}], "-", 
+              RowBox[{"kp", "*", 
+               RowBox[{"Lsr\[CapitalKappa]", "[", 
+                RowBox[{"i", "-", "1"}], "]"}], "*", 
+               RowBox[{"AI2in", "[", 
+                RowBox[{"i", "-", "1"}], "]"}]}]}], ")"}], "*", "dt"}]}]}], 
+         ";", " ", 
+         RowBox[{
+          RowBox[{"AI2out", "[", "i", "]"}], "=", 
+          RowBox[{
+           RowBox[{"AI2out", "[", 
+            RowBox[{"i", "-", "1"}], "]"}], "+", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"-", "kin"}], "*", 
+               RowBox[{"LsrACDB", "[", 
+                RowBox[{"i", "-", "1"}], "]"}], "*", 
+               RowBox[{"AI2out", "[", 
+                RowBox[{"i", "-", "1"}], "]"}]}], "+", 
+              RowBox[{"kout", "*", 
+               RowBox[{"AI2in", "[", 
+                RowBox[{"i", "-", "1"}], "]"}]}]}], ")"}], "*", "dt"}]}]}]}], 
+        "\[IndentingNewLine]", ",", 
+        RowBox[{"{", 
+         RowBox[{"i", ",", 
+          RowBox[{"Floor", "[", 
+           RowBox[{"270", "/", "dt"}], "]"}]}], "}"}]}], "]"}], ";", 
+      "\[IndentingNewLine]", "AI2out"}]}], "]"}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Ki", "=", "0.9"}], ";", 
+  RowBox[{"Knat", "=", "0.1"}], ";", 
+  RowBox[{"kd", "=", "0.02"}], ";", 
+  RowBox[{"\[Mu]", "=", "0.0044"}], ";", 
+  RowBox[{"dt", "=", "1"}], ";", 
+  RowBox[{"iOD600", "=", " ", "0.5"}], ";", 
+  RowBox[{"OD600", "=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"0.5", 
+      SuperscriptBox["\[ExponentialE]", 
+       RowBox[{"\[Mu]", " ", "#"}]]}], ")"}], "&"}]}], ";", 
+  RowBox[{
+   RowBox[{"Lsr\[CapitalKappa]", "[", "0", "]"}], "=", "0"}], ";", 
+  RowBox[{
+   RowBox[{"LsrACDB", "[", "0", "]"}], "=", "0"}], ";", 
+  RowBox[{"IPTGK", "=", "1"}], ";", 
+  RowBox[{"IPTGACDB", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Do", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"Lsr\[CapitalKappa]", "[", "i", "]"}], "=", 
+       RowBox[{
+        RowBox[{"Lsr\[CapitalKappa]", "[", 
+         RowBox[{"i", "-", "1"}], "]"}], "+", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"Knat", "+", 
+              RowBox[{"Ki", "*", "IPTGK"}]}], ")"}], "*", 
+            RowBox[{"OD600", "[", 
+             RowBox[{"i", "-", "1"}], "]"}]}], "-", 
+           RowBox[{"kd", "*", 
+            RowBox[{"Lsr\[CapitalKappa]", "[", 
+             RowBox[{"i", "-", "1"}], "]"}]}]}], ")"}], "*", "dt"}]}]}], ";", 
+      RowBox[{
+       RowBox[{"LsrACDB", "[", "i", "]"}], "=", 
+       RowBox[{
+        RowBox[{"LsrACDB", "[", 
+         RowBox[{"i", "-", "1"}], "]"}], "+", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"Knat", "+", 
+              RowBox[{"Ki", "*", "IPTGACDB"}]}], ")"}], "*", 
+            RowBox[{"OD600", "[", 
+             RowBox[{"i", "-", "1"}], "]"}]}], "-", 
+           RowBox[{"kd", "*", 
+            RowBox[{"LsrACDB", "[", 
+             RowBox[{"i", "-", "1"}], "]"}]}]}], ")"}], "*", "dt"}]}]}], 
+      ";"}], "\[IndentingNewLine]", ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", 
+       RowBox[{"Floor", "[", 
+        RowBox[{"270", "/", "dt"}], "]"}]}], "}"}]}], "]"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"scale", "=", "3"}], ";", 
+  RowBox[{"idealpara", "=", 
+   RowBox[{"{", 
+    RowBox[{"0.008", ",", "0.045", ",", "0.006"}], "}"}]}], ";", " ", 
+  RowBox[{"range", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"0", ",", "#"}], "}"}], "&"}], "/@", "idealpara"}], "*", 
+    "scale"}]}], ";", 
+  RowBox[{"data", "=", 
+   RowBox[{"SimulateData", "[", 
+    RowBox[{"Consumer3", ",", "idealpara", ",", 
+     RowBox[{"{", 
+      RowBox[{"Lsr\[CapitalKappa]", ",", "LsrACDB"}], "}"}], ",", 
+     RowBox[{"Range", "[", 
+      RowBox[{"0", ",", "270", ",", "30"}], "]"}], ",", "0", ",", "0"}], 
+    "]"}]}], ";"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.682227402398695*^9, 3.682227431493044*^9}, {
+   3.6822274693130116`*^9, 3.6822274717710085`*^9}, {3.6822278842783165`*^9, 
+   3.6822279538295083`*^9}, {3.682228098362711*^9, 3.682228165444914*^9}, {
+   3.6822422102654934`*^9, 3.6822422121566167`*^9}, 3.682242716672301*^9, {
+   3.682242748707738*^9, 3.682242788265145*^9}, {3.6822431049623365`*^9, 
+   3.6822431134972963`*^9}, {3.682243522842994*^9, 3.6822435516977153`*^9}, {
+   3.6822438926437855`*^9, 3.6822439180591154`*^9}, {3.6822439577402725`*^9, 
+   3.6822441270534377`*^9}, {3.6822441690795083`*^9, 
+   3.6822444457057543`*^9}, {3.6822444889297066`*^9, 
+   3.6822445115479326`*^9}, {3.682244544804946*^9, 3.6822446681256533`*^9}, {
+   3.682244822050463*^9, 3.682244925653201*^9}, {3.6822449745311418`*^9, 
+   3.6822450293580885`*^9}, {3.6822450750561085`*^9, 3.682245113794509*^9}, 
+   3.6822451744043045`*^9, {3.682245228585044*^9, 3.6822452370214443`*^9}, {
+   3.682245273774721*^9, 3.6822454743568363`*^9}, {3.682245528319188*^9, 
+   3.6822455419054017`*^9}, 3.6822459274730954`*^9, {3.682246434323589*^9, 
+   3.6822465053705435`*^9}, {3.6822466175850115`*^9, 3.682246637601878*^9}, {
+   3.6822468344515343`*^9, 3.6822469128443604`*^9}, {3.682246950455783*^9, 
+   3.6822471165784893`*^9}, {3.682248600348916*^9, 3.6822487104314127`*^9}, {
+   3.68224875092203*^9, 3.682248894639685*^9}, {3.6822490089125385`*^9, 
+   3.6822491289085703`*^9}, {3.6822491844787173`*^9, 3.682249191452815*^9}, {
+   3.6822493328827343`*^9, 3.682249341193734*^9}, {3.682249427831867*^9, 
+   3.682249436969516*^9}, {3.682249806449876*^9, 3.6822498752866163`*^9}, {
+   3.6822499233918247`*^9, 3.6822501087220097`*^9}, {3.682250248049582*^9, 
+   3.6822504254218826`*^9}, {3.6822504672646933`*^9, 
+   3.6822504759379263`*^9}, {3.6822505110323753`*^9, 3.6822505971631365`*^9}, 
+   3.682250657658377*^9, {3.682250689180338*^9, 3.682250733250989*^9}, {
+   3.682250787603654*^9, 3.682250926523935*^9}, 3.6822509593912153`*^9, {
+   3.682250997679068*^9, 3.682251050033984*^9}, {3.682251110792905*^9, 
+   3.682251128848318*^9}, {3.6822511594616385`*^9, 3.682251352574136*^9}, {
+   3.6822513853998146`*^9, 3.682251403394617*^9}, {3.682251441500103*^9, 
+   3.6822514426380997`*^9}, {3.6822515078854313`*^9, 
+   3.6822515985940404`*^9}, {3.6822517685427017`*^9, 
+   3.6822517726086655`*^9}, {3.6822518538268633`*^9, 
+   3.6822518902631955`*^9}, {3.682251922581933*^9, 3.682251950952573*^9}, {
+   3.6822521112117834`*^9, 3.6822522225469756`*^9}, {3.6822522568325024`*^9, 
+   3.682252409879964*^9}, {3.6822525157998466`*^9, 3.682252538831666*^9}, {
+   3.682252636991997*^9, 3.6822526371910725`*^9}, {3.682252747254916*^9, 
+   3.6822527775397735`*^9}, {3.68225290732041*^9, 3.6822529075513573`*^9}, {
+   3.6822548400527153`*^9, 3.682254916232544*^9}, 3.682255027820542*^9, {
+   3.6822550896562386`*^9, 3.682255136170508*^9}, {3.682255204182043*^9, 
+   3.6822553074546666`*^9}, {3.682255338993178*^9, 3.6822553960863295`*^9}, {
+   3.6822554642920694`*^9, 3.682255484056706*^9}, {3.6822555306494784`*^9, 
+   3.6822556898359156`*^9}, {3.6822557219788046`*^9, 
+   3.6822557475992203`*^9}, {3.682255813614868*^9, 3.682255813773927*^9}, {
+   3.6822558698185883`*^9, 3.6822558700507975`*^9}, {3.6822917774017973`*^9, 
+   3.6822917932467823`*^9}, 3.6822918524101505`*^9, {3.6822920607082*^9, 
+   3.6822920690347652`*^9}, {3.682292120080346*^9, 3.682292251809739*^9}, {
+   3.6822923940734234`*^9, 3.6822924479276896`*^9}, {3.682292482166444*^9, 
+   3.6822924987157297`*^9}, {3.6822926178651624`*^9, 3.682292632102314*^9}, {
+   3.682292664082486*^9, 3.6822927487242126`*^9}, {3.6822927857107916`*^9, 
+   3.6822928078077836`*^9}, {3.6822928790779023`*^9, 
+   3.6822929339580383`*^9}, {3.6822929770070844`*^9, 
+   3.6822930635513573`*^9}, {3.6822963881109886`*^9, 
+   3.6822965758279333`*^9}, {3.682296654566143*^9, 3.682296884006487*^9}, {
+   3.6822969325955124`*^9, 3.6822970002461777`*^9}, {3.682297067870493*^9, 
+   3.682297107870386*^9}, {3.682297239736766*^9, 3.6822972642540665`*^9}, {
+   3.682297357504086*^9, 3.6822974273749933`*^9}, {3.682297522959864*^9, 
+   3.68229760989137*^9}, {3.6822979065923767`*^9, 3.6822979181387854`*^9}, {
+   3.6822979576239777`*^9, 3.682297979657997*^9}, {3.6822980255406446`*^9, 
+   3.6822981036191845`*^9}, {3.68229820104916*^9, 3.682298213944068*^9}, 
+   3.6822982721275773`*^9, {3.6822983155569572`*^9, 3.6822983923193073`*^9}, {
+   3.6822987919987016`*^9, 3.6822988110758176`*^9}, {3.6822988603809247`*^9, 
+   3.682298860696511*^9}, {3.6822988978595905`*^9, 3.6822990234048767`*^9}, 
+   3.682299120185583*^9, {3.682299167115694*^9, 3.682299398429607*^9}, {
+   3.682299474445289*^9, 3.682299551985682*^9}, {3.6822995903082113`*^9, 
+   3.6822995915195303`*^9}, {3.6822996275152817`*^9, 3.68229967726073*^9}, {
+   3.68229971347371*^9, 3.68229976502229*^9}, {3.6822998206114607`*^9, 
+   3.6822998380774465`*^9}, {3.6822998914520426`*^9, 3.682299958838668*^9}, {
+   3.6822999985507436`*^9, 3.6823000219324045`*^9}, {3.682300202729178*^9, 
+   3.6823003360774407`*^9}, {3.6823003886976795`*^9, 
+   3.6823004175868874`*^9}, {3.68230045751062*^9, 3.6823005663685026`*^9}, {
+   3.682300597352423*^9, 3.6823005976054354`*^9}, {3.682300630015526*^9, 
+   3.682300709759652*^9}, 3.682300763937723*^9, {3.682302382234045*^9, 
+   3.6823024383696613`*^9}, {3.68230250254138*^9, 3.68230252795582*^9}, {
+   3.6823030820516143`*^9, 3.682303099820732*^9}, {3.682303241184059*^9, 
+   3.682303274288717*^9}, 3.6823033253993907`*^9, {3.682303372274452*^9, 
+   3.6823033918486834`*^9}, {3.682303423370592*^9, 3.6823034423933372`*^9}, {
+   3.6823035075646906`*^9, 3.6823035597317495`*^9}, {3.6823037555447407`*^9, 
+   3.6823037735999217`*^9}, {3.682303850277754*^9, 3.682303878566103*^9}, {
+   3.6823039696578197`*^9, 3.682303977864684*^9}, {3.682304012592846*^9, 
+   3.6823040180328426`*^9}, {3.6823040611337957`*^9, 3.682304247049721*^9}, {
+   3.682304432349921*^9, 3.682304432786751*^9}, {3.6823044700868554`*^9, 
+   3.6823044927917643`*^9}, {3.6823045343141394`*^9, 3.682304563766735*^9}, {
+   3.682304635062331*^9, 3.682304638651932*^9}, {3.6823048118868217`*^9, 
+   3.682304832611142*^9}, {3.6823049719378443`*^9, 3.682304997441433*^9}, {
+   3.6823079578875923`*^9, 3.6823080441890745`*^9}, {3.682308150466089*^9, 
+   3.682308158407013*^9}, {3.682308412460356*^9, 3.682308438833558*^9}, {
+   3.68230848330823*^9, 3.682308494023941*^9}, {3.682308526954073*^9, 
+   3.682308745452236*^9}, {3.6823087899373803`*^9, 3.6823089356456165`*^9}, {
+   3.6823090184987636`*^9, 3.682309052348977*^9}, {3.682309179069994*^9, 
+   3.6823091805614347`*^9}, {3.6823092783952465`*^9, 
+   3.6823093097706966`*^9}, {3.6823094004509335`*^9, 
+   3.6823095560630336`*^9}, {3.6823096216012964`*^9, 
+   3.6823096564500155`*^9}, {3.682309735739143*^9, 3.682310045747265*^9}, {
+   3.6823101647247095`*^9, 3.6823101871774387`*^9}, {3.682310221562287*^9, 
+   3.6823102359532223`*^9}, {3.682310721106862*^9, 3.6823108840307612`*^9}, {
+   3.6823109185387516`*^9, 3.6823109661858816`*^9}, {3.682310999833888*^9, 
+   3.6823110244792066`*^9}, {3.6823111511448383`*^9, 
+   3.6823111513302374`*^9}, {3.6823111821858616`*^9, 
+   3.6823111824740815`*^9}, {3.682312014150755*^9, 3.682312070780383*^9}, {
+   3.6823123278595114`*^9, 3.6823124105856934`*^9}, {3.6823124533249846`*^9, 
+   3.6823124989630165`*^9}, {3.682312547146017*^9, 3.68231256164854*^9}, 
+   3.682312632085226*^9, {3.6823126675654507`*^9, 3.6823127707376814`*^9}, 
+   3.6823128031340775`*^9, {3.6823128335234976`*^9, 3.682312844716038*^9}, {
+   3.682312876262478*^9, 3.682312876988078*^9}, 3.6823129156766696`*^9, {
+   3.6823130144202204`*^9, 3.682313063524732*^9}, {3.6823131053943214`*^9, 
+   3.6823131695448647`*^9}, {3.6823683927523403`*^9, 
+   3.6823683955381784`*^9}, {3.682369703971007*^9, 3.6823697418418903`*^9}, {
+   3.68237012861969*^9, 3.68237015508136*^9}, 3.682393774395153*^9, {
+   3.682469555693516*^9, 3.6824695717620955`*^9}, {3.682469627772354*^9, 
+   3.6824696361985283`*^9}, {3.6824696898123646`*^9, 
+   3.6824697158195543`*^9}, {3.6824697594527087`*^9, 
+   3.6824697855199723`*^9}, {3.68247005672946*^9, 3.6824701164507675`*^9}, {
+   3.682470176207197*^9, 3.682470182043478*^9}, {3.6824702335976763`*^9, 
+   3.6824702495957484`*^9}, {3.6824712636254888`*^9, 
+   3.6824712686924267`*^9}, {3.68247188710964*^9, 3.682471899770091*^9}, {
+   3.682471980884239*^9, 3.6824719836864448`*^9}, {3.6824720278188677`*^9, 
+   3.6824720790126963`*^9}, {3.6824724554178677`*^9, 
+   3.6824725115602803`*^9}, {3.682472639885249*^9, 3.682472811933137*^9}, {
+   3.682472850873344*^9, 3.682472904894494*^9}, {3.6824729998419647`*^9, 
+   3.682473061599289*^9}, {3.6824730981554384`*^9, 3.682473117454144*^9}, {
+   3.6824732118571367`*^9, 3.682473261750532*^9}, {3.6824733066199703`*^9, 
+   3.6824733143822503`*^9}, {3.682479737970812*^9, 3.6824797381357555`*^9}, {
+   3.682489511273756*^9, 3.6824895213945465`*^9}, {3.6824896038192315`*^9, 
+   3.6824896039877887`*^9}, {3.6824896875747213`*^9, 3.6824896879444*^9}, {
+   3.6824898103714523`*^9, 3.682489810619006*^9}, {3.682489989546209*^9, 
+   3.6824899898778753`*^9}, {3.6824901059887743`*^9, 
+   3.6824901070916376`*^9}, {3.6824903223161077`*^9, 
+   3.6824903224692802`*^9}, {3.6824903753533897`*^9, 
+   3.6824903758333025`*^9}, {3.682490528520957*^9, 3.6824905322586613`*^9}, {
+   3.6824908085222445`*^9, 3.682490809492186*^9}, {3.6824915500279784`*^9, 
+   3.682491557836214*^9}, {3.682491874507081*^9, 3.6824918749071336`*^9}, {
+   3.6825084396444597`*^9, 3.6825084400309844`*^9}, {3.6825088357473354`*^9, 
+   3.682508836147293*^9}, {3.6825125933938084`*^9, 3.682512597583291*^9}, 
+   3.682513673786899*^9, {3.682557527869197*^9, 3.682557548972745*^9}, {
+   3.6825575792424965`*^9, 3.6825576159207983`*^9}, {3.6825577103207498`*^9, 
+   3.6825577466781187`*^9}, {3.6825578978733845`*^9, 3.6825579011925287`*^9}, 
+   3.682558952367983*^9, {3.6825622006528926`*^9, 3.682562315243535*^9}, {
+   3.682562630411524*^9, 3.6825627179404817`*^9}, {3.6825628053067226`*^9, 
+   3.68256281471498*^9}, {3.682814314217307*^9, 3.6828143296384573`*^9}, {
+   3.6828277007831573`*^9, 3.68282770227981*^9}, {3.6828277809552364`*^9, 
+   3.6828277827505617`*^9}, {3.6828278156953464`*^9, 3.682827822993533*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"NumberForm", "[", 
+    RowBox[{
+     RowBox[{"SimulatePartitionFit", "[", 
+      RowBox[{
+       RowBox[{"Range", "[", 
+        RowBox[{"0", ",", "270", ",", "30"}], "]"}], ",", "Consumer3", ",", 
+       "idealpara", ",", 
+       RowBox[{"{", 
+        RowBox[{"Lsr\[CapitalKappa]", ",", "LsrACDB"}], "}"}], ",", "#", ",", 
+       "10", ",", 
+       FractionBox["1", "3"], ",", "3"}], "]"}], ",", "16"}], "]"}], "&"}], "/@", 
+  RowBox[{"Range", "[", 
+   RowBox[{"3", ",", "10"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.682827737933448*^9, 3.682827770592263*^9}, {
+  3.682827828270878*^9, 3.682827861349251*^9}, {3.682829091839965*^9, 
+  3.682829109622229*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TagBox[
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\<\"total\"\>", "\[Rule]", 
+       InterpretationBox["\<\"2.434446707845035\"\>",
+        2.4344467078450354`,
+        AutoDelete->True]}], ",", 
+      RowBox[{"\<\"error\"\>", "\[Rule]", 
+       InterpretationBox["\<\"1.610891245271264\"\>",
+        1.610891245271264,
+        AutoDelete->True]}], ",", 
+      RowBox[{"\<\"\\!\\(\\*SuperscriptBox[\\(R\\), \\(2\\)]\\)\"\>", 
+       "\[Rule]", 
+       InterpretationBox["\<\"0.9999999377598\"\>",
+        0.9999999377598003,
+        AutoDelete->True]}], ",", 
+      RowBox[{"\<\"len\"\>", "\[Rule]", 
+       InterpretationBox["\<\"3\"\>",
+        3,
+        Editable->False]}], ",", 
+      RowBox[{"\<\"times\"\>", "\[Rule]", 
+       InterpretationBox["\<\"10\"\>",
+        10,
+        Editable->False]}], ",", 
+      RowBox[{"\<\"trim\"\>", "\[Rule]", 
+       FractionBox[
+        InterpretationBox["\<\"1\"\>",
+         1,
+         Editable->False], 
+        InterpretationBox["\<\"3\"\>",
+         3,
+         Editable->False]]}], ",", 
+      RowBox[{"\<\"scale\"\>", "\[Rule]", 
+       InterpretationBox["\<\"3\"\>",
+        3,
+        Editable->False]}]}], "\[RightAssociation]"}],
+    NumberForm[#, 16]& ], ",", 
+   TagBox[
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\<\"total\"\>", "\[Rule]", 
+       InterpretationBox["\<\"7.852493153965567\"\>",
+        7.852493153965567,
+        AutoDelete->True]}], ",", 
+      RowBox[{"\<\"error\"\>", "\[Rule]", 
+       InterpretationBox["\<\"1.017600092713601\"\>",
+        1.0176000927136009`,
+        AutoDelete->True]}], ",", 
+      RowBox[{"\<\"\\!\\(\\*SuperscriptBox[\\(R\\), \\(2\\)]\\)\"\>", 
+       "\[Rule]", 
+       InterpretationBox["\<\"0.99999999977612\"\>",
+        0.99999999977612,
+        AutoDelete->True]}], ",", 
+      RowBox[{"\<\"len\"\>", "\[Rule]", 
+       InterpretationBox["\<\"4\"\>",
+        4,
+        Editable->False]}], ",", 
+      RowBox[{"\<\"times\"\>", "\[Rule]", 
+       InterpretationBox["\<\"10\"\>",
+        10,
+        Editable->False]}], ",", 
+      RowBox[{"\<\"trim\"\>", "\[Rule]", 
+       FractionBox[
+        InterpretationBox["\<\"1\"\>",
+         1,
+         Editable->False], 
+        InterpretationBox["\<\"3\"\>",
+         3,
+         Editable->False]]}], ",", 
+      RowBox[{"\<\"scale\"\>", "\[Rule]", 
+       InterpretationBox["\<\"3\"\>",
+        3,
+        Editable->False]}]}], "\[RightAssociation]"}],
+    NumberForm[#, 16]& ], ",", 
+   TagBox[
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\<\"total\"\>", "\[Rule]", 
+       InterpretationBox["\<\"18.93479638660529\"\>",
+        18.934796386605292`,
+        AutoDelete->True]}], ",", 
+      RowBox[{"\<\"error\"\>", "\[Rule]", 
+       InterpretationBox["\<\"1.371872330227961\"\>",
+        1.3718723302279612`,
+        AutoDelete->True]}], ",", 
+      RowBox[{"\<\"\\!\\(\\*SuperscriptBox[\\(R\\), \\(2\\)]\\)\"\>", 
+       "\[Rule]", 
+       InterpretationBox["\<\"0.999999961788866\"\>",
+        0.999999961788866,
+        AutoDelete->True]}], ",", 
+      RowBox[{"\<\"len\"\>", "\[Rule]", 
+       InterpretationBox["\<\"5\"\>",
+        5,
+        Editable->False]}], ",", 
+      RowBox[{"\<\"times\"\>", "\[Rule]", 
+       InterpretationBox["\<\"10\"\>",
+        10,
+        Editable->False]}], ",", 
+      RowBox[{"\<\"trim\"\>", "\[Rule]", 
+       FractionBox[
+        InterpretationBox["\<\"1\"\>",
+         1,
+         Editable->False], 
+        InterpretationBox["\<\"3\"\>",
+         3,
+         Editable->False]]}], ",", 
+      RowBox[{"\<\"scale\"\>", "\[Rule]", 
+       InterpretationBox["\<\"3\"\>",
+        3,
+        Editable->False]}]}], "\[RightAssociation]"}],
+    NumberForm[#, 16]& ], ",", 
+   TagBox[
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\<\"total\"\>", "\[Rule]", 
+       InterpretationBox["\<\"38.38012718442312\"\>",
+        38.38012718442312,
+        AutoDelete->True]}], ",", 
+      RowBox[{"\<\"error\"\>", "\[Rule]", 
+       InterpretationBox["\<\"1.293070851328372\"\>",
+        1.2930708513283717`,
+        AutoDelete->True]}], ",", 
+      RowBox[{"\<\"\\!\\(\\*SuperscriptBox[\\(R\\), \\(2\\)]\\)\"\>", 
+       "\[Rule]", 
+       InterpretationBox["\<\"0.999999971295058\"\>",
+        0.9999999712950582,
+        AutoDelete->True]}], ",", 
+      RowBox[{"\<\"len\"\>", "\[Rule]", 
+       InterpretationBox["\<\"6\"\>",
+        6,
+        Editable->False]}], ",", 
+      RowBox[{"\<\"times\"\>", "\[Rule]", 
+       InterpretationBox["\<\"10\"\>",
+        10,
+        Editable->False]}], ",", 
+      RowBox[{"\<\"trim\"\>", "\[Rule]", 
+       FractionBox[
+        InterpretationBox["\<\"1\"\>",
+         1,
+         Editable->False], 
+        InterpretationBox["\<\"3\"\>",
+         3,
+         Editable->False]]}], ",", 
+      RowBox[{"\<\"scale\"\>", "\[Rule]", 
+       InterpretationBox["\<\"3\"\>",
+        3,
+        Editable->False]}]}], "\[RightAssociation]"}],
+    NumberForm[#, 16]& ], ",", 
+   TagBox[
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\<\"total\"\>", "\[Rule]", 
+       InterpretationBox["\<\"70.61447838278207\"\>",
+        70.61447838278207,
+        AutoDelete->True]}], ",", 
+      RowBox[{"\<\"error\"\>", "\[Rule]", 
+       InterpretationBox["\<\"1.082828315177749\"\>",
+        1.0828283151777491`,
+        AutoDelete->True]}], ",", 
+      RowBox[{"\<\"\\!\\(\\*SuperscriptBox[\\(R\\), \\(2\\)]\\)\"\>", 
+       "\[Rule]", 
+       InterpretationBox["\<\"0.999999995941882\"\>",
+        0.9999999959418822,
+        AutoDelete->True]}], ",", 
+      RowBox[{"\<\"len\"\>", "\[Rule]", 
+       InterpretationBox["\<\"7\"\>",
+        7,
+        Editable->False]}], ",", 
+      RowBox[{"\<\"times\"\>", "\[Rule]", 
+       InterpretationBox["\<\"10\"\>",
+        10,
+        Editable->False]}], ",", 
+      RowBox[{"\<\"trim\"\>", "\[Rule]", 
+       FractionBox[
+        InterpretationBox["\<\"1\"\>",
+         1,
+         Editable->False], 
+        InterpretationBox["\<\"3\"\>",
+         3,
+         Editable->False]]}], ",", 
+      RowBox[{"\<\"scale\"\>", "\[Rule]", 
+       InterpretationBox["\<\"3\"\>",
+        3,
+        Editable->False]}]}], "\[RightAssociation]"}],
+    NumberForm[#, 16]& ], ",", 
+   TagBox[
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\<\"total\"\>", "\[Rule]", 
+       InterpretationBox["\<\"121.3681494395589\"\>",
+        121.36814943955889`,
+        AutoDelete->True]}], ",", 
+      RowBox[{"\<\"error\"\>", "\[Rule]", 
+       InterpretationBox["\<\"1.062330373135962\"\>",
+        1.0623303731359617`,
+        AutoDelete->True]}], ",", 
+      RowBox[{"\<\"\\!\\(\\*SuperscriptBox[\\(R\\), \\(2\\)]\\)\"\>", 
+       "\[Rule]", 
+       InterpretationBox["\<\"0.999999996781825\"\>",
+        0.9999999967818253,
+        AutoDelete->True]}], ",", 
+      RowBox[{"\<\"len\"\>", "\[Rule]", 
+       InterpretationBox["\<\"8\"\>",
+        8,
+        Editable->False]}], ",", 
+      RowBox[{"\<\"times\"\>", "\[Rule]", 
+       InterpretationBox["\<\"10\"\>",
+        10,
+        Editable->False]}], ",", 
+      RowBox[{"\<\"trim\"\>", "\[Rule]", 
+       FractionBox[
+        InterpretationBox["\<\"1\"\>",
+         1,
+         Editable->False], 
+        InterpretationBox["\<\"3\"\>",
+         3,
+         Editable->False]]}], ",", 
+      RowBox[{"\<\"scale\"\>", "\[Rule]", 
+       InterpretationBox["\<\"3\"\>",
+        3,
+        Editable->False]}]}], "\[RightAssociation]"}],
+    NumberForm[#, 16]& ], ",", 
+   TagBox[
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\<\"total\"\>", "\[Rule]", 
+       InterpretationBox["\<\"200.8414955930212\"\>",
+        200.84149559302125`,
+        AutoDelete->True]}], ",", 
+      RowBox[{"\<\"error\"\>", "\[Rule]", 
+       InterpretationBox["\<\"1.178949339005473\"\>",
+        1.178949339005473,
+        AutoDelete->True]}], ",", 
+      RowBox[{"\<\"\\!\\(\\*SuperscriptBox[\\(R\\), \\(2\\)]\\)\"\>", 
+       "\[Rule]", 
+       InterpretationBox["\<\"0.999999985455131\"\>",
+        0.9999999854551307,
+        AutoDelete->True]}], ",", 
+      RowBox[{"\<\"len\"\>", "\[Rule]", 
+       InterpretationBox["\<\"9\"\>",
+        9,
+        Editable->False]}], ",", 
+      RowBox[{"\<\"times\"\>", "\[Rule]", 
+       InterpretationBox["\<\"10\"\>",
+        10,
+        Editable->False]}], ",", 
+      RowBox[{"\<\"trim\"\>", "\[Rule]", 
+       FractionBox[
+        InterpretationBox["\<\"1\"\>",
+         1,
+         Editable->False], 
+        InterpretationBox["\<\"3\"\>",
+         3,
+         Editable->False]]}], ",", 
+      RowBox[{"\<\"scale\"\>", "\[Rule]", 
+       InterpretationBox["\<\"3\"\>",
+        3,
+        Editable->False]}]}], "\[RightAssociation]"}],
+    NumberForm[#, 16]& ], ",", 
+   TagBox[
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\<\"total\"\>", "\[Rule]", 
+       InterpretationBox["\<\"314.547367145592\"\>",
+        314.54736714559203`,
+        AutoDelete->True]}], ",", 
+      RowBox[{"\<\"error\"\>", "\[Rule]", 
+       InterpretationBox["\<\"1.041939401418579\"\>",
+        1.0419394014185794`,
+        AutoDelete->True]}], ",", 
+      RowBox[{"\<\"\\!\\(\\*SuperscriptBox[\\(R\\), \\(2\\)]\\)\"\>", 
+       "\[Rule]", 
+       InterpretationBox["\<\"0.999999998823097\"\>",
+        0.9999999988230973,
+        AutoDelete->True]}], ",", 
+      RowBox[{"\<\"len\"\>", "\[Rule]", 
+       InterpretationBox["\<\"10\"\>",
+        10,
+        Editable->False]}], ",", 
+      RowBox[{"\<\"times\"\>", "\[Rule]", 
+       InterpretationBox["\<\"10\"\>",
+        10,
+        Editable->False]}], ",", 
+      RowBox[{"\<\"trim\"\>", "\[Rule]", 
+       FractionBox[
+        InterpretationBox["\<\"1\"\>",
+         1,
+         Editable->False], 
+        InterpretationBox["\<\"3\"\>",
+         3,
+         Editable->False]]}], ",", 
+      RowBox[{"\<\"scale\"\>", "\[Rule]", 
+       InterpretationBox["\<\"3\"\>",
+        3,
+        Editable->False]}]}], "\[RightAssociation]"}],
+    NumberForm[#, 16]& ]}], "}"}]], "Output",
+ CellChangeTimes->{{3.682827840615606*^9, 3.6828278647221994`*^9}, 
+   3.682829888226053*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"result", "=", "%"}]], "Input",
+ CellChangeTimes->{{3.682829993745265*^9, 3.6828300010811296`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TagBox[
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\"\<total\>\"", "\[Rule]", 
+       InterpretationBox["\"\<2.434446707845035\>\"",
+        2.4344467078450354`,
+        AutoDelete->True]}], ",", 
+      RowBox[{"\"\<error\>\"", "\[Rule]", 
+       InterpretationBox["\"\<1.610891245271264\>\"",
+        1.610891245271264,
+        AutoDelete->True]}], ",", 
+      RowBox[{
+      "\"\<\\!\\(\\*SuperscriptBox[\\(R\\), \\(2\\)]\\)\>\"", "\[Rule]", 
+       InterpretationBox["\"\<0.9999999377598\>\"",
+        0.9999999377598003,
+        AutoDelete->True]}], ",", 
+      RowBox[{"\"\<len\>\"", "\[Rule]", 
+       InterpretationBox["\"\<3\>\"",
+        3,
+        Editable->False]}], ",", 
+      RowBox[{"\"\<times\>\"", "\[Rule]", 
+       InterpretationBox["\"\<10\>\"",
+        10,
+        Editable->False]}], ",", 
+      RowBox[{"\"\<trim\>\"", "\[Rule]", 
+       FractionBox[
+        InterpretationBox["\"\<1\>\"",
+         1,
+         Editable->False], 
+        InterpretationBox["\"\<3\>\"",
+         3,
+         Editable->False]]}], ",", 
+      RowBox[{"\"\<scale\>\"", "\[Rule]", 
+       InterpretationBox["\"\<3\>\"",
+        3,
+        Editable->False]}]}], "\[RightAssociation]"}],
+    NumberForm[#, 16]& ], ",", 
+   TagBox[
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\"\<total\>\"", "\[Rule]", 
+       InterpretationBox["\"\<7.852493153965567\>\"",
+        7.852493153965567,
+        AutoDelete->True]}], ",", 
+      RowBox[{"\"\<error\>\"", "\[Rule]", 
+       InterpretationBox["\"\<1.017600092713601\>\"",
+        1.0176000927136009`,
+        AutoDelete->True]}], ",", 
+      RowBox[{
+      "\"\<\\!\\(\\*SuperscriptBox[\\(R\\), \\(2\\)]\\)\>\"", "\[Rule]", 
+       InterpretationBox["\"\<0.99999999977612\>\"",
+        0.99999999977612,
+        AutoDelete->True]}], ",", 
+      RowBox[{"\"\<len\>\"", "\[Rule]", 
+       InterpretationBox["\"\<4\>\"",
+        4,
+        Editable->False]}], ",", 
+      RowBox[{"\"\<times\>\"", "\[Rule]", 
+       InterpretationBox["\"\<10\>\"",
+        10,
+        Editable->False]}], ",", 
+      RowBox[{"\"\<trim\>\"", "\[Rule]", 
+       FractionBox[
+        InterpretationBox["\"\<1\>\"",
+         1,
+         Editable->False], 
+        InterpretationBox["\"\<3\>\"",
+         3,
+         Editable->False]]}], ",", 
+      RowBox[{"\"\<scale\>\"", "\[Rule]", 
+       InterpretationBox["\"\<3\>\"",
+        3,
+        Editable->False]}]}], "\[RightAssociation]"}],
+    NumberForm[#, 16]& ], ",", 
+   TagBox[
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\"\<total\>\"", "\[Rule]", 
+       InterpretationBox["\"\<18.93479638660529\>\"",
+        18.934796386605292`,
+        AutoDelete->True]}], ",", 
+      RowBox[{"\"\<error\>\"", "\[Rule]", 
+       InterpretationBox["\"\<1.371872330227961\>\"",
+        1.3718723302279612`,
+        AutoDelete->True]}], ",", 
+      RowBox[{
+      "\"\<\\!\\(\\*SuperscriptBox[\\(R\\), \\(2\\)]\\)\>\"", "\[Rule]", 
+       InterpretationBox["\"\<0.999999961788866\>\"",
+        0.999999961788866,
+        AutoDelete->True]}], ",", 
+      RowBox[{"\"\<len\>\"", "\[Rule]", 
+       InterpretationBox["\"\<5\>\"",
+        5,
+        Editable->False]}], ",", 
+      RowBox[{"\"\<times\>\"", "\[Rule]", 
+       InterpretationBox["\"\<10\>\"",
+        10,
+        Editable->False]}], ",", 
+      RowBox[{"\"\<trim\>\"", "\[Rule]", 
+       FractionBox[
+        InterpretationBox["\"\<1\>\"",
+         1,
+         Editable->False], 
+        InterpretationBox["\"\<3\>\"",
+         3,
+         Editable->False]]}], ",", 
+      RowBox[{"\"\<scale\>\"", "\[Rule]", 
+       InterpretationBox["\"\<3\>\"",
+        3,
+        Editable->False]}]}], "\[RightAssociation]"}],
+    NumberForm[#, 16]& ], ",", 
+   TagBox[
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\"\<total\>\"", "\[Rule]", 
+       InterpretationBox["\"\<38.38012718442312\>\"",
+        38.38012718442312,
+        AutoDelete->True]}], ",", 
+      RowBox[{"\"\<error\>\"", "\[Rule]", 
+       InterpretationBox["\"\<1.293070851328372\>\"",
+        1.2930708513283717`,
+        AutoDelete->True]}], ",", 
+      RowBox[{
+      "\"\<\\!\\(\\*SuperscriptBox[\\(R\\), \\(2\\)]\\)\>\"", "\[Rule]", 
+       InterpretationBox["\"\<0.999999971295058\>\"",
+        0.9999999712950582,
+        AutoDelete->True]}], ",", 
+      RowBox[{"\"\<len\>\"", "\[Rule]", 
+       InterpretationBox["\"\<6\>\"",
+        6,
+        Editable->False]}], ",", 
+      RowBox[{"\"\<times\>\"", "\[Rule]", 
+       InterpretationBox["\"\<10\>\"",
+        10,
+        Editable->False]}], ",", 
+      RowBox[{"\"\<trim\>\"", "\[Rule]", 
+       FractionBox[
+        InterpretationBox["\"\<1\>\"",
+         1,
+         Editable->False], 
+        InterpretationBox["\"\<3\>\"",
+         3,
+         Editable->False]]}], ",", 
+      RowBox[{"\"\<scale\>\"", "\[Rule]", 
+       InterpretationBox["\"\<3\>\"",
+        3,
+        Editable->False]}]}], "\[RightAssociation]"}],
+    NumberForm[#, 16]& ], ",", 
+   TagBox[
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\"\<total\>\"", "\[Rule]", 
+       InterpretationBox["\"\<70.61447838278207\>\"",
+        70.61447838278207,
+        AutoDelete->True]}], ",", 
+      RowBox[{"\"\<error\>\"", "\[Rule]", 
+       InterpretationBox["\"\<1.082828315177749\>\"",
+        1.0828283151777491`,
+        AutoDelete->True]}], ",", 
+      RowBox[{
+      "\"\<\\!\\(\\*SuperscriptBox[\\(R\\), \\(2\\)]\\)\>\"", "\[Rule]", 
+       InterpretationBox["\"\<0.999999995941882\>\"",
+        0.9999999959418822,
+        AutoDelete->True]}], ",", 
+      RowBox[{"\"\<len\>\"", "\[Rule]", 
+       InterpretationBox["\"\<7\>\"",
+        7,
+        Editable->False]}], ",", 
+      RowBox[{"\"\<times\>\"", "\[Rule]", 
+       InterpretationBox["\"\<10\>\"",
+        10,
+        Editable->False]}], ",", 
+      RowBox[{"\"\<trim\>\"", "\[Rule]", 
+       FractionBox[
+        InterpretationBox["\"\<1\>\"",
+         1,
+         Editable->False], 
+        InterpretationBox["\"\<3\>\"",
+         3,
+         Editable->False]]}], ",", 
+      RowBox[{"\"\<scale\>\"", "\[Rule]", 
+       InterpretationBox["\"\<3\>\"",
+        3,
+        Editable->False]}]}], "\[RightAssociation]"}],
+    NumberForm[#, 16]& ], ",", 
+   TagBox[
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\"\<total\>\"", "\[Rule]", 
+       InterpretationBox["\"\<121.3681494395589\>\"",
+        121.36814943955889`,
+        AutoDelete->True]}], ",", 
+      RowBox[{"\"\<error\>\"", "\[Rule]", 
+       InterpretationBox["\"\<1.062330373135962\>\"",
+        1.0623303731359617`,
+        AutoDelete->True]}], ",", 
+      RowBox[{
+      "\"\<\\!\\(\\*SuperscriptBox[\\(R\\), \\(2\\)]\\)\>\"", "\[Rule]", 
+       InterpretationBox["\"\<0.999999996781825\>\"",
+        0.9999999967818253,
+        AutoDelete->True]}], ",", 
+      RowBox[{"\"\<len\>\"", "\[Rule]", 
+       InterpretationBox["\"\<8\>\"",
+        8,
+        Editable->False]}], ",", 
+      RowBox[{"\"\<times\>\"", "\[Rule]", 
+       InterpretationBox["\"\<10\>\"",
+        10,
+        Editable->False]}], ",", 
+      RowBox[{"\"\<trim\>\"", "\[Rule]", 
+       FractionBox[
+        InterpretationBox["\"\<1\>\"",
+         1,
+         Editable->False], 
+        InterpretationBox["\"\<3\>\"",
+         3,
+         Editable->False]]}], ",", 
+      RowBox[{"\"\<scale\>\"", "\[Rule]", 
+       InterpretationBox["\"\<3\>\"",
+        3,
+        Editable->False]}]}], "\[RightAssociation]"}],
+    NumberForm[#, 16]& ], ",", 
+   TagBox[
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\"\<total\>\"", "\[Rule]", 
+       InterpretationBox["\"\<200.8414955930212\>\"",
+        200.84149559302125`,
+        AutoDelete->True]}], ",", 
+      RowBox[{"\"\<error\>\"", "\[Rule]", 
+       InterpretationBox["\"\<1.178949339005473\>\"",
+        1.178949339005473,
+        AutoDelete->True]}], ",", 
+      RowBox[{
+      "\"\<\\!\\(\\*SuperscriptBox[\\(R\\), \\(2\\)]\\)\>\"", "\[Rule]", 
+       InterpretationBox["\"\<0.999999985455131\>\"",
+        0.9999999854551307,
+        AutoDelete->True]}], ",", 
+      RowBox[{"\"\<len\>\"", "\[Rule]", 
+       InterpretationBox["\"\<9\>\"",
+        9,
+        Editable->False]}], ",", 
+      RowBox[{"\"\<times\>\"", "\[Rule]", 
+       InterpretationBox["\"\<10\>\"",
+        10,
+        Editable->False]}], ",", 
+      RowBox[{"\"\<trim\>\"", "\[Rule]", 
+       FractionBox[
+        InterpretationBox["\"\<1\>\"",
+         1,
+         Editable->False], 
+        InterpretationBox["\"\<3\>\"",
+         3,
+         Editable->False]]}], ",", 
+      RowBox[{"\"\<scale\>\"", "\[Rule]", 
+       InterpretationBox["\"\<3\>\"",
+        3,
+        Editable->False]}]}], "\[RightAssociation]"}],
+    NumberForm[#, 16]& ], ",", 
+   TagBox[
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\"\<total\>\"", "\[Rule]", 
+       InterpretationBox["\"\<314.547367145592\>\"",
+        314.54736714559203`,
+        AutoDelete->True]}], ",", 
+      RowBox[{"\"\<error\>\"", "\[Rule]", 
+       InterpretationBox["\"\<1.041939401418579\>\"",
+        1.0419394014185794`,
+        AutoDelete->True]}], ",", 
+      RowBox[{
+      "\"\<\\!\\(\\*SuperscriptBox[\\(R\\), \\(2\\)]\\)\>\"", "\[Rule]", 
+       InterpretationBox["\"\<0.999999998823097\>\"",
+        0.9999999988230973,
+        AutoDelete->True]}], ",", 
+      RowBox[{"\"\<len\>\"", "\[Rule]", 
+       InterpretationBox["\"\<10\>\"",
+        10,
+        Editable->False]}], ",", 
+      RowBox[{"\"\<times\>\"", "\[Rule]", 
+       InterpretationBox["\"\<10\>\"",
+        10,
+        Editable->False]}], ",", 
+      RowBox[{"\"\<trim\>\"", "\[Rule]", 
+       FractionBox[
+        InterpretationBox["\"\<1\>\"",
+         1,
+         Editable->False], 
+        InterpretationBox["\"\<3\>\"",
+         3,
+         Editable->False]]}], ",", 
+      RowBox[{"\"\<scale\>\"", "\[Rule]", 
+       InterpretationBox["\"\<3\>\"",
+        3,
+        Editable->False]}]}], "\[RightAssociation]"}],
+    NumberForm[#, 16]& ]}], "}"}]], "Input"]
+},
+WindowSize->{1664, 976},
+WindowMargins->{{-8, Automatic}, {Automatic, 0}},
+Magnification:>1.1 Inherited,
+FrontEndVersion->"10.4 for Microsoft Windows (64-bit) (April 17, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 15636, 295, 293, "Input"],
+Cell[CellGroupData[{
+Cell[16219, 319, 708, 18, 48, "Input"],
+Cell[16930, 339, 10116, 300, 323, "Output"]
+}, Open  ]],
+Cell[27061, 642, 122, 2, 32, "Input"],
+Cell[27186, 646, 10013, 298, 314, "Input"]
+}
+]
+*)
+

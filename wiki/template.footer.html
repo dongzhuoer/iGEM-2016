@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">   
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/share.css">
+    <link rel="stylesheet" href="css/local.css">
+    <script title="jquery.js" src="js/jquery-3.1.0.min.js"></script>
+    <script title="jquery-ui.js" src="js/jquery-ui.min.js"></script>
+    <script title="bootstrap.js" src="js/bootstrap.min.js"></script>
+    <script title="modernizr.js" src="js/modernizr.js"></script>
+    <script title="particles.js" src="js/particles.min.js"></script>
+    <script>
+        var rem = Number($('html').css('font-size').replace('px', ''));
+        function log(value) { console.log(value); }
+        function particles() { $('#particles-js').toggle(); }
+        function adjust_figure(scale) {
+            $('figure').each(
+                function (index, value) {
+                    var max_width = $(value).find('span').width() / rem * scale + 'rem';
+                    $(value).css('max-width', max_width);
+                }
+            )
+        }
+    </script>
+
+    <!--separatrix-->
+    
+    <style>
+        .main#foot {
+            padding:5vh 15vw;
+            line-height: 1.42857143;
+            font-family:Raleway;
+            color:white;
+        }
+
+        .main#foot > div:first-child {
+            display: flex;
+            justify-content: space-around;
+            align-content: space-around;
+            flex-wrap: wrap;
+            background-color: transparent;
+        }
+
+        #foot div.p {
+            text-indent:0;
+        }
+    </style>
+    <style>
+        #foot .fooer-column > .p {
+            text-transform:uppercase;
+            font-weight:bold;
+            font-size:1.2rem;
+            text-align:left;
+        }
+
+        #sponsors {
+            width: 60%;
+        }
+
+        #image-wrapper {
+            
+        }
+
+        #sponsors img {
+            display:inline-block;
+            margin:1.5rem auto;
+            width: 40%;
+        }
+
+        #contact {
+            width: 35%;
+        }
+
+        #address div.p {
+            font-size:0.8rem;
+        }
+
+        #address span {
+            font-weight:bold;
+        }
+
+        #logo {
+            height:8rem;
+        }
+
+        #copyright.p {
+            margin-top:0.3rem;
+            text-align:center;
+            font-size: 0.7rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="main" id="foot">
+        <div>
+            <div id="sponsors" class="fooer-column">
+                <div class="p">sponsors</div>
+                <div id="image-wrapper">
+                    <img src="../image/footer/1.png">
+                    <img src="../image/footer/2.png">
+                    <img src="../image/footer/3.png">
+                    <img src="../image/footer/4.png">
+                </div>
+            </div>
+            <div id="contact" class="fooer-column">
+                <div class="p">contact us</div>
+                <img id="logo" src="../image/logo.png">
+                <div id="address">
+                    <div class="p"><span>Email:</span> iGEM_NKU_China@hotmail.com</div>
+                    <div class="p"><span>Website:</span> 2016.igem.org/Team:NKU_China</div>
+                    <div class="p">
+                        <span>Address:</span> Nankai University,<br>
+                        No.94 Weijin Road, Nankai District<br>
+                        Tianjin, P.R.China 300071
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="p" id="copyright">&copy; NKU_China IGEM - All rights reserved. Based on jQuery and bootstrap.</div>
+    </div>
+</body>
+</html>

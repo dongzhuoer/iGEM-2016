@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">   
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/share.css">
+    <link rel="stylesheet" href="css/local.css">
+    <script title="jquery.js" src="js/jquery-3.1.0.min.js"></script>
+    <script title="jquery-ui.js" src="js/jquery-ui.min.js"></script>
+    <script title="bootstrap.js" src="js/bootstrap.min.js"></script>
+    <script title="modernizr.js" src="js/modernizr.js"></script>
+    <script title="particles.js" src="js/particles.min.js"></script>
+    <script>
+        var rem = Number($('html').css('font-size').replace('px', ''));
+        function log(value) { console.log(value); }
+        function particles() { $('#particles-js').toggle(); }
+        function adjust_figure(scale) {
+            $('figure').each(
+                function (index, value) {
+                    var max_width = $(value).find('span').width() / rem * scale + 'rem';
+                    $(value).css('max-width', max_width);
+                }
+            )
+        }
+    </script>
+
+    <!--separatrix-->
+    <style>
+        .main#description {
+            padding:0 8vw;
+            padding-bottom:10vh;
+            line-height:1.25;
+        }
+
+        #description .h1 {
+        }
+
+        .main > img {
+            width:100%;
+        }
+
+        .main div.h2 {
+            font-size:2rem;
+            font-weight:bold;
+            text-align:left;
+            color:cyan;
+            padding:0.5rem 1rem;
+            border-radius:0.375rem;
+            font-family: Pacifico;
+        }
+
+        .main .p {
+            font-size:1.2rem;
+        }
+
+        #description .p {
+            font-family:Raleway;
+        }
+    </style>
+    <style>
+        section {
+            margin: 3rem 0;
+        }
+
+        #description section .p, #description section figure {
+            margin:1rem 0;
+        }
+
+        section figure {
+            margin:1rem auto;
+        }
+
+        section figure img {
+            display:block;
+            margin:auto;
+            max-width:100%;
+            max-height:calc(100vh - 5rem - 18px);
+            position:relative;
+            z-index:3;
+            background-color:white;
+        }        
+
+        section figcaption {
+            margin:1rem 0;
+            font-size:1rem;
+            text-align:center;
+            color:dodgerblue;
+        }
+
+        #description .section .h3 {
+            text-align: left;
+            font-size: 2rem;
+            color: dodgerblue;
+            margin: 4rem 0 0rem 2rem;
+        }
+
+        #description .section .h4 {
+            font-weight:normal;
+            font-family:'Times New Roman';
+            color:cyan;
+            font-size: 1.5rem;
+            margin: 2rem 0 0.5rem 0.5rem;
+        }
+
+        #description .section > .p, #description .section .accordion {
+            margin: 0.5rem;
+        }
+
+        #description .accordion-content {
+            font-size: 1.2rem;
+            padding: 1rem;
+        }
+
+        #description .accordion-content .p {
+            margin: 0.5rem;
+        }
+
+        #description .accordion-content ul {
+            margin: 0rem;
+        }
+
+        #description .accordion-content li {
+            margin: 0.5rem;
+            text-indent: 0;
+        }
+
+        #description .accordion-content img {
+            display: block;
+            padding: 1rem;
+            position: relative;
+            z-index: 3;
+            box-sizing:border-box;
+        }
+
+        #description .accordion-content figure {
+            margin: 1rem auto;
+        }
+
+        #description .accordion-content figure img {
+            width: 100%;
+            margin-bottom: 0.25rem;
+        }
+
+        #description .accordion-content figure figcaption {
+            text-align: center;
+            line-height: 1.25;
+        }
+
+
+        #description .accordion-content span.notice {
+            color: gold;
+        }
+
+        #reference .h {
+            color:dodgerblue;
+            font-size:1.25rem;
+            margin:0.5rem;
+        }
+
+        #reference li {
+            margin:0.5rem;
+            font-size:1rem;
+        }
+    </style>
+    <script>
+        $(function () {
+            $(".accordion").accordion({
+                header: ".accordion-header",
+                event: 'click',
+                heightStyle: 'content',
+                collapsible: true,
+                active: 0,
+                icons: false,
+            });
+
+            //$('#particles-js').hide();
+        })
+    </script>
+</head>
+<body id="dongzhuoer">
+    <div id="particles-js"></div>
+    <script src="js/particlesJS.js"></script>
+    <div class="main" id="description">
+        <div class="h1">Description</div>
+        <section>
+            <div class="h2 ui-state-active">Abstract</div>
+            <div class="p">This summer, our team has been aiming to engineer bacteria for supplement and absorption of autoinducer-2 (AI-2) in the natural and artificial environment. We have mainly designed two cell machines. AI-2 Supplier is the cell machine which can directly supply and enrich the AI-2 molecule while AI-2 Consumer is another cell machine which can sense, absorb and degrade the AI-2 in the environment. By taking advantage of the special characteristics of AI-2 controllers, we hope to directly control the population behavior of bacteria in group level.</div>
+            <div class="p">What's more, biosafety is further taken into consideration in our project. By applying gene circuits to control essential gene expression under the assigned biocontainment conditions, we can block essential gene expression to kill the cell upon loss of the biocontainment signal.</div>           
+        </section>
+        <section>
+            <div class="h2 ui-state-active">AI-2 Concept</div>
+            <div class="p">Success in nature depends on an ability to perceive and adapt to the surrounding environment. Bacteria are not an exception: they recognize and constantly adjust to changing situations by sensing environmental and self-produced signals, altering gene expression accordingly. Autoinducer-2 (AI-2) is a signal molecule produced by LuxS, an enzyme found in many bacteria species and thus is proposed to enable interspecies communication. Two classes of AI-2 receptors and many layers and interactions involved in downstream signaling have been identified up till now. So far, AI-2 has been implicated in the regulation of numerous niche-specific behaviors across the bacteria kingdom. </div>
+            <div class="p">In <i>Escherichia coli</i>, LuxS generates AI-2 from metabolic precursors. AI-2 molecules are then exported out of the cell by TqsA. AI-2 is primarily taken up through the ABC-type transporter Lsr, and then phosphorylated by LsrK to AI-2-P. AI-2-P depresses the response regulator LsrR, thereby activating transcription of the <i>lsr</i> operon. AI-2-P is degraded by LsrF and LsrG.</div>     
+            <figure>
+                <img src="../image/Description/01.png">
+                <figcaption>AI-2 quorum sensing network in <i>E. coli</i></figcaption>
+            </figure>
+        </section>
+        <section>
+            <div class="h2 ui-state-active">Motivation</div>
+            <div class="p">Coordination between cell populations via prevailing metabolic cues has been noted as a promising approach to connect synthetic devices and drive phenotypic or product outcomes. However, there has been little progress in developing 'controller cells' to modulate metabolic cues and guide these systems.</div>
+            <div class="p">Metabolic engineering exploits the genetic modification of cellular pathways to improve production of metabolites and proteins. Many noteworthy examples have been demonstrated wherein these cells serve as 'factories' for the environmentally sustainable production of energy, materials, and chemicals. Towards this aim, metabolic engineering has incorporated finely tuned synthetic controllers and cells in the creation of artificial networks. The general structure of these synthetic networks is based on control devices that respond to specific stimuli in a predictable fashion.</div>
+            <div class="p">However, the task of coordinating among and between cell populations remains a critical challenge that can limit the production of desired end-products. One creative approach to address both of these challenges is through the leveraging of cell&mdash;Cell communication networks, and these have been the target of a variety of dynamic control systems.</div>
+            <div class="p">AI-2 is synthesized and recognized by a wide variety of bacteria, which is known as a universal language in bacteria populations; correspondingly its use as a potential target for modulating Quorum Sensing (QS) activities among different cell types is of interest. In this project, we have developed bacteria AI-2 suppliers and AI-2-consumers, which can be deployed to control AI-2 concentration in a predictable fashion using the now well-characterized QS mechanisms of <i>E. coli</i>.</div>
+            <div class="p">We have addressed this through the model-based design, construction, and characterization of these 'controller cells' to modulate the external AI-2 environment.</div>
+        </section>
+        <section>
+            <div class="h2 ui-state-active">Design &amp; Functional Prototype</div>          
+            <div class="p">We developed 'controller cells' that manipulate the molecular connection between cells by modulating the bacterial signal molecule, autoinducer-2, which is secreted as a QS signal by many bacteria species. Specifically, we have engineered <i>E. coli</i> to overexpress components responsible for AI-2 production (<i>luxS</i>, <i>mtn</i>), uptake (<i>lsrACDB</i>), phosphorylation (<i>lsrK</i>), and degradation (<i>lsrFG</i>), thereby attenuating cell&mdash;cell communication among populations.</div>          
+            <div class="section">
+                <div class="h3"><b>Part 1</b> AI-2 Supplier</div>
+                <div class="p">
+                    <span class="bold">Abstract: </span>To enrich the AI-2 concentration in the nature or artificial environment, we constructed two AI-2 Supplier Devices by overexpression the components responsible for AI-2 production (<i>luxS</i>, <i>mtn</i>).
+                </div>
+                <div class="accordion">
+                    <div class="accordion-header"><span class="default">&#9758;</span><span class="active">&#9759;</span>&nbsp;</div>
+                    <div class="accordion-content">
+                        <div class="h4">Key Achievement</div>
+                        <ul>
+                            <li>Constructed two devices for supplement of AI-2 signal in the environment.</li>
+                            <li>Characterized AI-2 Supplier Devices in <i>E. coli </i>MG1655.</li>
+                            <li>Demonstrated two AI-2 Supplier Devices can work under simulated conditions in the lab.</li>
+                        </ul>
+                        <div class="h4">Design of modular QS elements</div>   
+                        <div class="p">
+                            As illustrated in Panel A, there are mainly 2 steps involved in the processing of AI-2 production in bacteria cells. AI-2 is produced from S-adenosylhomocysteine (SAH) by Mtn and LuxS and accumulates extracellularly with cell density. In our project, we cloned <i>mtn</i>, <i>luxS</i> into the plasmid pTrcHisB to enable overexpression of proteins associated with these AI-2 production machanisms in E. coli. Two AI-2 Supplier Device, pLuxS and pLuxSMtn were successfully constructed using homologous recombination technology.
+                        </div>                   
+                        <figure>
+                            <img src="../image/Description/02.png">
+                            <figcaption></figcaption>
+                        </figure>
+                        <div class="p">
+                            Scheme 1. Panel (A) depicts two AI-2 Supplier Device, pLuxS and pLuxSMtn we constructed in our project. Panel (B) depicts the AI-2 Supplier cells that are engineered through the overexpression of distinct components of AI-2 production pathway. "Native" indicates native production, while "Induced" indicates over-expression. Panel (C) illustrate how AI-2 Supplier devices work in our chassis.<br>
+                            See more in <a href="http://2016.igem.org/Team:NKU_China/Proof" style="position:relative;z-index:3;color:dodgerblue;">Proof of Concept</a>.
+                        </div>
+                    </div>
+                </div>
+            </div>            
+            <div class="section">
+                <div class="h3"><b>Part 2</b> AI-2 Consumer</div>
+                <div class="p">
+                    <span class="bold">Abstract: To 'quench' AI-2 signal in the nature or artificial environment, we constructed six AI-2 Consumer Devices by overexpression the components responsible for AI-2 uptake(<i>lsrACDB</i>), phosphorylation(<i>lsrK</i>) and degradation (<i>lsrFG</i>). </span>
+                </div>
+                <div class="accordion">
+                    <div class="accordion-header"><span class="default">&#9758;</span><span class="active">&#9759;</span>&nbsp;</div>
+                    <div class="accordion-content">
+                        <div class="h4">Key Achievement</div>
+                        <ul>
+                            <li>Constructed six devices for 'quenching' AI-2 signal in the environment.</li>
+                            <li>Characterized AI-2 Consumer Devices in <i>E. coli </i>MG1655.</li>
+                            <li>Demonstrated four AI-2 Supplier Devices can work under simulated conditions in the lab.</li>
+                        </ul>
+                        <div class="h4">Design of modular QS elements</div>
+                        <div class="p">As illustrated in Panel A, there are mainly three steps involved in the processing of AI-2 from the extracellular environment are uptake, primarily through the LsrACDB transporter, (ii) LsrK-mediated phosphorylation of AI-2 (to AI-2P), which blocks export back to the extracellular milieu so that accumulated AI-2P binds the regulatory protein LsrR, derepressing the Lsr transporter as well as enzymes, LsrF and LsrG, and (iii) degradation of AI-2P through the two step process from isomerase LsrG followed with cleaving and thiolation by LsrF. In our project, we cloned <i>lsrACDB</i>, <i>lsrK</i>, <i>lsrFG</i> into the plasmid pTrcHisB to enable overexpression of all proteins associated with these AI-2 processing mechanisms in E. coli. Six AI-2 Supplier Device, pLsrACDB, pLsrK, pLsrFG, pLsrACDBFG, pLsrACDBK, pLsrACDBFGK were successfully constructed using homologous recombination technology.</div>                
+                        <figure>
+                            <img src="../image/Description/03.png">
+                            <figcaption></figcaption>
+                        </figure>
+                        <div class="p">
+                            Scheme 2. Panel (A) depicts six AI-2 Supplier Device, pLsrACDB, pLsrK, pLsrFG, pLsrACDBFG, pLsrACDBK, pLsrACDBFGK we constructed in our project. Panel (B) depicts the AI-2 Consumer cells that are engineered through the overexpression of distinct components of AI-2 production pathway. 'Native' indicates native production, while 'Induced' indicates over-expression. Panel (C) illustrate how AI-2 Consumer devices work in our chassis.<br>
+                            See more in <a href="http://2016.igem.org/Team:NKU_China/Proof" style="position:relative;z-index:3;color:dodgerblue;">Proof of Concept</a>.
+                        </div>
+                    </div>
+                </div>
+            </div>                        
+            <div class="section">
+                <div class="h3"><b>Part 3</b> AI-2 Responser Device</div>
+                <div class="p">
+                    <span class="bold">Abstract: </span>We successfully constructed two devices that could respond to AI-2 by producing GFP, to provide an independent means to use AI-2 Controller to alter heterologous gene expression. we show that a 1:1 mixture of AI-2 Response Device with AI-2 suppliers activated QS-activated gene expression from the WT (AI-2 producing) cells. And 1:1 mixture of AI-2 Response Device with AI-2 controller could significantly depress QS-activated gene expression from the WT (AI-2 producing) cells.
+                </div>
+                <div class="accordion">
+                    <div class="accordion-header"><span class="default">&#9758;</span><span class="active">&#9759;</span>&nbsp;</div>
+                    <div class="accordion-content">
+                        <div class="h4">Key Achievement</div>
+                        <ul>
+                            <li>Constructed two devices which could respond to AI-2 by producing GFP.</li>
+                            <li>Characterized AI-2 Response Devices by adding exogenous AI-2.</li>
+                            <li>Demonstrated two AI-2 Response Devices can work under simulated conditions in the lab.</li>
+                        </ul>
+                        <div class="h4">Design of AI-2 Response Device</div>
+                        <div class="p">
+                            For AI-2 Response Device A, this composite part consists of the AI-2 (autoinducer-2) quorum sensor-inducible promoter BBa_K1981101, a GFP coding sequence BBa_E0040, a double terminator BBa_B0015. In AI-2 Response Device A, GFP expression is under the control of promoter, plsr. When phospho-AI-2 binds LsrR, expression of GFP ensues. The expression of GFP can directly response to the AI-2 level in the environment, which is an alternative way to reflect the AI-2 concentration in the nature or artificial environment.
+                        </div>
+                        <figure>
+                            <img src="../image/Description/04.png">
+                            <figcaption></figcaption>
+                        </figure>
+                        <div class="p">
+                            And in AI-2 Response Device B, additional lsrR expression enables additional repression of target genes for tighter regulation and delayed response compared to AI-2 response device A.
+                        </div>
+                        <div class="p">
+                            Scheme 3. Panel (A) depicts that <i>plsr </i>region which is depressed by the response regulator LsrR. AI-2P depresses the response regulator LsrR, thereby activating transcription of the <i>lsr </i>operon. Panel (B) depicts the partes that we succeefully cloned for construction of AI-2 Response Devices. Panel (C) illustrate the AI-2 Response devices we constructed on pTrcHisB.<br>
+                            See more in <a href="http://2016.igem.org/Team:NKU_China/Proof" style="position:relative;z-index:3;color:dodgerblue;">Proof of Concept</a>.
+                        </div>
+
+                    </div>
+                </div>
+            </div>          
+            <div class="section">
+                <div class="h3"><b>Part 4</b>Biosafety System</div>
+                <div class="p">
+                    <span class="bold">Abstract: </span>With the advent of synthetic biology, genetically modified microorganisms are being increasingly used for bio medical, industrial and environmental applications. Deployment of these engineered microbes in large scales and open environments calls for the development of safe and secure means to restrain their proliferation. An alternative approach to biocontainment is to use gene circuits to maintain essential gene expression or block toxin gene expression under the assigned biocontainment conditions.<br>
+                    This summer, we added <i>mf</i>-lon ssrA tag into 5 essential genes by using CRIPSR/Cas9 technology. By applying gene circuits to control <i>mf</i>-lon protease expression under the assigned biocontainment conditions, we can blocks essential gene expression to kill the cell upon loss of the biocontainment signal.
+                </div>
+                <div class="accordion">
+                    <div class="accordion-header"><span class="default">&#9758;</span><span class="active">&#9759;</span>&nbsp;</div>
+                    <div class="accordion-content">
+                        <div class="h4">Key Achievement</div>
+                        <ul>
+                            <li>Designed kill switches which could couple a specific input signal with cell survival.</li>
+                            <li>Designed a orthogonal system in <i>E. coli </i>in which <i>mf</i>-Lon protease can specifically recognize and degrade 5 essential proteins with <i>mf</i>-ssrA tag.</li>
+                        </ul>
+                        <div class="h4">Design of biosafety system</div>
+                        <div class="p">Pioneering biocontainment systems used metabolic auxotrophy in which target cells could only grow in the presence of an exogenously supplied metabolite, and the recent creation of an <i>E. coli </i>strain with an altered genetic code enabled production of synthetic auxotrophy strains that require an exogenous supply of non-natural amino acids for cell survival.</div>
+                        <div class="p">Traditional metabolic auxotrophy strains are hampered by the potential for inadvertent complementation by cross-feeding or by the presence of the metabolite in heterogenous environments, and synthetic auxotrophy systems rely on extensive genome-wide engineering that may be impractical for many industrial production and biotherapeutic microbes. Furthermore, they are intrinsically difficult to reprogram for different environmental conditions, potentially limiting their application.</div>
+                        <div class="p">An alternative approach to biocontainment is to use gene circuits to maintain essential gene expression or block toxin gene expression under the assigned biocontainment conditions. Upon loss of the biocontainment signal, the circuit blocks essential gene expression or induces toxin gene expression to kill the cell.</div>
+                        <div class="p">Here we present a synthetic biosafety degradation system based on the Gram-positive M. florum tmRNA system that does not rely on host degradation systems and can function in a wide range of bacteria. Researchers showed that the M. florum ssrA tag (<i>mf</i>-ssrA) is degraded by its endogenous Lon protease (<i>mf</i>-Lon) but not by <i>E. coli </i>Lon or ClpXP, and <i>mf</i>-Lon does not recognize or degrade <i>ec</i>-ssrA, providing a protease and cognate degradation tag with orthogonal functionality in E. coli.</div>
+                        <div class="p">In our biosafety system, firstly, we use CRISPR/Cas9 technology to add <i>mf</i>-lon ssrA tag into 5 essential genes. Then by applying gene circuits to control <i>mf</i>-lon protease expression under the assigned biocontainment conditions, we can blocks essential gene expression to kill the cell upon loss of the biocontainment signal.</div>
+                        <figure>
+                            <img src="../image/Description/05.png" style="max-height:none;">
+                            <figcaption></figcaption>
+                        </figure>
+                        <div class="p">
+                            Scheme 4. Panel (A) depicts that the kill switch which controls the expression of <i>mf</i>-Lon gene. Without IPTG, the promoter Pgrac is inhibited by suppressor LacI and the supreessor XylR will not synthesized, thus the promoter Pxyl is active and <i>mf</i>-Lon gene is expressed. When IPTG is added, the xylR gene is expressed and the suppressor XylR is synthesized thereafter inhibited the expression of <i>mf</i>-Lon genes. Panel (B) depicts tive essential gene was targeted to add the the <i>mf</i>-ssrA tag. Panel (C) illustrates schematic of biosafety system in which IPTG-induced <i>mf</i>-Lon expression allows the <i>mf</i>-Lonprotease to degrade essential proteins in a <i>mf</i>-ssrA-dependent manner. We use CRISPR/Cas9 technology to add <i>mf</i>-lon ssrA tag into 5 essential genes.<br>
+                            See more in <a href="http://2016.igem.org/Team:NKU_China/Proof" style="position:relative;z-index:3;color:dodgerblue;">Proof of Concept</a>.
+
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </section>
+        <div id="reference">
+            <div class="h">References</div>
+            <ol>
+                <li>Thompson J A, Oliveira R A, Djukovic A, et al. Manipulation of the quorum sensing signal AI-2 affects the antibiotic-treated gut microbiota[J]. Cell reports, 2015, 10(11): 1861-1871.</li>
+                <li>Zargar A, Quan D N, Emamian M, et al. Rational design of "controller cells" to manipulate protein and phenotype expression[J]. Metabolic engineering, 2015, 30: 61-68.</li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html>
+{{NKU_China/footer}}

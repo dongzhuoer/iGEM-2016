@@ -1,0 +1,117 @@
+/*accordion*/
+.main .ui-accordion {
+    margin:0;
+    padding:0;
+}
+
+.main .ui-accordion .ui-accordion-header {
+    font-size: 1.2rem;
+    line-height:1.3;
+    font-weight:bold;
+    margin: 0.2rem 0 0 0;
+    padding: 0.5rem;
+    position:relative;
+    z-index:3;
+}
+
+.main .ui-accordion .ui-accordion-header span {
+    font-size:1.2em;
+    width:1.25rem
+}   
+
+.main .ui-accordion .ui-accordion-header.ui-state-default .default{
+    display:inline-block;
+}
+
+.main .ui-accordion .ui-accordion-header.ui-state-default .active{
+    display:none;
+}
+
+.main .ui-accordion .ui-accordion-header.ui-state-active .default{
+    display:none;
+}
+
+.main .ui-accordion .ui-accordion-header.ui-state-active .active{
+    display:inline-block;
+}
+
+.main .ui-accordion .ui-accordion-content {
+    margin: 0;
+    padding: 0;
+    border:0.3rem solid #26b3f7;
+    border-top-width:0;
+    font-size:1rem;
+}
+
+/*tabs*/
+.main .ui-tabs {
+    margin:0;
+    padding:0.1rem;
+}
+
+#dongzhuoer .main .ui-tabs {
+    border:none;
+}
+
+.main .ui-tabs .ui-tabs-nav {   
+    margin: 0;
+    padding: 0.2rem 0 0 0;
+    position:relative;
+    z-index:3;
+    border-bottom-left-radius:0;
+    border-bottom-right-radius:0;
+}
+
+.main .ui-tabs .ui-tabs-nav .ui-tabs-tab {
+    margin: 0 0.2rem;
+    padding: 0px;
+}
+
+.main .ui-tabs .ui-tabs-nav .ui-tabs-tab .ui-tabs-anchor {
+    font-size: 1.5rem;
+    font-weight:bold;
+    margin: 0;
+    padding: 0.15rem 0.6rem;
+    cursor:pointer;
+}
+
+.main .ui-tabs .ui-tabs-nav li.ui-tabs-active .ui-tabs-anchor {
+    cursor:pointer;
+}
+
+.main .ui-tabs .ui-tabs-panel {
+    margin: 0;
+    padding: 0;
+    border:0.35rem solid #333333;
+    border-top-width:0;
+    font-size:1rem;
+}
+
+/*carousel*/
+.main .carousel-indicators {
+    bottom: 2rem;
+    left:0;
+    width:100%;
+    margin:0;
+}
+
+.main .carousel-indicators li {
+    border-color: dodgerblue;
+    background-color:gray;
+}
+
+.main .carousel-indicators li.active {
+    background-color: dodgerblue;
+}
+
+.main a.carousel-control {
+    text-decoration:none;
+    display:flex;
+}
+
+.main a.carousel-control span {
+    display:block;
+    margin:auto;
+    font-size:4rem;
+    color:dodgerblue;
+}

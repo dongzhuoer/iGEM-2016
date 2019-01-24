@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">   
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/share.css">
+    <link rel="stylesheet" href="css/local.css">
+    <script title="jquery.js" src="js/jquery-3.1.0.min.js"></script>
+    <script title="jquery-ui.js" src="js/jquery-ui.min.js"></script>
+    <script title="bootstrap.js" src="js/bootstrap.min.js"></script>
+    <script title="modernizr.js" src="js/modernizr.js"></script>
+    <script title="particles.js" src="js/particles.min.js"></script>
+    <script>
+        var rem = Number($('html').css('font-size').replace('px', ''));
+        function log(value) { console.log(value); }
+        function particles() { $('#particles-js').toggle(); }
+        function adjust_figure(scale) {
+            $('figure').each(
+                function (index, value) {
+                    var max_width = $(value).find('span').width() / rem * scale + 'rem';
+                    $(value).css('max-width', max_width);
+                }
+            )
+        }
+    </script>
+
+    <!--separatrix-->
+    <style>
+        .main#attributions {
+            padding: 0 10vw;
+            padding-bottom:10vh;
+            font-size: 1.15rem;
+            line-height:1.25;
+        }
+
+        .main div.h2 {
+            color:cyan;
+            text-align: left;
+            font-size:2rem;
+            padding-bottom:1rem;
+            font-family: Pacifico;
+        }
+
+        article {
+            margin-bottom: 2.5rem;
+        }
+
+        #attributions article .p {
+            margin:0.5rem;
+        }
+
+        #nutshell {
+            padding:1rem 0;
+        }
+
+        #nutshell .article {
+            margin: 1rem 0.4rem;
+            line-height:1.6rem;
+        }
+
+        #nutshell .article div:first-child {
+            font-weight: bold;
+            color: cyan;
+            text-indent:0;
+        }
+
+        #nutshell img, #nutshell > div:last-child {
+            display: inline-block;
+            margin: 0;
+            padding: 0;
+            vertical-align: top;
+        }
+
+        #nutshell img {
+            margin-right:1rem;
+            vertical-align:middle;
+            height: 25rem;
+            position:relative;
+            z-index:3;
+        }
+
+        #supervision .p, #acknowledgements .p{
+            margin:1rem;
+        }
+    </style>
+    <script>
+        $(function () {
+            //particles();
+        })
+    </script>
+</head>
+<body id="dongzhuoer">
+    <div id="particles-js"></div>
+    <script src="js/particlesJS.js"></script>
+    <div class="main" id="attributions">
+        <div id="nutshell">
+            <div class="h1">
+                Attributions in AI-2 Controller Construction
+            </div>
+            <img src="../image/mascot.png">
+            <div>
+                <div class="article">
+                    <div class="p">
+                        Fankang Meng, Xinyu Ma, Yujie Zhao, Jingzhe Dong:
+                    </div>
+                    <div class="p">
+                        AI-2 Controller Gene Circuits Construction;
+                    </div>
+                    <div class="p">
+                        AI-2 Response Device Construction;
+                    </div>
+                    <div class="p">
+                        AI-2 Controller Biosafety Construction;
+                    </div>
+                </div>
+                <div class="article">
+                    <div class="p">
+                        Xinhao Song, Xiao Liu, Liangti Dai, Yuxiu Xiong:
+                    </div>
+                    <div class="p">
+                        AI-2 Controller Characterization;
+                    </div>
+                    <div class="p">
+                        Parts Construction;
+                    </div>
+                    <div class="p">
+                        Interlab Study;
+                    </div>
+                </div>
+                <div class="article">
+                    <div class="p">
+                        Zhuoer Dong:
+                    </div>
+                    <div class="p">
+                        Mathematical Modeling; Wiki Construction;
+                    </div>
+                </div>
+                <div class="article">
+                    <div class="p">
+                        Xianglin Zhao:
+                    </div>
+                    <div class="p">
+                        Human Practice; Art Design;
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="details">
+            <div class="h1">Attributions in detail</div>
+            <article>
+                <div class="h2">Project: the idea</div>
+                <div class="p">We came to the "AI-2 Controller" project after many brainstorming meetings including all the team members. It would be reasonable to attribute the idea of the project to all the team members because we all contributed to the design of the project..</div>
+            </article>
+            <article>
+                <div class="h2">AI-2 Controller Construction:</div>
+                <div class="p">
+                    All the experiments including AI-2 controller gene circuits construction, AI-2 response device construction and AI-2 controller biosafety construction were designed and conducted by Fankang Meng, Xinyu Ma, Yujie Zhao and Jingzhe Dong.
+                </div>
+                <div class="p">
+                    This part of construction includes the construction of pTrcHisB, pLuxS, pLuxS-Mtn, pLsrACDB, pLsrACDBFG, pLsrACDBK, pLsrACDBFGK, AI-2 Response Device A and B using homologous recombination method. What<U+00A1><U+00AF>s more, the four people listed before also took advantage of mf-lon protease to create safer engineered bacteria.
+                </div>
+            </article>
+            <article>
+                <div class="h2">AI-2 Controller Characterization:</div>
+                <div class="p">
+                    All the experiments in AI-2 controller characterization were designed and conducted by Fankang Meng, Xiao Liu and Xinhao Song.
+                    This part of construction includes using qPCR, Western blot, microplate reader and HPLC to characterize pTrcHisB, pLuxS, pLuxS-Mtn, pLsrACDB, pLsrACDBFG, pLsrACDBK, pLsrACDBFGK.
+                </div>
+                <div class="p">
+                    This part of construction includes using qPCR, Western blot, microplate reader and HPLC to characterize pTrcHisB, pLuxS, pLuxS-Mtn, pLsrACDB, pLsrACDBFG, pLsrACDBK, pLsrACDBFGK.
+                </div>
+            </article>
+            <article>
+                <div class="h2">Moedling:</div>
+                <div class="p">
+                    This part of work was designed and conducted by Zhuoer Dong, Fankang Meng.
+                </div>
+            </article>
+            <article>
+                <div class="h2">Parts Construction:</div>
+                <div class="p">
+                    Xinhao Song, Xiao Liu, Liangti Dai and Yuxiu Xiong performed all the work of parts standardization.
+                </div>
+            </article>
+            <article>
+                <div class="h2">Interlab Study:</div>
+                <div class="p">
+                    Xinhao Song, Xiao Liu, Liangti Dai and Yuxiu Xiong performed all the work of interlab study.
+                </div>
+            </article>
+            <article>
+                <div class="h2">Human Practices.</div>
+                <div class="p">
+                    Xinglin Zhao, Liangti Dai, Zhuoer Dong and Ruilin Tian organized the "Synfuture" Exposition. Also they organized the iGEM Meeting with iGEM team TJUSLS_China. What' s more, they also interviewed many famous scholars to gather suggestions which greatly improved our project.
+                </div>
+            </article>
+            <article>
+                <div class="h2">Wiki Construction</div>
+                <div class="p">
+                    Zhuoer Dong conducted most of the work for wiki construction, including page design and implementation. He edited web pages, uploaded resources (images, fonts etc.) onto iGEM server and, moreover, fixed numerous bugs. Special acknowledgement must be attributed to dedicated chief editor&mdash;Xinhao Song. He proofread all the material several times. Other team members including Fankang Meng, Xinyu Ma, Xiao Liu, Liangti Dai, and Xinglin Zhao kindly provided contents for our wiki.
+                </div>
+            </article>
+        </div>
+        <div id="supervision">
+            <div class="h1">Supervision</div>
+            <div class="p">
+                <b>THE INSTRUCTORS</b> were closely involved to keep the instructions in time and the team on track to reach the goals.
+            </div>
+            <div class="p">
+                <b>Dr. Yufen Quan</b> kept a relaxed atmosphere in the lab and her instructions were so clear that we could easily obtain the expected results without the need for further explanations.
+            </div>
+            <div class="p">
+                <b>Dr. Yulei Dang</b> provided tremendous organizational support for our team throughout the whole process.
+            </div>
+            <div class="p">
+                <b>Dr. Jiwei Mao & Dr. Xiang Wang</b> gave us helpful advice on AI-2 Controller Protein level experiments.
+            </div>
+        </div>
+        <div id="acknowledgements">
+            <div class="h1">Acknowledgements</div>
+            <div class="p">
+                We would like to thank the 'The Ministry Key Laboratory of Molecular Microbiology and Technology' and Boling College for helping us establish the new iGEM laboratory. We would like to thank Prof. Weihui Wu and Prof. Honggang Wang for letting us use the microplate reader and fluorescence microscope when we characterized the AI-2 Responser. We would like to thank Prof. Lingyi Chen and Prof. Zhihui Cheng for sharing their experience on circuits construction and for giving us helpful advice on how to improve our experiments to obtain better data.
+            </div>
+            <div class="p">
+                We would like to thank all our colleagues at the College of Life Sciences for their support during our project. Particularly, we would like to thank Prof. Cunjiang Song for kindly allowing us to present our project to freshman students of College of Life Science in a course named "Introduction to Biotechnology" instructed by him.
+            </div>
+            <div class="p">
+                Finally, we want to thank teams listed below for helping us improve our project on data process and analysis, modelling, human practice, etc.
+            </div>
+            <div class="p">
+                <ul style="list-style:disc">
+                    <li>iGEM Team NAU_China;</li>
+                    <li>iGEM Team SLSTJU;</li>
+                    <li>iGEM Team Tianjin;</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+{{NKU_China/footer}}

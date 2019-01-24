@@ -1,0 +1,173 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.4' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      5629,        165]
+NotebookOptionsPosition[      4795,        133]
+NotebookOutlinePosition[      5137,        148]
+CellTagsIndexPosition[      5094,        145]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Rsquare$1", "=", "0.9999040212712934`"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"bestRsquare$1", "=", "0.9999999978924726`"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"times$1", "=", 
+   RowBox[{"{", 
+    RowBox[{
+    "4.066442100581467`", ",", "39.762035121831616`", ",", 
+     "41.226026477510366`", ",", "40.21937873217572`", ",", 
+     "39.61681366099264`", ",", "40.27904507620089`", ",", 
+     "39.50001297218393`", ",", "40.77858591791031`"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Total", "[", "times$1", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Length", "[", "times$1", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"error$1", "=", "1.076535821847492`"}], "\[IndentingNewLine]", 
+ RowBox[{"assess$1", "=", "2.005589149425343`"}]}], "Input",
+ CellChangeTimes->{{3.6823682214923353`*^9, 3.682368225579213*^9}, {
+   3.682368317941656*^9, 3.682368325293927*^9}, {3.6823683723952584`*^9, 
+   3.6823683749809895`*^9}, {3.6823691499595222`*^9, 3.682369228610866*^9}, {
+   3.6823693314888363`*^9, 3.6823694477591605`*^9}, {3.6823695216674733`*^9, 
+   3.682369544927578*^9}, {3.6823695884743204`*^9, 3.682369625228483*^9}, {
+   3.682370011056031*^9, 3.6823700223468733`*^9}, {3.682370171698187*^9, 
+   3.682370172884115*^9}, 3.682378402701098*^9}],
+
+Cell[BoxData["285.44834005938696`"], "Output",
+ CellChangeTimes->{
+  3.6823695456749773`*^9, {3.68236959967651*^9, 3.682369626229133*^9}, 
+   3.6823700231787205`*^9, 3.6823784004691753`*^9}],
+
+Cell[BoxData["8"], "Output",
+ CellChangeTimes->{
+  3.6823695456749773`*^9, {3.68236959967651*^9, 3.682369626229133*^9}, 
+   3.6823700231787205`*^9, 3.6823784004691753`*^9}],
+
+Cell[BoxData["1.076535821847492`"], "Output",
+ CellChangeTimes->{
+  3.6823695456749773`*^9, {3.68236959967651*^9, 3.682369626229133*^9}, 
+   3.6823700231787205`*^9, 3.6823784004691753`*^9}],
+
+Cell[BoxData["2.005589149425343`"], "Output",
+ CellChangeTimes->{
+  3.6823695456749773`*^9, {3.68236959967651*^9, 3.682369626229133*^9}, 
+   3.6823700231787205`*^9, 3.6823784004691753`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Rsquare$2", "=", "1.`"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"bestRsquare$2", "=", "0.9999999916703192`"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"times$2", "=", 
+   RowBox[{"{", 
+    RowBox[{
+    "4.1999549537349194`", ",", "37.70227954058512`", ",", 
+     "37.549362581093966`", ",", "38.246667645520105`", ",", 
+     "37.443692026098326`", ",", "38.441543205212824`", ",", 
+     "37.46355087163097`", ",", "37.277052206625505`"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Total", "[", "times$2", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Length", "[", "times$2", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"error$2", "=", "1.`"}], "\[IndentingNewLine]", 
+ RowBox[{"assess$2", "=", "1.805554272749779`"}]}], "Input",
+ CellChangeTimes->{{3.682370070255112*^9, 3.682370106822373*^9}, 
+   3.6823701900319176`*^9, {3.682370226596738*^9, 3.682370241678319*^9}, 
+   3.682378243392974*^9}],
+
+Cell[BoxData["268.32410303050176`"], "Output",
+ CellChangeTimes->{3.6823783764358826`*^9}],
+
+Cell[BoxData["8"], "Output",
+ CellChangeTimes->{3.6823783764358826`*^9}],
+
+Cell[BoxData["1.`"], "Output",
+ CellChangeTimes->{3.6823783764358826`*^9}],
+
+Cell[BoxData["1.805554272749779`"], "Output",
+ CellChangeTimes->{3.6823783764358826`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Rsquare$2", "=", "0.9989871886743196`"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"bestRsquare$3", "=", "0.9999955086562494`"}], 
+  ";"}], "\[IndentingNewLine]", "3", "\[IndentingNewLine]", 
+ RowBox[{"error$3", "=", "1.0505516099645833`"}], "\[IndentingNewLine]", 
+ RowBox[{"assess$3", "=", "1.818321642212366`"}]}], "Input",
+ CellChangeTimes->{{3.6823782033764358`*^9, 3.682378269102476*^9}, {
+  3.682378386089221*^9, 3.6823783915261097`*^9}}],
+
+Cell[BoxData["3"], "Output",
+ CellChangeTimes->{3.6823783971661396`*^9}],
+
+Cell[BoxData["1.0505516099645833`"], "Output",
+ CellChangeTimes->{3.6823783971661396`*^9}],
+
+Cell[BoxData["1.818321642212366`"], "Output",
+ CellChangeTimes->{3.6823783971661396`*^9}]
+}, Open  ]]
+},
+WindowSize->{838, 967},
+WindowMargins->{{Automatic, -7}, {Automatic, 0}},
+FrontEndVersion->"10.4 for Microsoft Windows (64-bit) (April 17, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 1322, 26, 192, "Input"],
+Cell[1905, 50, 190, 3, 31, "Output"],
+Cell[2098, 55, 172, 3, 31, "Output"],
+Cell[2273, 60, 189, 3, 31, "Output"],
+Cell[2465, 65, 189, 3, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2691, 73, 960, 21, 192, "Input"],
+Cell[3654, 96, 90, 1, 31, "Output"],
+Cell[3747, 99, 72, 1, 31, "Output"],
+Cell[3822, 102, 74, 1, 31, "Output"],
+Cell[3899, 105, 89, 1, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4025, 111, 494, 10, 112, "Input"],
+Cell[4522, 123, 72, 1, 31, "Output"],
+Cell[4597, 126, 90, 1, 31, "Output"],
+Cell[4690, 129, 89, 1, 31, "Output"]
+}, Open  ]]
+}
+]
+*)
+
