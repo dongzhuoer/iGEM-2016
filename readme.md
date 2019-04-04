@@ -13,7 +13,7 @@ The experiment work has been published in https://doi.org/10.1186/s12866-017-110
 
 开始用 Mathematica 实现，后来觉得太慢（貌似内存也耗得多），后来改用 R 发现好多了。
 
-整理成 R 包后取名为 `partition-fit` , 后改名 `bisecpp` 并移到专门的 repo。
+整理成 R 包后取名为 `partition-fit` , 后移到专门的 repo 并改名为[bisecpp](https://github.com/dongzhuoer/bisecpp)。
 
 MATLAB 的代码实现了微分方程数值求解的函数，主要是画个示意图 ^[好像是为了感谢一下 MATLAB，实际上 `fit.png` 可能是用 R 画的]。
 
@@ -71,9 +71,6 @@ The R code has been abandoned for a long time, basically it embeds the widget in
 
 
 
-
-
 ------------------
-
 [![Creative Commons License](https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-nc-sa/4.0/)  
 This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
